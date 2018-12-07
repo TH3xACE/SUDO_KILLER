@@ -5,12 +5,12 @@ Script written in bash to assist in the exploitaton of sudo (Misconfiguration + 
 Example: ./sudo_killer.sh -c -r report.txt -e /tmp/
 
 # Arguments 
--k : Keywords
--e : export location
--c : include CVE checks with respect to sudo version
--s : supply user password for sudo checks (not recommended ++except for CTF)
--r : report name
--h : help
+-k : Keywords \
+-e : export location \
+-c : include CVE checks with respect to sudo version \
+-s : supply user password for sudo checks (not recommended ++except for CTF) \
+-r : report name \
+-h : help 
 
 # CVEs check
 To update the CVE database : run the following script ./cve_update.sh
@@ -47,6 +47,10 @@ user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt \
 user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt \
 user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt \
 user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof \
+user ALL=(root) NOPASSWD: /direc/*/user \
+user ALL=(root) NOPASSWD: */direc/toto \
+user ALL=(root) NOPASSWD: /bin/cp * \
+
 
 root@sudo_exploit:/home/user# mkdir support \
 root@sudo_exploit:/home/user# cd support/ \
@@ -55,19 +59,19 @@ root@sudo_exploit:/home/user/support# touch start.sh \
 root@sudo_exploit:/home/user/support# chmod u+rwx restart.sh \
 root@sudo_exploit:/home/user/support# chmod g+xr restart.sh \
 root@sudo_exploit:/home/user/support# chmod o+x restart.sh \
-root@sudo_exploit:/home/user/support# chown user:user start.sh \ 
+root@sudo_exploit:/home/user/support# chown user:user start.sh   
 root@sudo_exploit:/home/user/support# chmod u+rwx start.sh \
 root@sudo_exploit:/home/user/support# chmod g+xr start.sh \
 root@sudo_exploit:/home/user/support# chmod o+x start.sh \
 root@sudo_exploit:/home/user/support# cd ../ \
-root@sudo_exploit:/home/user# chown user:user support/ \
+root@sudo_exploit:/home/user# chown user:user support/ 
 
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script
 
 # Disclaimer
 
-This or previous script is for Educational purpose ONLY. Do not use it without permission. The usual disclaimer applies, especially the fact that me (TH3xACE) is not liable for any damages caused by direct or indirect use of the information or functionality provided by these programs. The author or any Internet provider bears NO responsibility for content or misuse of these programs or any derivatives thereof. By using these programs you accept the fact that any damage (dataloss, system crash, system compromise, etc.) caused by the use of these programs is not t0kx's responsibility.
+This script is for Educational purpose ONLY. Do not use it without permission. The usual disclaimer applies, especially the fact that me (TH3xACE) is not liable for any damages caused by direct or indirect use of the information or functionality provided by these programs. The author or any Internet provider bears NO responsibility for content or misuse of these programs or any derivatives thereof. By using these programs you accept the fact that any damage (dataloss, system crash, system compromise, etc.) caused by the use of the script is not my responsibility.
 
 
 
