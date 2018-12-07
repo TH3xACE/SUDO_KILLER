@@ -32,8 +32,7 @@ However, these rules only affect the current user, so if user impersonation is p
 
 Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
 
-TESTING ZONE
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 # Testing the script :)
 
 $ docker build -t privesc/cve-2015-5602 .
@@ -80,7 +79,7 @@ root@c0631a24f588:/home/user/support# cd ../
 
 root@c0631a24f588:/home/user# chown user:user support/
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script
