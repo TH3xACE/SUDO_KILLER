@@ -15,8 +15,8 @@ Example: ./sudo_killer.sh -c -r report.txt -e /tmp/
 # CVEs check
 To update the CVE database : run the following script ./cve_update.sh
 
-# NOTE : sudo_killer does not exploit but check for misconguration and vulnerabilities and then propose you the following :
-+ a list of commands
+# NOTE : sudo_killer does not exploit automatically by itself, it was designed like this on purpose but check for misconguration and vulnerabilities and then propose you the following (if you are lucky the route to root is near!) :
++ a list of commands to exploit
 + a list of exploits
 + some description on how and why the attack could be performed
 
@@ -41,45 +41,26 @@ $ docker run --rm -it privesc/cve-2015-5602
 
 $ vim /etc/sudoers
 ** paste
-user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh
+user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh \
+user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/* \
+user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt \
+user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt \
+user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt \
+user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof \
 
-user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/*
-
-user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt
-
-user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt
-
-user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt
-
-user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof
-
-root@c0631a24f588:/home/user# mkdir support
-
-root@c0631a24f588:/home/user# cd support/
-
-root@c0631a24f588:/home/user/support# touch restart.sh
-
-root@c0631a24f588:/home/user/support# touch start.sh
-
-root@c0631a24f588:/home/user/support# chmod u+rwx restart.sh 
-
-root@c0631a24f588:/home/user/support# chmod g+xr restart.sh 
-
-root@c0631a24f588:/home/user/support# chmod o+x restart.sh 
-
-root@c0631a24f588:/home/user/support# chown user:user start.sh 
-
-root@c0631a24f588:/home/user/support# chmod u+rwx start.sh 
-
-root@c0631a24f588:/home/user/support# chmod g+xr start.sh 
-
-root@c0631a24f588:/home/user/support# chmod o+x start.sh 
-
-root@c0631a24f588:/home/user/support# cd ../
-
-root@c0631a24f588:/home/user# chown user:user support/
-
-
+root@sudo_exploit:/home/user# mkdir support \
+root@sudo_exploit:/home/user# cd support/ \
+root@sudo_exploit:/home/user/support# touch restart.sh \
+root@sudo_exploit:/home/user/support# touch start.sh \
+root@sudo_exploit:/home/user/support# chmod u+rwx restart.sh \
+root@sudo_exploit:/home/user/support# chmod g+xr restart.sh \
+root@sudo_exploit:/home/user/support# chmod o+x restart.sh \
+root@sudo_exploit:/home/user/support# chown user:user start.sh \ 
+root@sudo_exploit:/home/user/support# chmod u+rwx start.sh \
+root@sudo_exploit:/home/user/support# chmod g+xr start.sh \
+root@sudo_exploit:/home/user/support# chmod o+x start.sh \
+root@sudo_exploit:/home/user/support# cd ../ \
+root@sudo_exploit:/home/user# chown user:user support/ \
 
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script
