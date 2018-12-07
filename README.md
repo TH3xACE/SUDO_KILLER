@@ -37,29 +37,47 @@ TESTING ZONE
 # Testing the script :)
 
 $ docker build -t privesc/cve-2015-5602 .
+
 $ docker run --rm -it privesc/cve-2015-5602
 
 $ vim /etc/sudoers
 ** paste
 user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh
+
 user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/*
+
 user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt
+
 user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt
+
 user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt
+
 user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof
 
 root@c0631a24f588:/home/user# mkdir support
+
 root@c0631a24f588:/home/user# cd support/
+
 root@c0631a24f588:/home/user/support# touch restart.sh
+
 root@c0631a24f588:/home/user/support# touch start.sh
+
 root@c0631a24f588:/home/user/support# chmod u+rwx restart.sh 
+
 root@c0631a24f588:/home/user/support# chmod g+xr restart.sh 
+
 root@c0631a24f588:/home/user/support# chmod o+x restart.sh 
+
 root@c0631a24f588:/home/user/support# chown user:user start.sh 
+
 root@c0631a24f588:/home/user/support# chmod u+rwx start.sh 
+
 root@c0631a24f588:/home/user/support# chmod g+xr start.sh 
+
 root@c0631a24f588:/home/user/support# chmod o+x start.sh 
+
 root@c0631a24f588:/home/user/support# cd ../
+
 root@c0631a24f588:/home/user# chown user:user support/
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
