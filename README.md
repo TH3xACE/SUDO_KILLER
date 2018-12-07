@@ -15,14 +15,13 @@ Example: ./sudo_killer.sh -c -r report.txt -e /tmp/
 # CVEs check
 To update the CVE database : run the following script ./cve_update.sh
 
+# IMPORTANT !!!
+If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
+
 **NOTE : sudo_killer does not exploit automatically by itself, it was designed like this on purpose but check for misconguration and vulnerabilities and then propose you the following (if you are lucky the route to root is near!) :
 + a list of commands to exploit
 + a list of exploits
 + some description on how and why the attack could be performed
-
-# IMPORTANT !!!
-If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
-
 
 # Why is it possible to run "sudo -l" without a password?
 
