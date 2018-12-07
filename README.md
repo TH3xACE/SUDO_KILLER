@@ -24,7 +24,7 @@ To update the CVE database : run the following script ./cve_update.sh
 If you need to input a password to run sudo -l then the script will not work if you provide password with the argument -s.
 
 
-# Why it is possible to run "sudo -l" without a password?
+# Why is it possible to run "sudo -l" without a password?
 
 By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, he or she will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
 
