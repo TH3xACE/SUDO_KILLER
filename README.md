@@ -21,7 +21,7 @@ To update the CVE database : run the following script ./cve_update.sh
 + some description on how and why the attack could be performed
 
 # IMPORTANT !!!
-If you need to input a password to run sudo -l then the script will not work if you provide password with the argument -s.
+If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
 
 
 # Why is it possible to run "sudo -l" without a password?
