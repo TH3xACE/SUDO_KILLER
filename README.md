@@ -65,6 +65,10 @@ root@sudo_exploit:/home/user# chown user:user support/ \
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script
 
+# Disclaimer
+
+This or previous script is for Educational purpose ONLY. Do not use it without permission. The usual disclaimer applies, especially the fact that me (TH3xACE) is not liable for any damages caused by direct or indirect use of the information or functionality provided by these programs. The author or any Internet provider bears NO responsibility for content or misuse of these programs or any derivatives thereof. By using these programs you accept the fact that any damage (dataloss, system crash, system compromise, etc.) caused by the use of these programs is not t0kx's responsibility.
+
 
 
  
