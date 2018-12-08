@@ -44,11 +44,11 @@ user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh \
 user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/* \
 user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt \
 user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt \
-user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt \
+user ALL=NOPASSWD: sudoedit /home/'*'/'*'/esc.txt \
 user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof \
 user ALL=(root) NOPASSWD: /direc/*/user \
 user ALL=(root) NOPASSWD: */direc/toto \
-user ALL=(root) NOPASSWD: /bin/cp * 
+user ALL=(root) NOPASSWD: /bin/cp '*' 
 
 
 root@sudo_exploit:/home/user# mkdir support \
