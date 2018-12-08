@@ -69,8 +69,8 @@ root@sudo_exploit:/home/user/support# chmod o+x start.sh \
 root@sudo_exploit:/home/user/support# cd ../ \
 root@sudo_exploit:/home/user# chown user:user support/ 
 
-exit
-cd SUDO_KILLER
+exit \
+cd SUDO_KILLER \
 ./sudo_killerv1.3.1.sh
 
 # Credits
