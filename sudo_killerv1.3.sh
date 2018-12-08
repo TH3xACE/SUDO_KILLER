@@ -118,7 +118,7 @@ echo -e "\n"
 
 footer()
 {
-echo -e "\n ${GREEN} [*##################### SCAN_COMPLETED ##########################*] "
+echo -e "\n ${GREEN} [*##################### SCAN_COMPLETED ##########################*] ${RESET} "
 }
 
 
@@ -284,7 +284,7 @@ fi
 
 sudochown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown"`
 if [ "$sudochown" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: \n $sudochown"
+  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: ${RESET}\n $sudochown"
   echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n "
 else
   :
