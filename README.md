@@ -48,7 +48,6 @@ $ vim /etc/sudoers
 <p>user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt   </p>
 <p>user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof   </p>
 <p>user ALL=(root) NOPASSWD: /direc/*/user  </p>
-<p>user ALL=(root) NOPASSWD: */direc/toto   </p>
 <p>user ALL=(root) NOPASSWD: /bin/cp *  </p>
 
 
