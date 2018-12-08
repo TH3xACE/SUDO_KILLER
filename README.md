@@ -6,10 +6,10 @@ Example: ./sudo_killer.sh -c -r report.txt -e /tmp/
 
 # Arguments 
 -k : Keywords \
--e : export location \
+-e : export location (export /etc/sudoers) \
 -c : include CVE checks with respect to sudo version \
 -s : supply user password for sudo checks (not recommended ++except for CTF) \
--r : report name \
+-r : report name (save the output) \
 -h : help 
 
 # CVEs check
