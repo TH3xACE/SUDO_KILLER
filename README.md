@@ -38,6 +38,7 @@ $ cd privesc-CVE-2015-5602 \
 $ docker build -t privesc/cve-2015-5602 . \
 $ docker run --rm -it privesc/cve-2015-5602
 
+<p>
 $ vim /etc/sudoers
 ** paste
 user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh \
@@ -49,7 +50,7 @@ user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /hom
 user ALL=(root) NOPASSWD: /direc/*/user \
 user ALL=(root) NOPASSWD: */direc/toto \
 user ALL=(root) NOPASSWD: /bin/cp '*' 
-
+</p>
 
 root@sudo_exploit:/home/user# mkdir support \
 root@sudo_exploit:/home/user# cd support/ \
