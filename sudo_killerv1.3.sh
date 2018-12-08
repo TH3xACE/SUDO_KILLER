@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
 # Version="version 1.3"
-# Date : 09/11/2018
+# Date : 08/12/2018
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -30,7 +30,7 @@ echo -e " Example: ./sudo_killer.sh -c -r report.txt -e /tmp/  \n"
 		echo "-e	Enter export location"
 		echo "-s 	Supply user password for sudo checks (NOT SECURE)"
 #		echo "-t	Include thorough (lengthy) tests"
-	  echo "-c	Include sudo CVE"
+	    echo "-c	Include sudo CVE"
 		echo "-r	Enter report name" 
 		echo "-h	Displays this help text"
 		echo -e "\n"
@@ -42,10 +42,7 @@ echo -e " ######################################################### "
 
 header() 
 {
-# echo -e "\n [*##################### SUDO_KILLER ##########################*] "
 
-#echo -e "\e[40;15;5m \n [*#################### SUDO_KILLER is running ;) #######################*] \e[25m"
-echo -e "\e[5m \n [*#################### SUDO_KILLER is running ;) #######################*]  \e[25m"
 
 cat << "EOF"
    _____ _    _ _____   ____    _  _______ _      _      ______ _____
@@ -58,28 +55,25 @@ cat << "EOF"
 
 EOF
 
-echo "${BLUE} @TH3_ACE - BLAIS David"
-echo "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE/"
-echo "\n"
 
+
+# CANARY
 }
 
 
 intro()
 {
 
-
-echo "[+] Intro" 
-
+#echo "${BOLD}${YELLOW}[+] Intro ${RESET}" 
 
 if [ "$report" ]; then 
-	echo "[+] Report name = $report" 
+	echo "${BOLD}${YELLOW}[+] Report name = $report${RESET}" 
 else 
 	:
 fi
 
 if [ "$export" ]; then 
-	echo "[+] Export location = $export" 
+	echo "${BOLD}${YELLOW}[+] Export location = $export${RESET}" 
 else 
 	:
 fi
@@ -102,7 +96,7 @@ else
 fi
 
 if [ "$sudopass" ]; then 
-  echo -e "[+] Please enter password - NOT RECOMMENDED - For CTF use!"
+  echo -e "${RED} [+] Please enter password - NOT RECOMMENDED - For CTF use! ${RESET}"
   read -s userpassword
   echo 
 else 
@@ -110,9 +104,12 @@ else
 fi
 
 who=`whoami` 2>/dev/null 
+echo -e "${BLUE} @TH3_ACE - BLAIS David"
+echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE"
 echo -e "\n" 
-
-echo -e "Scan started at:"; date 
+echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
+echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
+echo -e "$who"
 echo -e "\n" 
 
 }
@@ -121,7 +118,7 @@ echo -e "\n"
 
 footer()
 {
-echo -e "\n [*##################### SCAN_COMPLETED ##########################*] "
+echo -e "\n ${GREEN} [*##################### SCAN_COMPLETED ##########################*] "
 }
 
 
@@ -129,7 +126,7 @@ echo -e "\n [*##################### SCAN_COMPLETED ##########################*] 
 checkinitial()
 {
 
-echo -e "============ Initial check - Quick ================== \n"
+echo -e "${BOLD}${YELLOW}============ Initial check - Quick ================== ${RESET} \n"
 
 # useful binaries (thanks to https://gtfobins.github.io/)
 binarylist='nmap\|perl\|awk\|find\|bash\|sh\|man\|more\|less\|vi\|emacs\|vim\|nc\|netcat\|python\|ruby\|lua\|irb\|tar\|zip\|gdb\|pico\|scp\|git\|rvim\|script\|ash\|csh\|curl\|dash\|ed\|env\|expect\|ftp\|sftp\|node\|php\|rpm\|rpmquery\|socat\|strace\|taskset\|tclsh\|telnet\|tftp\|wget\|wish\|zsh\|ssh'
@@ -138,7 +135,7 @@ binarylist='nmap\|perl\|awk\|find\|bash\|sh\|man\|more\|less\|vi\|emacs\|vim\|nc
 ##### sudo version - check to see if there are any known vulnerabilities with this - CVE
 sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null`
 if [ "$sudover" ]; then
-  echo -e "[+] Sudo version:\n$sudover" 
+  echo -e "${BOLD}${GREEN}[+] Sudo version:${RESET}\n$sudover " 
   echo -e "\n"
 else 
   :
@@ -147,7 +144,7 @@ fi
 #pull out vital sudoers info
 sudoers=`grep -v -e '^$' /etc/sudoers 2>/dev/null |grep -v "#" 2>/dev/null`
 if [ "$sudoers" ]; then
-  echo -e "[+] Sudoers configuration (condensed) exported:\n$sudoers"
+  echo -e "${BOLD}${GREEN}[+] Sudoers configuration (condensed) exported:${RESET}\n$sudoers"
   echo -e "\n" 
 
 #export sudoers file to export location
@@ -165,7 +162,7 @@ if [ "$export" ] ; then
 #sudoers=`echo '' | sudo -S -l -k 2>/dev/null` >> $format/sudoers_export.txt 2>/dev/null
 sudoers="sudo -S -l -k"
 $sudoers > $format/sudoers_export.txt
-echo -e "[+] Sudoers configuration exported! \n$sudoers"
+echo -e "${BOLD}${GREEN}[+] Sudoers configuration exported!${RESET} \n$sudoers"
 echo -e "\n" 
 fi
 
@@ -175,7 +172,7 @@ fi
 #can we sudo without supplying a password
 sudoperms=`echo '' | sudo -S -l -k 2>/dev/null`
 if [ "$sudoperms" ]; then
-  echo -e "[+] SUDO possible without a password!\n$sudoperms" 
+  echo -e "${BOLD}${GREEN}[+] SUDO possible without a password!${RESET}\n$sudoperms" 
   echo -e "\n" 
 else 
   :
@@ -188,7 +185,7 @@ if [ "$sudopass" ]; then
     else
       sudoauth=`echo $userpassword | sudo -S -l -k 2>/dev/null`
       if [ "$sudoauth" ]; then
-        echo -e "[+] SUDO possible with a password supplied!\n$sudoauth" 
+        echo -e "${BOLD}${GREEN}[+] SUDO possible with a password supplied!${RESET}\n$sudoauth" 
         echo -e "\n" 
       else 
         :
@@ -205,7 +202,7 @@ if [ "$sudopass" ]; then
     else
       sudopermscheck=`echo $userpassword | sudo -S -l -k 2>/dev/null | xargs -n 1 2>/dev/null|sed 's/,*$//g' 2>/dev/null | grep -w $binarylist 2>/dev/null`
       if [ "$sudopermscheck" ]; then
-        echo -e "[-] Possible sudo pwnage!\n$sudopermscheck" 
+        echo -e "${BOLD}${GREEN}[+] Possible sudo pwnage!${RESET}\n$sudopermscheck" 
         echo -e "\n" 
      else 
         :
@@ -218,7 +215,7 @@ fi
 #known 'good' breakout binaries (cleaned to parse /etc/sudoers for comma separated values)
 sudopwnage=`echo '' | sudo -S -l -k 2>/dev/null | xargs -n 1 2>/dev/null | sed 's/,*$//g' 2>/dev/null | grep -w $binarylist 2>/dev/null`
 if [ "$sudopwnage" ]; then
-  echo -e "[+] Possible sudo pwnage!\n$sudopwnage" 
+  echo -e "${BOLD}${GREEN}[+] Possible sudo pwnage!${RESET}\n$sudopwnage" 
   echo -e "\n" 
 else 
   :
@@ -247,9 +244,9 @@ checkcve()
 {
 
   if [ "$sudocve" ]; then
-  echo -e "============ Checking for disclosed vulnerabilities related to version used (CVE) ================== \n"
+  echo -e "${BOLD}${YELLOW}============ Checking for disclosed vulnerabilities related to version used (CVE) ================== ${RESET} \n"
 
-  echo -e "[+] Sudo version vulnerable to the below CVEs:"
+  echo -e "${BOLD}${GREEN}[+] Sudo version vulnerable to the below CVEs:${RESET}"
   sver_tmp=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null | cut -d" " -f 3 2>/dev/null`
   sver=$(echo $sver_tmp | tr -d ' ' | sed 's/P/p/g')
   cat cve.sudo2.txt | grep "$sver_tmp" | cut -d"+" -f 1,2
@@ -269,11 +266,11 @@ checkcve()
 checkmisconfig()
 {
 
-echo -e "============ Checking for Common Misconfiguration ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Common Misconfiguration ================== ${RESET} \n"
 
 sudochownrec=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR"`
 if [ "$sudochownrec" ]; then
-  echo -e "[+] Sudo chown with recursive, was found: \n $sudochownrec"
+  echo -e "${BOLD}${GREEN}[+] Sudo chown with recursive, was found: ${RESET}\n $sudochownrec"
   echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n"
   # echo -e "[-] run the command: sudo chown -hR [new_owner:old_owner] [/parent/children] "
   # echo -e "[-] you can then modify or create .sh script that can be run with root right "
@@ -287,7 +284,7 @@ fi
 
 sudochown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown"`
 if [ "$sudochown" ]; then
-  echo -e "[+] Sudo chown, was found: \n $sudochown"
+  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: \n $sudochown"
   echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n "
 else
   :
@@ -295,7 +292,7 @@ fi
 
 sudoimpuser=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/su"`
 if [ "$sudoimpuser" ]; then
-  echo -e "[+] Sudo su, was found:  \n $sudoimpuser"
+  echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET} \n $sudoimpuser"
   echo -e "[-] You can impersonate users, by running the cmd: sudo su - [USER] "
   echo -e "[+] Run the tool AGAIN for the impersonated user! \n"
 else
@@ -305,7 +302,7 @@ fi
 #sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | cut -d " " -f 5`
 sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | grep "/bin\|/sbin"`
 if [ "$sudonopassuser" ]; then
-echo -e "[+] Sudo without password for other user, was found:  \n $sudoimpuser"
+echo -e "${BOLD}${GREEN}[+] Sudo without password for other user, was found: ${RESET} \n $sudoimpuser"
 echo -e "[-] You can impersonate users, by running the cmd: sudo -u [USER] /path/bin"
 else
   :
@@ -317,7 +314,7 @@ fi
 
 sudodblwildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/"`
 if [ "$sudodblwildcard" ]; then
-  echo -e "[+] Sudoedit with double wildcard was found was detected: \n $sudodblwildcard"
+  echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected: ${RESET} \n $sudodblwildcard"
   echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14, check the version of sudo"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
@@ -329,24 +326,24 @@ fi
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 sudowildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' `  
 if [ "$sudowildcard" ]; then
-  echo -e "[+] Wildcard was found in the suoders file: \n $sudowildcard \n"
+  echo -e "${BOLD}${GREEN}[+] Wildcard was found in the suoders file: ${RESET} \n $sudowildcard \n"
 else
   :
 fi
 
 sudowildcardsh=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep ".sh"`
 if [ "$sudowildcardsh" ]; then
-  echo -e "[+] Wildcard with a bash was found in the suoders file: \n $sudowildcardsh"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the suoders file: ${RESET} \n $sudowildcardsh"
 else
   :
 fi
 
-echo -e "============ Checking for File owner hijacking ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for File owner hijacking ================== ${RESET} \n"
 
 #####  Chown file reference trick (file owner hijacking)
 sudowildcardchown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chown"`
 if [ "$sudowildcardchown" ]; then
-  echo -e "[+] Wildcard with chown was found in the suoders file: \n $sudowildcardchown"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with chown was found in the suoders file: ${RESET} \n $sudowildcardchown"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (chown).txt \n"
 else
@@ -356,7 +353,7 @@ fi
 #####  tar file reference trick (file owner hijacking)
 sudowildcardtar=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "tar"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "[+] Wildcard with tar was found in the suoders file: \n $sudowildcardtar"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with tar was found in the suoders file: ${RESET} \n $sudowildcardtar"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (tar).txt \n"
 else
@@ -366,19 +363,19 @@ fi
 #####  rsync file reference trick (file owner hijacking)
 sudowildcardrsync=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "rsync"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "[+] Wildcard with rsync was found in the suoders file: \n $sudowildcardrsync"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with rsync was found in the suoders file:  ${RESET} \n $sudowildcardrsync"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (rsync).txt \n"
 else
   :
 fi
 
-echo -e "============ Checking for File permission hijacking ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for File permission hijacking ================== ${RESET} \n"
 
 #####  Chmod file reference trick(file permission hijacking)
 sudowildcardchmod=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chmod"`
 if [ "$sudowildcardchmod" ]; then
-  echo -e "[+] Wildcard with chmod was found in the suoders file: \n $sudowildcardchmod"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with chmod was found in the suoders file: ${RESET} \n $sudowildcardchmod"
   echo -e "[-] File permission hijacking possible."
   echo -e "[*] Exploit: /notes/file_permission_hijacking.txt \n"
 else
@@ -388,7 +385,7 @@ fi
 
 #### Check for scripts execution without password in sudoers
 
-echo -e "============ Checking for Missing scripts from sudoers ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Missing scripts from sudoers ================== ${RESET} \n"
 
 current_user="$(whoami)"
 #current_groups="$(groups)"
@@ -397,7 +394,7 @@ groups > /tmp/groups.txt
 
 sudo -S -l -k | grep .sh | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g' |  tr -d " \t\r" | grep ".sh" > /tmp/sh_list.txt
 
-echo -e "[+] The script/s found in sudoers can be found at: /tmp/sh_list.txt"
+echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/sh_list.txt  ${RESET}"
 
 #### Check for missing scripts that exists in the sudoers file and whether the current user is the owner of directory 
 echo -e "[-] Checking whether there are any missing scripts defined in sudoers but that no longer exists on system:"
@@ -427,7 +424,7 @@ drights=$( echo "$repexist" | cut -d " " -f 1 )
 # checking the owner of the directory is the current user
 if [ "$current_user" == "$direc_user" ]
 then
-  echo -e "[+] The current user is the directory owner of the missing file."
+  echo -e "${BOLD}${GREEN}[+] The current user is the directory owner of the missing file.${RESET}"
  # echo -e "[*] Exploit, refer to /notes/owner_direc_missing_file.txt"
 
 #### checking the permission on the directory that the owner/current user has
@@ -494,7 +491,7 @@ do
 if [ "$line1" == "$direc_grp" ]
 then
 
-echo -e "[+] The current user is in a group that is the directory owner of the missing file."
+echo -e "${BOLD}${GREEN}[+] The current user is in a group that is the directory owner of the missing file.${RESET}"
 # echo -e "[+] Exploit, refer to /notes/owner_direc_missing_file.txt "
 
 # drightsgrp=${drights:5:3}
@@ -540,7 +537,7 @@ done
 echo -e "\n"
 
 
-echo -e "============ Checking for Excessive directory right where the scripts from sudoers reside ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Excessive directory right where the scripts from sudoers reside ================== ${RESET} \n"
 
 #current_user="$(whoami)"
 #current_groups="$(groups)"
@@ -549,7 +546,7 @@ echo -e "============ Checking for Excessive directory right where the scripts f
 
 #sudo -S -l -k | grep .sh | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g' |  tr -d " \t\r" | grep ".sh" > /tmp/sh_list.txt
 
-echo -e "[+] The script/s found in sudoers can be found at: /tmp/sh_list.txt"
+echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/sh_list.txt"
 
 
 cat /tmp/sh_list.txt | while read liney
@@ -578,7 +575,7 @@ drights1=$( echo "$repexist1" | cut -d " " -f 1 )
 # checking the owner of the directory is the current user
 if [ "$current_user" == "$direc_user1" ]
 then
-  echo -e "[+] The current user is the directory owner of the script."
+  echo -e "${BOLD}${GREEN}[+] The current user is the directory owner of the script.${RESET}"
  # echo -e "[*] Exploit, refer to /notes/owner_direc_missing_file.txt"
 
 #### checking the permission on the directory that the owner/current user has
@@ -645,7 +642,7 @@ do
 if [ "$linet" == "$direc_grp1" ]
 then
 
-echo -e "[+] The current user is in a group that is the directory owner of the script."
+echo -e "${BOLD}${GREEN}[+] The current user is in a group that is the directory owner of the script.${RESET}"
 # echo -e "[+] Exploit, refer to /notes/owner_direc_missing_file.txt "
 
 # drightsgrp=${drights:5:3}
@@ -692,7 +689,7 @@ done
 # clear the scripts list
 # rm /tmp/sh_list.txt
 
-echo -e "============ Checking for Writable scripts from sudoers ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Writable scripts from sudoers ================== ${RESET} \n"
 
 ####### [FILE]
 
@@ -830,11 +827,11 @@ checkdangenvar()
 {
 
 ##### Check for dangerous environment variables
-echo -e "============ Checking for Dangerous environment variables ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Dangerous environment variables ================== ${RESET} \n"
 
 sudoenv=`echo '' | sudo -S -l -k 2>/dev/null | grep "!env_reset" `  
 if [ "$sudoenv" ]; then
-echo -e "[+] env_reset is disabled, This means we can manipulate the environment of the command we are allowed to run (depending on sudo version)."
+echo -e "${BOLD}${GREEN}[+] env_reset is disabled, This means we can manipulate the environment of the command we are allowed to run (depending on sudo version).${RESET}"
 rm /tmp/env_remove.txt
 echo -e "[-] check the environment variables blacklist, /tmp/env_remove.txt"
 echo -e "[-] Exploit of LD_PRELOAD and PS4: /notes/env_exploit.txt"
@@ -843,7 +840,7 @@ sudo -V | sed -n '/Environment variables removed:/,/Environment/p' >> /tmp/env_r
 sed -i '1d' /tmp/env_remove.txt
 sed -i '$d' /tmp/env_remove.txt
 
-echo -e "[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt \n" 
+echo -e "${BOLD}${GREEN}[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt ${RESET}\n" 
 
 
 else
@@ -852,7 +849,7 @@ fi
 
 sudoenvld_preload=`echo '' | sudo -S -l -k 2>/dev/null | grep "LD_PRELOAD" `  
 if [ "$sudoenvld_preload" ]; then
-echo -e "[+] LD_PRELOAD is set and is a dangerous environment."
+echo -e "${BOLD}${GREEN}[+] LD_PRELOAD is set and is a dangerous environment.${RESET}"
 rm /tmp/env_remove.txt
 echo -e "[-] check the environment variables blacklist, /tmp/env_remove.txt"
 echo -e "[-] Exploit of LD_PRELOAD : /notes/env_exploit.txt"
@@ -861,7 +858,7 @@ sudo -V | sed -n '/Environment variables removed:/,/Environment/p' >> /tmp/env_r
 sed -i '1d' /tmp/env_remove.txt
 sed -i '$d' /tmp/env_remove.txt
 
-echo -e "[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt \n" 
+echo -e "${BOLD}${GREEN}[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt ${RESET} \n" 
 
 
 else
@@ -870,7 +867,7 @@ fi
 
 sudodangenv=`echo '' | sudo -S -l -k 2>/dev/null | grep "PERL5OPT\|PYTHONINSPECT" `  
 if [ "$sudodangenv" ]; then
-echo -e "[+] Check for dangerous environment variables such as LD_PRELOAD, PS4, PERL5OPT, PYTHONINSPECT,... ."
+echo -e "${BOLD}${GREEN}[+] Check for dangerous environment variables such as LD_PRELOAD, PS4, PERL5OPT, PYTHONINSPECT,... .${RESET}"
 
 rm /tmp/env_remove.txt
 echo -e "[-] check the environment variables blacklist, /tmp/env_remove.txt"
@@ -879,7 +876,7 @@ sudo -V | sed -n '/Environment variables removed:/,/Environment/p' >> /tmp/env_r
 sed -i '1d' /tmp/env_remove.txt
 sed -i '$d' /tmp/env_remove.txt
 
-echo -e "[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt \n" 
+echo -e "${BOLD}${GREEN}[+] Check sudo version, since sudo < 1.8.5 environment variables are not removed and CVE-2014-0106 refer to:  /exploits/CVE-2014-0106.txt ${RESET} \n" 
 
 
 else
@@ -972,11 +969,11 @@ fi
 
 
 # echo -e "\n" 
-echo -e "============ Checking for Dangerous bin from sudoers ================== \n"
+echo -e "${BOLD}${YELLOW}============ Checking for Dangerous bin from sudoers ================== ${RESET} \n"
 
 
 # fn_dngbin "BIN_NAME" "PATH" "CMD_LINE_1" "CMD_LINE_2" "CMD_LINE_3" "CMD_LINE_4"
-echo -e "[+] Common dangerous bins: "
+echo -e "${BOLD}${GREEN}[+] Common dangerous bins: ${RESET}"
 fn_dngbin "find" "/usr/bin/" "[=] sudo find /etc/passwd -exec /bin/sh \;"
 fn_dngbin "nano" "/usr/bin/" "[=] if find exists, then sudo find /bin -name nano -exec /bin/sh \;"
 fn_dngbin "nano" "/usr/bin/" "[=] A text editor with root priv can be used to modify the passwd file so as " "to add a user with root priv. add the below line into the /etc/passwd file using >> sudo nano /etc/passwd" "toto:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:root:/root:/bin/bash" "su - toto , username: toto password: test"
