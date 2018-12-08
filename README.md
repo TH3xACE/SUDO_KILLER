@@ -36,8 +36,12 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 $ git clone https://github.com/t0kx/privesc-CVE-2015-5602.git \
 $ cd privesc-CVE-2015-5602 \
 $ docker build -t privesc/cve-2015-5602 . \
-$ docker run --rm -it privesc/cve-2015-5602
-
+$ docker run --rm -it privesc/cve-2015-5602 \
+$ ./exploit.sh \
+copy the password and use the password
+$ su root
+$ apt-get install git
+$ git clone https://github.com/TH3xACE/SUDO_KILLER.git
 
 $ vim /etc/sudoers
 ** paste
@@ -64,6 +68,10 @@ root@sudo_exploit:/home/user/support# chmod g+xr start.sh \
 root@sudo_exploit:/home/user/support# chmod o+x start.sh \
 root@sudo_exploit:/home/user/support# cd ../ \
 root@sudo_exploit:/home/user# chown user:user support/ 
+
+exit
+cd SUDO_KILLER
+./sudo_killerv1.3.1.sh
 
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script
