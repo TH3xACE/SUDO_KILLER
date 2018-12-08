@@ -33,7 +33,8 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 
 # Testing the script :)
-
+$ git clone https://github.com/t0kx/privesc-CVE-2015-5602.git
+$ cd privesc-CVE-2015-5602
 $ docker build -t privesc/cve-2015-5602 .
 
 $ docker run --rm -it privesc/cve-2015-5602
