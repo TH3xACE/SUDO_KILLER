@@ -38,9 +38,9 @@ $ cd privesc-CVE-2015-5602 \
 $ docker build -t privesc/cve-2015-5602 . \
 $ docker run --rm -it privesc/cve-2015-5602 \
 $ ./exploit.sh \
-copy the password and use the password
-$ su root
-$ apt-get install git
+copy the password and use the password \
+$ su root \
+$ apt-get install git \
 $ git clone https://github.com/TH3xACE/SUDO_KILLER.git
 
 $ vim /etc/sudoers
