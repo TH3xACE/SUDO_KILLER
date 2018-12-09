@@ -66,17 +66,30 @@ intro()
 
 #echo "${BOLD}${YELLOW}[+] Intro ${RESET}" 
 
+who=`whoami` 2>/dev/null 
+echo -e "${BLUE} @TH3_ACE - BLAIS David"
+echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE"
+echo -e "\n" 
+echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
+echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
+echo -e "\n"
+echo -e "Current user: $who"
+echo -e "\n" 
+
+
 if [ "$report" ]; then 
-	echo "${BOLD}${YELLOW}[+] Report name = $report${RESET}" 
+	echo -e "${BOLD}${YELLOW}[+] Report name: ${RESET} $report " 
 else 
 	:
 fi
 
 if [ "$export" ]; then 
-	echo "${BOLD}${YELLOW}[+] Export location = $export${RESET}" 
+	echo -e "${BOLD}${YELLOW}[+] Export location: ${RESET} $export" 
 else 
 	:
 fi
+
+echo -e "\n" 
 
 # PHASE 2
 #if [ "$thorough" ]; then 
@@ -103,14 +116,7 @@ else
   :
 fi
 
-who=`whoami` 2>/dev/null 
-echo -e "${BLUE} @TH3_ACE - BLAIS David"
-echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE"
-echo -e "\n" 
-echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
-echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
-echo -e "$who"
-echo -e "\n" 
+
 
 }
 
