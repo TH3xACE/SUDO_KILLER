@@ -76,7 +76,7 @@ cd SUDO_KILLER \
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script.
 
-Special kudos to Vincent Puydoyeux :)
+Special kudos to Vincent Puydoyeux :) who gave me the idea to develop this tool.
 
 # Disclaimer
 
