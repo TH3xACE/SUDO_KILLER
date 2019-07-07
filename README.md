@@ -1,5 +1,7 @@
 #sudo exploitation #Abusing sudo #Exploiting Sudo
 
+If you like the project and for my personal motivation so as to develop other tools please a +1 star *
+
 # SUDO_KILLER
 Script written in bash to assist in the exploitaton of sudo (Misconfiguration + Vulnerabilities)
 
