@@ -3,7 +3,7 @@
 If you like the project and for my personal motivation so as to develop other tools please a +1 star *
 
 # SUDO_KILLER
-SUDO_KILLER is a tool which help to abuse SUDO in different way and with the primary objective of performing a privilege escalation on linux environment. 
+SUDO_KILLER is a tool which help to abuse SUDO in different ways and with the main objective of performing a privilege escalation on linux environment. 
 
 The tool helps to identify misconfiguration within sudo rules, vulnerability within the version of sudo being used (CVEs and vulns) and the used of dangerous binary, all of these could be abuse to elevate privilege to ROOT. SUDO_KILLER will then provide with a list of commands or local exploits which could be exploited to elevate privilege.
 
