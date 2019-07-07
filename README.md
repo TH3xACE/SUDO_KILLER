@@ -1,4 +1,4 @@
-'#sudo exploitation
+#sudo exploitation #Abusing sudo #Exploiting Sudo
 
 # SUDO_KILLER
 Script written in bash to assist in the exploitaton of sudo (Misconfiguration + Vulnerabilities)
