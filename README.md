@@ -42,7 +42,7 @@ However, these rules only affect the current user, so if user impersonation is p
 Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
 
 
-# Testing the script :)
+# Testing the tool :)
 $ git clone https://github.com/t0kx/privesc-CVE-2015-5602.git \
 $ cd privesc-CVE-2015-5602 \
 $ docker build -t privesc/cve-2015-5602 . \
