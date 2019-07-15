@@ -45,45 +45,9 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 
 # Testing the tool :)
-$ git clone https://github.com/t0kx/privesc-CVE-2015-5602.git \
-$ cd privesc-CVE-2015-5602 \
-$ docker build -t privesc/cve-2015-5602 . \
-$ docker run --rm -it privesc/cve-2015-5602 \
-$ ./exploit.sh \
-copy the password and use the password \
-$ su root \
-$ apt-get install git \
-$ git clone https://github.com/TH3xACE/SUDO_KILLER.git
 
-$ vim /etc/sudoers
-** paste
-<p>user ALL=(root) NOPASSWD: /directory/*/user*/setup.sh </p>
-<p>user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/* </p>
-<p>user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt  </p>
-<p>user ALL=(root) NOPASSWD: /bin/chown -HR * *.txt   </p>
-<p>user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt   </p>
-<p>user ALL=NOPASSWD: /home/user/support/start.sh, /home/user/support/stop.sh, /home/user/support/restart.sh, /usr/sbin/lsof   </p>
-<p>user ALL=(root) NOPASSWD: /direc/*/user  </p>
-<p>user ALL=(root) NOPASSWD: /bin/cp *  </p>
+Will soon provide a docker to test the different scenarios :) ... Stay connected!
 
-
-root@sudo_exploit:/home/user# mkdir support \
-root@sudo_exploit:/home/user# cd support/ \
-root@sudo_exploit:/home/user/support# touch restart.sh \
-root@sudo_exploit:/home/user/support# touch start.sh \
-root@sudo_exploit:/home/user/support# chmod u+rwx restart.sh \
-root@sudo_exploit:/home/user/support# chmod g+xr restart.sh \
-root@sudo_exploit:/home/user/support# chmod o+x restart.sh \
-root@sudo_exploit:/home/user/support# chown user:user start.sh   
-root@sudo_exploit:/home/user/support# chmod u+rwx start.sh \
-root@sudo_exploit:/home/user/support# chmod g+xr start.sh \
-root@sudo_exploit:/home/user/support# chmod o+x start.sh \
-root@sudo_exploit:/home/user/support# cd ../ \
-root@sudo_exploit:/home/user# chown user:user support/ 
-
-exit \
-cd SUDO_KILLER \
-./sudo_killerv1.3.1.sh
 
 # Credits
 The script was written by myself but with the help of a lot of online ressources found on github and in the wild, I thanks those people who inspire me. The credits and the links are shown when their exploits/decriptions are used when running the script.
