@@ -48,17 +48,19 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 To setup a vulnerable environment for your test you will need Docker installed, and just run the following command:
  
- # To pull from docker
- service docker start
- docker pull th3xace/sudo_killer_demo 
- docker run --rm -it  th3xace/sudo_killer_demo
+To pull from docker
+-------------------
+ service docker start \
+ docker pull th3xace/sudo_killer_demo \
+ docker run --rm -it  th3xace/sudo_killer_demo 
  
- # To build locally using the Dockerfile
- service docker start
- git clone https://github.com/TH3xACE/SUDO_KILLER.git
- cd SUDO_KILLER
- docker build -t  th3xace/sudo_killer_demo .
- docker run --rm -it  th3xace/sudo_killer_demo
+To build locally using the Dockerfile
+-------------------
+ service docker start \
+ git clone https://github.com/TH3xACE/SUDO_KILLER.git \
+ cd SUDO_KILLER \
+ docker build -t  th3xace/sudo_killer_demo . \
+ docker run --rm -it  th3xace/sudo_killer_demo 
 
 And it will spawn a interactive shell with low user privileges.
 
