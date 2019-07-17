@@ -46,7 +46,13 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 # Testing the tool :)
 
-Will soon provide a docker to test the different scenarios :) ... Stay connected!
+To setup a vulnerable environment for your test you will need Docker installed, and just run the following command:
+
+git clone 
+docker build -t  th3xace/sudo_killer_demo .
+docker run --rm -it  th3xace/sudo_killer_demo
+
+And it will spawn a interactive shell with low user privileges.
 
 
 # Credits
