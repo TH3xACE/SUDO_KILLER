@@ -264,8 +264,8 @@ checkcve()
 	#echo "$line"
 	cvepath=`ls -al exploits/ | grep "$line" | cut -d " " -f 11`
 	if [ $cvepath ]; then
-  		echo -e "Please find the exploits for $line in the following directory:"
-  		echo -e "$cvepath"
+  		echo -e "\n[+] Please find the following exploit for $line in the exploits' directory:"
+  		echo -e "[*] Exploit /exploits/$cvepath \n"
 	fi
    done <<< "$cve_vuln"
 
