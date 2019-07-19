@@ -964,7 +964,7 @@ if [ "$var2" ]; then
   echo -e "[+] Sudo $1, was found "
   echo -e "Run the following commands :"
   
-  resgrep=`echo '' | cat exploits/"$1".txti | grep -v "\* Sudo \*"`
+  resgrep=`echo '' | cat exploits/"$1".txt | grep -v "\* Sudo \*"`
   echo -e "$resgrep"
   
 echo -e "\n"
