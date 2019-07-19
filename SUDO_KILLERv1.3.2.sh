@@ -256,12 +256,24 @@ checkcve()
   sver_tmp=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null | cut -d" " -f 3 2>/dev/null`
   sver=$(echo $sver_tmp | tr -d ' ' | sed 's/P/p/g')
   cat cve.sudo2.txt | grep "$sver_tmp" | cut -d"+" -f 1,2
-  echo -e "\n"
-  #cat cve.sudo.txt | while read line
+  #echo -e "\n"
+  
+  cve_vuln=`cat cve.sudo2.txt | grep "$(echo $sver)" | cut -d"+" -f 1`
+  
+  while read -r line; do
+	#echo "$line"
+	cvepath=`ls -al exploits/ | grep "$line" | cut -d " " -f 11`
+	if [ $cvepath ]; then
+  		echo -e "Please find the exploits for $line in the following directory:"
+  		echo -e "$cvepath"
+	fi
+   done <<< "$cve_vuln"
+
+#cat cve.sudo.txt | while read line
   #do
   #echo $line
   #done
-
+  
   else 
   :
   fi
