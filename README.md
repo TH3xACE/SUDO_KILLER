@@ -73,7 +73,8 @@ And it will spawn a interactive shell with low user privileges.
  + Video 2 : Scenario 1 - CVE exploitation \
      https://youtu.be/CpLJ9kY6eig
   
- + Video 3: Scenario 2 - Dangerous Bins
+ + Video 3: Scenario 2 - Dangerous Bins \
+     https://youtu.be/cELFVC6cTyU
   
  + Video 4: Scenario 3 - Misconfiguration (Wildcard)
   
