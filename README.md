@@ -68,6 +68,7 @@ And it will spawn a interactive shell with low user privileges.
  Several videos are provided below with different scenarios of exploitation.
  
   + Video 1 : Docker - Setup vuln environment
+  
   https://youtu.be/Q8iO9mYrfv8
   
   + Video 2 : Scenario 1 - CVE exploitation
