@@ -67,25 +67,24 @@ And it will spawn a interactive shell with low user privileges.
  # Demo Video 
  Several videos are provided below with different scenarios of exploitation.
  
-  + Video 1 : Docker - Setup vuln environment
+ + Video 1 : Docker - Setup vuln environment \
+     https://youtu.be/Q8iO9mYrfv8
   
-  https://youtu.be/Q8iO9mYrfv8
+ + Video 2 : Scenario 1 - CVE exploitation
   
-  + Video 2 : Scenario 1 - CVE exploitation
+ + Video 3: Scenario 2 - Dangerous Bins
   
-  + Video 3: Scenario 2 - Dangerous Bins
+ + Video 4: Scenario 3 - Misconfiguration (Wildcard)
   
-  + Video 4: Scenario 3 - Misconfiguration (Wildcard)
+ + Video 5: Scenario 4 - Misconfiguration (Excessive Rights)
   
-  + Video 5: Scenario 4 - Misconfiguration (Excessive Rights)
+ + Video 6: Scenario 5 - Misconfiguration (Missing scripts)
   
-  + Video 6: Scenario 5 - Misconfiguration (Missing scripts)
+ + Video 7: Scenario 6 - Credentials Harvesting
   
-  + Video 7: Scenario 6 - Credentials Harvesting
+ + Video 8: Scenario 7 - Token Abuse
   
-  + Video 8: Scenario 7 - Token Abuse
-  
-  + Video 9: Scenarion 8 - Environment Exploitation
+ + Video 9: Scenarion 8 - Environment Exploitation
 
  
 
