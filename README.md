@@ -81,22 +81,26 @@ And it will spawn a interactive shell with low user privileges.
  + Video 4: Scenario 3 - Misconfiguration (Wildcard) \
      https://youtu.be/rKA55mis8-4
   
- + Video 5: Scenario 4 - Misconfiguration (Excessive Rights)
+ + Video 5: Scenario 4 - Misconfiguration (Excessive Rights) \
+    https://youtu.be/s1KK6go1nGY
   
- + Video 6: Scenario 5 - Misconfiguration (Missing scripts)
+ + Video 6: Scenario 5 - Misconfiguration (Missing scripts) \
+     https://youtu.be/zsxvsSYz4as
   
- + Video 7: Scenario 6 - Credentials Harvesting
+ + Video 7: Scenario 6 - Credentials Harvesting \
+     https://youtu.be/i7ixN0sv2Qw
   
  + Video 8: Scenario 7 - Token Abuse
+    will be available soon
   
  + Video 9: Scenarion 8 - Environment Exploitation
-
+    will be available soon
  
 
  # Coming functionality and improvement
- + Sudo token abuse
+ + Sudo token abuse 
  + Dealing with aliases
- + Credentials harvest
+ + Credentials harvest - done
  + Improve the way information on potential vuln and exploit are presented
  + If you want me to add any other one... please submit an issue
 
