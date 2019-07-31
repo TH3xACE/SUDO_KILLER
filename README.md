@@ -70,7 +70,8 @@ And it will spawn a interactive shell with low user privileges.
  + Video 1 : Docker - Setup vuln environment \
      https://youtu.be/Q8iO9mYrfv8
   
- + Video 2 : Scenario 1 - CVE exploitation
+ + Video 2 : Scenario 1 - CVE exploitation \
+     https://youtu.be/CpLJ9kY6eig
   
  + Video 3: Scenario 2 - Dangerous Bins
   
