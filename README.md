@@ -67,6 +67,8 @@ And it will spawn a interactive shell with low user privileges.
  # Demo Video 
  Several videos are provided below with different scenarios of exploitation.
  
+ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
+ 
  + Video 1 : Docker - Setup vuln environment \
      https://youtu.be/Q8iO9mYrfv8
   
@@ -76,7 +78,8 @@ And it will spawn a interactive shell with low user privileges.
  + Video 3: Scenario 2 - Dangerous Bins \
      https://youtu.be/cELFVC6cTyU
   
- + Video 4: Scenario 3 - Misconfiguration (Wildcard)
+ + Video 4: Scenario 3 - Misconfiguration (Wildcard) \
+     https://youtu.be/rKA55mis8-4
   
  + Video 5: Scenario 4 - Misconfiguration (Excessive Rights)
   
