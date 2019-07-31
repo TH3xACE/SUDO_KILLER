@@ -2,6 +2,8 @@
 
 If you like the project and for my personal motivation so as to develop other tools please a +1 star *
 
+The tool can be used by pentesters, system admins, CTF players, students, System Auditors and trolls :).
+
 # SUDO_KILLER
 SUDO_KILLER is a tool which help to abuse SUDO in different ways and with the main objective of performing a privilege escalation on linux environment. 
 
