@@ -1,7 +1,8 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
 # Version="version 1.3"
-# Date : 08/12/2018
+# Date Created : 08/12/2018
+# Date of last modification : 06/08/2019
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -410,7 +411,10 @@ current_user="$(whoami)"
 
 groups > /tmp/groups.txt
 
-sudo -S -l -k | grep .sh | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g' |  tr -d " \t\r" | grep ".sh" > /tmp/sh_list.txt
+#sudo -S -l -k | grep .sh | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g' |  tr -d " \t\r" | grep ".sh" > /tmp/sh_list.txt
+
+sudo -S -l -k | grep .sh | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g'  | sed -e 's/  *$//' | awk '$1=$1' | cut -d " " -f 1 > /tmp/sh_list
+
 
 echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/sh_list.txt  ${RESET}"
 
