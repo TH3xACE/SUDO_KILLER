@@ -333,6 +333,7 @@ fi
 
 sudodblwildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/"`
 if [ "$sudodblwildcard" ]; then
+  echo -e "\n"
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected: ${RESET} \n $sudodblwildcard"
   echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14, check the version of sudo"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
