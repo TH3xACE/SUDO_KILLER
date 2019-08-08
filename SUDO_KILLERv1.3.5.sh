@@ -685,7 +685,7 @@ then
 
 echo -e ">>> Checking current user permission on the scripts owned by him \n"
 echo -e "Checking the following script: $linex"
-echo -e "\n"
+#echo -e "\n"
 
 msgfp="The current user can "
 
@@ -736,7 +736,7 @@ cat /tmp/groups.txt | while read line2
 do
 if [ "$line2" == "$direc_grp1" ]
 then
-echo -e ">>> Checking current user group ownership of the scripts"
+echo -e ">>> Checking current user group ownership of the script \n"
 #echo -e ">>> Checking current user group permission on file \n"
 echo -e "${BOLD}${GREEN}[-] The current user is part of a group or several groups that is the owner of the script, the groups are: $line2${RESET}"
 #echo -e "[-] The current user is in a group that is the file owner of the script."
