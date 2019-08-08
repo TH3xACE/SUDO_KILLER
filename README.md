@@ -95,7 +95,7 @@ And it will spawn a interactive shell with low user privileges.
  + Video 8: Scenario 7 - Token Abuse \
     will be available soon
   
- + Video 9: Scenarion 8 - Environment Exploitation \
+ + Video 9: Scenarion 8 - Environment Variable Exploitation \
     will be available soon
  
 
