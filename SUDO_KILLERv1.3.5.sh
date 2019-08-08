@@ -785,9 +785,9 @@ done
 
 
 echo -e "${BOLD}${YELLOW}============ Checking whether vulnerable to Credential Harvesting ================== ${RESET} \n"
-
+echo "Current User: $current_user"
 current_user="$(whoami)"
-echo $current_user
+#echo $current_user
 
 #hdir=`echo "" | ls -ld /home/*`
 #echo "$hdir"
