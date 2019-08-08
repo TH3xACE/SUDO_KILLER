@@ -669,7 +669,7 @@ echo -e "${BOLD}${YELLOW}============ Checking for Writable scripts from sudoers
 
 
 
-cat /tmp/sh_list.txt | while read linex
+cat /tmp/script_list.txt | while read linex
 do
 
 # if script exist
