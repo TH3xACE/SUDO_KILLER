@@ -537,7 +537,7 @@ echo -e "\n"
 
 echo -e "${BOLD}${YELLOW}============ Checking for Excessive directory right where the scripts from sudoers reside ================== ${RESET} \n"
 
-echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/script_list.txt"
+echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/script_list.txt ${RESET}"
 
 echo -e "-------------------------------------------------------"
 
@@ -684,7 +684,8 @@ if [ "$current_user" == "$owner_file" ]
 then
 
 echo -e ">>> Checking current user permission on the scripts owned by him \n"
-echo -e "$linex"
+echo -e "Checking the following script: $linex"
+echo -e "\n"
 
 msgfp="The current user can "
 
@@ -715,7 +716,7 @@ fi # perms
 
  msgfp+=" for the script $linex"
 
-echo -e "[+] $msgfp \n"
+echo -e "${BOLD}${GREEN}[+] $msgfp${RESET} \n"
 
 # clear var
 owner_file="nothing"
@@ -737,7 +738,7 @@ if [ "$line2" == "$direc_grp1" ]
 then
 echo -e ">>> Checking current user group ownership of the scripts"
 #echo -e ">>> Checking current user group permission on file \n"
-echo -e "[-] The current user is part of a group or several groups that is the owner of the script, the groups are: $line2"
+echo -e "${BOLD}${GREEN}[-] The current user is part of a group or several groups that is the owner of the script, the groups are: $line2${RESET}"
 #echo -e "[-] The current user is in a group that is the file owner of the script."
 # echo -e "[+] Exploit, refer to /notes/owner_direc_missing_file.txt "
 
