@@ -102,8 +102,8 @@ And it will spawn a interactive shell with low user privileges.
  # Coming functionality and improvement
  + Sudo token abuse 
  + Dealing with aliases
- + Credentials harvest - done
- + Improve the way information on potential vuln and exploit are presented
+ + Credentials harvesting - done
+ + Improve the way information on potential vuln and exploit are presented - partially done
  + If you want me to add any other one... please submit an issue
 
 
