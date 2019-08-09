@@ -58,8 +58,6 @@ and the use of dangerous binary, all of these could be abused to elevate privile
 *SUDO_KILLER* will then provide a list of commands or local exploits which could be exploited to elevate privilege. 
 It is worth noting that the tool does not perform any exploitation on your behalf, the exploitation will need to be performed manually and this is intended.
 
-
-
 =============
 Features
 =============
@@ -216,12 +214,12 @@ will be available soon
 
 Author
 ----------------------------
-.. image:: ./pictures/visio/architecture/jok3r-architecture.png
+.. image:: ./pictures/ace.jpg
     :alt: Author
 
 Project
 ----------------------------
-.. image:: ./pictures/visio/flowchart/jok3r-flow-chart.svg
+.. image:: ./pictures/killer_project.jpg
     :width: 700px
     :alt: Project
 
