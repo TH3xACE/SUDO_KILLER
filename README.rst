@@ -2,7 +2,7 @@
 
    <h1 align="center">
 
-.. image:: ./pictures/logo.png
+.. image:: ./pictures/SUDO KILLER2.JPG
 
 .. raw:: html
 
