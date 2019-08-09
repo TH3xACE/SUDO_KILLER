@@ -210,24 +210,6 @@ will be available soon
 will be available soon
 
    
-============
-#whoami
-============
-
-Author
-----------------------------
-.. image:: ./pictures/ace2.jpg
-    :scale: 50%
-    :height: 100px
-    :width: 100px
-    :alt: Author
-
-Project
-----------------------------
-.. image:: ./pictures/killer_project.jpg
-    :width: 100px
-    :alt: Project
-
 
 
 =============
