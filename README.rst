@@ -147,21 +147,18 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
     .. code-block:: console
 
         service docker start 
-		docker pull th3xace/sudo_killer_demo
-		docker run --rm -it th3xace/sudo_killer_demo		
+	docker pull th3xace/sudo_killer_demo
+	docker run --rm -it th3xace/sudo_killer_demo		
 
 2. **Build locally from Dockerfile :**
 
     .. code-block:: console
 
         service docker start 
-		git clone https://github.com/TH3xACE/SUDO_KILLER.git 
-		cd SUDO_KILLER 
-		docker build -t th3xace/sudo_killer_demo . 
-		docker run --rm -it th3xace/sudo_killer_demo
-
-
-
+	git clone https://github.com/TH3xACE/SUDO_KILLER.git 
+	cd SUDO_KILLER 
+	docker build -t th3xace/sudo_killer_demo . 
+	docker run --rm -it th3xace/sudo_killer_demo
 
 
 ============
