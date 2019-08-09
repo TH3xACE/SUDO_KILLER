@@ -169,7 +169,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 
 
 * **Video 1 : Docker - Setup vuln environment** 
-.. image:: ./pictures/p1.jpg
+.. image:: ./pictures/p1.JPG
    :target: https://youtu.be/Q8iO9mYrfv8
 
 * **Video 2 : Scenario 1 - CVE exploitation** 
