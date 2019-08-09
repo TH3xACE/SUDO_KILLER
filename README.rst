@@ -217,12 +217,13 @@ will be available soon
 Author
 ----------------------------
 .. image:: ./pictures/ace.jpg
+    :width: 300px
     :alt: Author
 
 Project
 ----------------------------
 .. image:: ./pictures/killer_project.jpg
-    :width: 700px
+    :width: 100px
     :alt: Project
 
 
