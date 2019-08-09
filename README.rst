@@ -169,38 +169,37 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 
 
 * **Video 1 : Docker - Setup vuln environment** 
-
-.. image:: pictures/p1.jpg
+.. image:: ./pictures/p1.jpg
    :target: https://youtu.be/Q8iO9mYrfv8
 
 * **Video 2 : Scenario 1 - CVE exploitation** 
 
-.. image:: pictures/p2.jpg
+.. image:: ./pictures/p2.jpg
    :target: https://youtu.be/CpLJ9kY6eig
 
 * **Video 3: Scenario 2 - Dangerous Bins** 
 
-.. image:: pictures/p3.jpg
+.. image:: ./pictures/p3.jpg
    :target: https://youtu.be/cELFVC6cTyU
 
 * **Video 4: Scenario 3 - Misconfiguration (Wildcard)** 
 
-.. image:: pictures/p4.jpg
+.. image:: ./pictures/p4.jpg
    :target: https://youtu.be/rKA55mis8-4
 
 * **Video 5: Scenario 4 - Misconfiguration (Excessive Rights)** 
 
-.. image:: pictures/p5.jpg
+.. image:: ./pictures/p5.jpg
    :target: https://youtu.be/s1KK6go1nGY
    
 * **Video 6: Scenario 5 - Misconfiguration (Missing scripts)** 
 
-.. image:: pictures/p6.jpg
+.. image:: ./pictures/p6.jpg
    :target: https://youtu.be/zsxvsSYz4as
 
 * **Video 7: Scenario 6 - Credentials Harvesting** 
 
-.. image:: pictures/p7.jpg
+.. image:: ./pictures/p7.jpg
    :target: https://youtu.be/i7ixN0sv2Qw  
    
 * **Video 8: Scenario 7 - Token Abuse** 
