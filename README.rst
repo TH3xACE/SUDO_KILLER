@@ -86,12 +86,12 @@ Example
 
 Arguments
 --------------------------
--k : Keywords 
--e : export location (export /etc/sudoers) 
--c : include CVE checks with respect to sudo version 
--s : supply user password for sudo checks (not recommended ++except for CTF) 
--r : report name (save the output) 
--h : help
+* **-k : Keywords**
+* **-e : export location (export /etc/sudoers)**
+* **-c : include CVE checks with respect to sudo version**
+* **-s : supply user password for sudo checks (not recommended ++except for CTF)**
+* **-r : report name (save the output)**
+* **-h : help**
 
 
 CVEs check
