@@ -3,9 +3,8 @@
    <h1 align="center">
 
 .. image:: ./pictures/SUDO KILLER2.JPG
- :width: 100px
- :height: 100px
- :alt: Project
+ 	:width: 700px
+ 	:alt: Project
 
 .. raw:: html
 
