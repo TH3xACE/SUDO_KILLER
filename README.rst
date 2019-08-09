@@ -7,14 +7,14 @@
 .. raw:: html
 
    <br class="title">
-   SUDO_KILLER
+   KILLER PROJECT
    <br>
 
 .. image: https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic
    :target: https://github.com/TH3xACE/SUDO_KILLER
    :alt: Last Commit
 
-.. image::https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo ?style=plastic
+.. image::https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo?style=plastic
     :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
     :alt: Docker Size
 
@@ -25,8 +25,6 @@
 .. raw:: html
 
    </h1>
-   <h3 align="center">KILLER PROJECT</h3>
-   <p align="center">SUDO_KILLER</p>
 
 #sudo exploitation #Abusing sudo #Exploiting Sudo
 
