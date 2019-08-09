@@ -216,8 +216,10 @@ will be available soon
 
 Author
 ----------------------------
-.. image:: ./pictures/ace.jpg
-    :width: 300px
+.. image:: ./pictures/ace2.jpg
+    :scale: 50%
+    :height: 100px
+    :width: 100px
     :alt: Author
 
 Project
