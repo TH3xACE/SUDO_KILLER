@@ -24,14 +24,15 @@
 	
 .. raw:: html
 
+#sudo exploitation #Abusing sudo #Exploiting Sudo
+
+If you like the project and for my personal motivation so as to develop other tools please a +1 star *
+
+The tool can be used by pentesters, system admins, CTF players, students, System Auditors and trolls :).
+
    </h1>
    <h3 align="center">KILLER PROJECT</h3>
    <p align="center">SUDO_KILLER</p>
-
-**WARNING: SUDO_KILLER is part of the KILLER project. SUDO_KILLER is still under development 
-and there might be some issues, please create an issue if you found any. **
-
-**Other tool will be added to the KILLER project in the coming months so stay tuned up. Also ideas, bug reports, contributions are more than welcome !**
 
 
 .. contents:: 
@@ -42,12 +43,10 @@ and there might be some issues, please create an issue if you found any. **
 INTRO
 =============
 
-#sudo exploitation #Abusing sudo #Exploiting Sudo
+**WARNING: SUDO_KILLER is part of the KILLER project. SUDO_KILLER is still under development 
+and there might be some issues, please create an issue if you found any. **
 
-If you like the project and for my personal motivation so as to develop other tools please a +1 star *
-
-The tool can be used by pentesters, system admins, CTF players, students, System Auditors and trolls :).
-
+**Other tool will be added to the KILLER project in the coming months so stay tuned up. Also ideas, bug reports, contributions are more than welcome !**
 
 
 =============
