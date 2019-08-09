@@ -125,7 +125,7 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 
 ============
-Installation
+Docker - Vulnerable testing environment
 ============
 **IMPORTANT: The recommended way to test the tool is to use the docker image created on purpose for the testing. The image contained several vulnerabilities and misconfigurations related to
 the usage of SUDO.
