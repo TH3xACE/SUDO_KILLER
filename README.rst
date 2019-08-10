@@ -78,8 +78,9 @@ Usage
 
 Example
 --------------------------
-
- ./sudo_killer.sh -c -r report.txt -e /tmp/
+ .. code-block:: console
+ 
+ 	./sudo_killer.sh -c -r report.txt -e /tmp/
 
 
 Arguments
