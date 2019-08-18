@@ -13,9 +13,9 @@ RUN apt-get update && \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # configure vuln application
-RUN wget https://www.sudo.ws/dist/sudo-1.8.13.tar.gz -O /tmp/sudo.tar.gz && \
+RUN wget https://www.sudo.ws/dist/sudo-1.8.4.tar.gz -O /tmp/sudo.tar.gz && \
     tar xfz /tmp/sudo.tar.gz -C /tmp/ && \
-    cd /tmp/sudo-1.8.13 && \
+    cd /tmp/sudo-1.8.4 && \
     ./configure && \
     make && make install
 RUN rm -rf /tmp/sudo*
