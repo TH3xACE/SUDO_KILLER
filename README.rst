@@ -203,13 +203,13 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 .. image:: ./pictures/p7.JPG
    :target: https://youtu.be/i7ixN0sv2Qw  
    
-* **Video 8: Scenario 7 - Token Abuse** 
-will be available soon
+* **Video 8: Scenario 7 -  Environment Variable Exploitation** 
 
-* **Video 9: Scenarion 8 - Environment Variable Exploitation** 
-will be available soon
+.. image:: ./pictures/p8.JPG
+   :target: https://youtu.be/sGd8KW_eqhw  
 
-   
+* **Video 9: Scenarion 8 - Token Abuse** 
+Will soon be available
 
 
 =============
