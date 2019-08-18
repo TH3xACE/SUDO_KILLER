@@ -141,7 +141,7 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
     :alt: Docker Size
 
 
-1. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub:**
+1. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub (This version maybe a bit more up-to-date):**
 
     .. code-block:: console
 
