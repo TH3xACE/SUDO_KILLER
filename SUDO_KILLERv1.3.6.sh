@@ -61,6 +61,15 @@ EOF
 # CANARY
 }
 
+function versionToInt() {
+  local IFS=.
+  parts=($1)
+  let val=1000000*parts[0]+1000*parts[1]+parts[2]
+  cnver=$val
+}
+
+
+
 
 intro()
 {
