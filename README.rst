@@ -71,6 +71,8 @@ Some of the checks/functionalities that are performed by the tool.
 * **Vulnerable versions of sudo - CVEs**
 * **Dangerous Environment Variables**
 * **Credential Harvesting**
+* **Writable directories where scripts reside**
+* **Binaries that might be replaced**
 
 =============
 Usage
