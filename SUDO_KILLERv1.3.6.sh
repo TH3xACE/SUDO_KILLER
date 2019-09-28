@@ -265,7 +265,7 @@ checkcve()
   echo -e "${BOLD}${GREEN}[+] Sudo version vulnerable to the following CVEs:${RESET}"
   sver_tmp=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null | cut -d" " -f 3 2>/dev/null`
   sver=$(echo $sver_tmp | tr -d ' ' | sed 's/P/p/g')
-  cat cve.sudo2.txt | grep "$sver_tmp" | cut -d"+" -f 1,2
+  cat cve.sudo2.txt | grep "$sver_tmp" | cut -d"+" -f 1,2 | awk '{print $0,"\n"}'
   #echo -e "\n"
   
   cve_vuln=`cat cve.sudo2.txt | grep "$(echo $sver)" | cut -d"+" -f 1`
