@@ -43,8 +43,8 @@ The tool can be used by pentesters, system admins, CTF players, students, System
 INTRO
 =============
 
-**WARNING: SUDO_KILLER is part of the KILLER project. SUDO_KILLER is still under development 
-and there might be some issues, please create an issue if you found any. **
+.. warning::
+   SUDO_KILLER is part of the KILLER project. SUDO_KILLER is still under development and there might be some issues, please create an issue if you found any.
 
 **Other tool will be added to the KILLER project in the coming months so stay tuned up. Also ideas, bug reports, contributions are more than welcome !**
 
