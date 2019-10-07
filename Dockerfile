@@ -56,7 +56,7 @@ RUN cd /home/user/ && \
     git clone https://github.com/TH3xACE/SUDO_KILLER.git && \
     chown -R user:user SUDO_KILLER && \
     cd SUDO_KILLER && \
-    chmod +x SUDO_KILLERv1.3.6.sh
+    chmod +x SUDO_KILLERv*.sh
 
 # run interactive shell
 # with user privileges

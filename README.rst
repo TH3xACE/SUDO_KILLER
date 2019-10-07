@@ -218,10 +218,11 @@ Will soon be available
 =============
 Coming functionality and improvement
 =============
-* **Sudo token abuse**
-* **Dealing with aliases**
 * **Credentials harvesting - done**
 * **Improve the way information on potential vuln and exploit are presented - partially done**
+* **Sudo token abuse**
+* **Dealing with aliases**
+* **Ability to extract data and do analysis offline - on your machine**
 * **If you want me to add any other one... please submit an issue**
 
 
