@@ -1,7 +1,7 @@
-FROM debian:jessie
+FROM debian:buster-slim
 
 MAINTAINER TH3XACE <BLALAA> 
-LABEL description="This docker was created for testing the tool SUDO_KILLER available on github. The tool was developped to identify and exploit misconfigurations within sudo rules as well as vulnerable version of sudo itself.
+LABEL description="This docker was created for testing the tool SUDO_KILLER available on github. The tool was developped to identify and exploit misconfigurations within sudo rules as well as vulnerable version of sudo itself. \
 Several scenarios are included in the docker so as to illustrate some of the vulnerable configurations and a vulnerable version if sudo."
 
 # install debian stuff
@@ -56,7 +56,7 @@ RUN cd /home/user/ && \
     git clone https://github.com/TH3xACE/SUDO_KILLER.git && \
     chown -R user:user SUDO_KILLER && \
     cd SUDO_KILLER && \
-    chmod +x SUDO_KILLERv1.3.1.sh
+    chmod +x SUDO_KILLERv*.sh
 
 # run interactive shell
 # with user privileges
