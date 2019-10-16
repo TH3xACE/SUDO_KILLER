@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y git && \
     apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    wget vim build-essential \
+    wget vim build-essential curl \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # configure vuln application
@@ -56,7 +56,7 @@ RUN cd /home/user/ && \
     git clone https://github.com/TH3xACE/SUDO_KILLER.git && \
     chown -R user:user SUDO_KILLER && \
     cd SUDO_KILLER && \
-    chmod +x SUDO_KILLERv*.sh
+    chmod +x *.sh
 
 # run interactive shell
 # with user privileges
