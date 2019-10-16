@@ -68,7 +68,7 @@ Some of the checks/functionalities that are performed by the tool.
 --------------------------
 * **Misconfigurations**
 * **Dangerous Binaries**
-* **Vulnerable versions of sudo - CVEs**
+* **Vulnerable versions of sudo - CVEs (NEW - CVE-2019-14287)**
 * **Dangerous Environment Variables**
 * **Credential Harvesting**
 * **Writable directories where scripts reside**
