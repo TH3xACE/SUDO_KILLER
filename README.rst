@@ -223,6 +223,8 @@ Coming functionality and improvement
 * **Sudo token abuse**
 * **Dealing with aliases**
 * **Ability to extract data and do analysis offline - on your machine**
+* **Adding scenario + exploit for CVE-2019-14287 -done**
+* **Detect CVE-2019-14287 - to be done**
 * **If you want me to add any other one... please submit an issue**
 
 
