@@ -434,7 +434,7 @@ if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET} \n $sudoeditpath"
   echo -e "[-] Privilege escalation is possible if the sudo version is < 1.8.30"
   echo -e "[*] Run the command sudo $sudoeditpath <file> to invoke a file editor as root"
-  echo -e "[*] Then use the appropriate exploit from /exploits/ for the editor you invoked"
+  echo -e "[*] Then use the appropriate exploit from /exploits/ for the editor you invoked \n"
 fi
 
 #### check for scripts execution without password in sudoers
