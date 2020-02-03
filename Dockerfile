@@ -26,7 +26,9 @@ RUN useradd -d /home/user \
     -ms /bin/bash user
 
 # add sudoers entry
-RUN echo 'user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt' >> /etc/sudoers && \
+RUN echo 'Defaults env_reset' >> /etc/sudoers && \
+    echo 'Defaults env_keep += LD_PRELOAD' >> /etc/sudoers && \
+    echo 'user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /home/user/directory/user*/setup.sh' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/* ' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/chown -hR * *.txt' >> /etc/sudoers && \  
