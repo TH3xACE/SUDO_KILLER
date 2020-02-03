@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 1.3.7"
+# Version="version 1.3.8"
 # Date Created : 08/12/2018
-# Date of last modification : 16/10/2019
+# Date of last modification : 03/02/2020
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -1047,6 +1047,7 @@ fn_dngbin2 "apt"
 fn_dngbin2 "apt-get"
 fn_dngbin2 "aria2c"
 fn_dngbin2 "ash"
+fn_dngbin2 "apache2"
 fn_dngbin2 "awk"
 fn_dngbin2 "base64"
 fn_dngbin2 "bash"
