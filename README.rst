@@ -28,7 +28,9 @@
 
    </h1>
 
-#sudo exploitation #Abusing sudo #Exploiting Sudo
+#sudo exploitation #Abusing sudo #Exploiting Sudo #Linux Privilege Escalation
+
+Linux Privilege Escalation through SUDO abuse.
 
 If you like the tool and for my personal motivation so as to develop other tools please a +1 star * 
 
@@ -54,11 +56,12 @@ Overview
 =============
 
 *SUDO_KILLER* is a tool that can be used for privilege escalation on linux environment by abusing SUDO in several ways. 
-The tool helps to identify misconfiguration within sudo rules, vulnerability within the version of sudo being used (CVEs and vulns) 
-and the use of dangerous binary, all of these could be abused to elevate privilege to ROOT.
+The tool helps to identify misconfiguration within sudo rules, vulnerability within the version of sudo being used (CVEs and vulns) and the use of dangerous binary, all of these could be abused to elevate privilege to ROOT.
 
 *SUDO_KILLER* will then provide a list of commands or local exploits which could be exploited to elevate privilege. 
 It is worth noting that the tool does not perform any exploitation on your behalf, the exploitation will need to be performed manually and this is intended.
+
+
 
 =============
 Features
