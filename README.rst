@@ -78,6 +78,12 @@ Some of the checks/functionalities that are performed by the tool.
 * **Binaries that might be replaced**
 * **Identify missing scripts**
 
+New checks and/or scenarios
+-------------------------
+1. CVE-2019-14287 - runas
+2. No CVE yet - sudoedit - absolute path
+3. CVE-2019-18634 - pwfeedback
+
 =============
 Usage
 =============
