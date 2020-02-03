@@ -35,7 +35,7 @@ RUN echo 'user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /direc/*/user' >> /etc/sudoers && \ 
     echo 'user ALL=(ALL, !root) NOPASSWD: /bin/bash' >> /etc/sudoers && \
     echo 'user ALL=(ALL, !root) NOPASSWD: /usr/bin/id' >> /etc/sudoers && \
-    echo 'user ALL=(root) NOPASSWD: /bin/sudoedit /etc/printcap' >> /etc/sudoers && \
+    echo 'user ALL=(root) NOPASSWD: /usr/local/bin/sudoedit /etc/printcap' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/cp *' >> /etc/sudoers
 
 # create vulnerable scripts
