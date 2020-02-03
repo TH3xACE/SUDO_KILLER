@@ -442,12 +442,16 @@ else
   :
 fi
 
+  
 #####  Check for absolute path to sudoedit
 sudoeditpath=`echo '' | sudo -S -l -k 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit"`
 if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET} \n $sudoeditpath"
   echo -e "[-] Privilege escalation is possible if the sudo version is < 1.8.30"
   echo -e "[*] Run the command sudo $sudoeditpath <file> to invoke a file editor as root"
+  echo -e "[-] Once you are in the editor, type the following command in command mode to get a shell"
+  echo -e "[-] Run command : :set shell=/bin/sh"
+  echo -e "[-] :shell"
   echo -e "[*] Then use the appropriate exploit from /exploits/absolute_path-sudoedit.txt for the editor you invoked \n"
 fi
 
