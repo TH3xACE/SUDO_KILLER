@@ -72,7 +72,7 @@ Some of the checks/functionalities that are performed by the tool.
 --------------------------
 * **Misconfigurations**
 * **Dangerous Binaries**
-* **Vulnerable versions of sudo - 1. CVEs (NEW - CVE-2019-14287) 2. New a vuln related to sudoedit absolute path.. no CVE yet.**
+* **Vulnerable versions of sudo - CVEs**
 * **Dangerous Environment Variables**
 * **Credential Harvesting**
 * **Writable directories where scripts reside**
