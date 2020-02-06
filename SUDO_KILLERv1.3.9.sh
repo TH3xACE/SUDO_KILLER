@@ -298,7 +298,8 @@ echo -e "${BOLD}${YELLOW}============ Checking for Common Misconfiguration =====
 
 sudochownrec=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR"`
 if [ "$sudochownrec" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo chown with recursive, was found: ${RESET}\n $sudochownrec"
+  echo -e "${BOLD}${GREEN}[+] Sudo chown with recursive, was found: ${RESET}"
+  echo -e "$sudochownrec"
   echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n"
   # echo -e "[-] run the command: sudo chown -hR [new_owner:old_owner] [/parent/children] "
   # echo -e "[-] you can then modify or create .sh script that can be run with root right "
@@ -312,7 +313,8 @@ fi
 
 sudochown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown"`
 if [ "$sudochown" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: ${RESET}\n $sudochown"
+  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: ${RESET}"
+  echo -e "$sudochown"
   echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n "
 else
   :
@@ -320,7 +322,8 @@ fi
 
 sudoimpuser=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/su"`
 if [ "$sudoimpuser" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET} \n $sudoimpuser"
+  echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET}"
+  echo -e "$sudoimpuser"
   echo -e "[-] You can impersonate users, by running the cmd: sudo su - [USER] "
   echo -e "[+] Run the tool AGAIN for the impersonated user! \n"
 else
@@ -350,7 +353,8 @@ fi
 sudodblwildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/"`
 if [ "$sudodblwildcard" ]; then
   echo -e "\n"
-  echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected: ${RESET} \n $sudodblwildcard"
+  echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected: ${RESET}" 
+  echo -e "$sudodblwildcard"
   echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14, check the version of sudo"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
@@ -400,7 +404,8 @@ fi
 
 sudowildcardsh=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep ".sh"`
 if [ "$sudowildcardsh" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the suoders file: ${RESET} \n $sudowildcardsh"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the suoders file: ${RESET}"
+  echo -e "$sudowildcardsh"
 else
   :
 fi
@@ -410,7 +415,8 @@ echo -e "${BOLD}${YELLOW}============ Checking for File owner hijacking ========
 #####  Chown file reference trick (file owner hijacking)
 sudowildcardchown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chown"`
 if [ "$sudowildcardchown" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with chown was found in the suoders file: ${RESET} \n $sudowildcardchown"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with chown was found in the suoders file: ${RESET} "
+  echo -e "$sudowildcardchown"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (chown).txt \n"
 else
@@ -420,7 +426,8 @@ fi
 #####  tar file reference trick (file owner hijacking)
 sudowildcardtar=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "tar"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with tar was found in the suoders file: ${RESET} \n $sudowildcardtar"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with tar was found in the suoders file: ${RESET}"
+  echo -e "$sudowildcardtar"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (tar).txt \n"
 else
@@ -430,7 +437,8 @@ fi
 #####  rsync file reference trick (file owner hijacking)
 sudowildcardrsync=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "rsync"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "${BOLD}${GREEN} [+] Wildcard with rsync was found in the suoders file:  ${RESET} \n $sudowildcardrsync"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with rsync was found in the suoders file:  ${RESET}"
+  echo -e "$sudowildcardrsync"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (rsync).txt \n"
 else
@@ -442,7 +450,8 @@ echo -e "${BOLD}${YELLOW}============ Checking for File permission hijacking ===
 #####  Chmod file reference trick(file permission hijacking)
 sudowildcardchmod=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chmod"`
 if [ "$sudowildcardchmod" ]; then
-  echo -e "${BOLD}${GREEN} [+] Wildcard with chmod was found in the suoders file: ${RESET} \n $sudowildcardchmod"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with chmod was found in the suoders file: ${RESET}"
+  echo -e "$sudowildcardchmod"
   echo -e "[-] File permission hijacking possible."
   echo -e "[*] Exploit: /notes/file_permission_hijacking.txt \n"
 else
@@ -453,7 +462,8 @@ fi
 #####  Check for absolute path to sudoedit
 sudoeditpath=`echo '' | sudo -S -l -k 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit"`
 if [ "$sudoeditpath" ]; then
-  echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET} \n $sudoeditpath"
+  echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET}"
+  echo -e "$sudoeditpath"
   echo -e "[-] Privilege escalation is possible if the sudo version is < 1.8.30"
   echo -e "[*] Run the command sudo $sudoeditpath <file> to invoke a file editor as root"
   echo -e "[-] Once you are in the editor, type the following command in command mode to get a shell"
