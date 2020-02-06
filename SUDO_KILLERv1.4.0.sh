@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 1.3.8"
+# Version="version 1.7.0"
 # Date Created : 08/12/2018
-# Date of last modification : 03/02/2020
+# Date of last modification : 07/02/2020
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -367,7 +367,7 @@ fi
 
 sudorunas=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)"`
 if [ "$sudorunas" ]; then
-  cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g'`
+  cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2`
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-14287: ${RESET}"
   echo -e "[-] Vulnerable to CVE-2019-14287 if the sudo version is <=1.8.27, check the version of sudo"
   echo -e "[-] Example : sudo -u#-1 /usr/bin/id"  
