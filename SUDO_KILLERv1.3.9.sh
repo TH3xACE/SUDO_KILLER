@@ -397,7 +397,8 @@ fi
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 sudowildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' `  
 if [ "$sudowildcard" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard was found in the suoders file: ${RESET} \n $sudowildcard \n"
+  echo -e "${BOLD}${GREEN}[+] Wildcard was found in the suoders file: ${RESET}" 
+  echo -e "$sudowildcard \n"
 else
   :
 fi
