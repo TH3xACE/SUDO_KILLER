@@ -466,9 +466,8 @@ current_user="$(whoami)"
 
 groups > /tmp/groups.txt
 
-sudo -S -l -k | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g'  | sed -e 's/  *$//' | awk '$1=$1' | cut -d " " -f 1 | grep .sh  > /tmp/script_list
-
-
+# issue #10 > missing check on NOPAASWD
+sudo -S -l -k | grep "NOPASSWD" | sed 's/(root) //g' | sed 's/NOPASSWD: //g' | sed 's/,/\n/g'  | sed -e 's/  *$//' | awk '$1=$1' | cut -d " " -f 1 | grep .sh  > /tmp/script_list
 echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/script_list  ${RESET}"
 
 #### Check for missing scripts that exists in the sudoers file and whether the current user is the owner of directory 
