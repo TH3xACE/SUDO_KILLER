@@ -328,7 +328,11 @@ else
 fi
 
 #sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | cut -d " " -f 5`
-sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | grep "/bin\|/sbin"`
+
+# comment due to issue > Checking sudo without password #9
+#sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | grep "/bin\|/sbin"`
+
+sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:"`
 if [ "$sudonopassuser" ]; then
 echo -e "${BOLD}${GREEN}[+] Sudo without password for other user, was found: ${RESET} \n $sudoimpuser"
 echo -e "[-] You can impersonate users, by running the cmd: sudo -u [USER] /path/bin"
