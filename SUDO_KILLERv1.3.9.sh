@@ -272,7 +272,7 @@ checkcve()
   
   while read -r line; do
 	#echo "$line"
-	cvepath=`ls -al exploits/ | grep "$line" | cut -d " " -f 11`
+	cvepath=`ls -al exploits/ | grep "$line" | cut -d " " -f 12`
 	if [ "$cvepath" ]; then
   		echo -e "\n[+] Please find the following exploit for $line in the exploits' directory:"
   		echo -e "[*] Exploit /exploits/$cvepath \n"
