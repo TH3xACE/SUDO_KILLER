@@ -200,14 +200,14 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p2.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenario 9 - sudoedit - absolute path**    |	
+|* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenario 9 - sudoedit - absolute path**     |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/cELFVC6cTyU">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
 |  <img src="./pictures/p3.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenario 10 - User impersonation I [X2]**  |
+|* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenario 10 - User impersonation I [X2]**   |
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/rKA55mis8-4">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
@@ -221,7 +221,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p5.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2015-5602 sudoedit w/c** |	
+|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2015-5602 sudoedit w/c**  |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/zsxvsSYz4as">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
