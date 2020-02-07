@@ -184,81 +184,43 @@ Demos
 Several videos are provided below with different scenarios of exploitation.
 
 The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
-  	
-* **Video 1 : Docker - Setup vuln environment** 
-.. raw:: html
 
-   <a href="https://youtu.be/Q8iO9mYrfv8"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p1.JPG" width="350" height="200" /> </a>
- 
------------------------------------------------------
-
-* **Video 2 : Scenario 1 - CVE exploitation** 
-.. raw:: html
-
-   <a href="https://youtu.be/CpLJ9kY6eig"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p2.JPG" width="350" height="200" /> </a>
- 
------------------------------------------------------
- 
-* **Video 3: Scenario 2 - Dangerous Bins** 
-.. raw:: html
-
-   <a href="https://youtu.be/cELFVC6cTyU"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p3.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------
-
-* **Video 4: Scenario 3 - Misconfiguration (Wildcard)** 
-.. raw:: html
-
-   <a href="https://youtu.be/rKA55mis8-4"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p4.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------
-
-* **Video 5: Scenario 4 - Misconfiguration (Excessive Rights)** 
-.. raw:: html
-
-   <a href="https://youtu.be/s1KK6go1nGY"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p5.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------
-
-* **Video 6: Scenario 5 - Misconfiguration (Missing scripts)** 
-.. raw:: html
-
-   <a href="https://youtu.be/zsxvsSYz4as"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p6.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------
-
-* **Video 7: Scenario 6 - Credentials Harvesting** 
-.. raw:: html
-
-   <a href="https://youtu.be/i7ixN0sv2Qw"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p7.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------   
-
-* **Video 8: Scenario 7 -  Environment Variable Exploitation** 
-.. raw:: html
-
-   <a href="https://youtu.be/sGd8KW_eqhw "><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p8.JPG" width="350" height="200" /> </a>
-
------------------------------------------------------
-
-* **Video 9: Scenarion 8 - CVE-2019-14287 - runas** 
-Will soon be available
-
-* **Video 10: Scenarion 9 - sudoedit - absolute path** 
-Will soon be available
-
-* **Video 11: Scenarion 10 - User impersonation I [2 exploitations]** 
-Will soon be available
-
-* **Video 12: Scenarion 10 - User impersonation II** 
-Will soon be available
-
-* **Video 13: Scenarion 11 - CVE-2015-5602 - sudoedit wildcard** 
-Will soon be available
-
-* **Video 14: Scenarion 12 - Token Abuse** 
-Will soon be available
-
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 1 : Docker - Setup vuln environment**	   |* **Video 8: Scenario 7 -  Environment Var Exploitation** |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p1.JPG" width="450" height="250"/>  | <img src="./pictures/p8.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 2 : Scenario 1 - CVE exploitation**		   |* **Video 9: Scenarion 8 - CVE-2019-14287 - runas**	      |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p2.JPG" width="450" height="250"/>  | <img src="./pictures/p9.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenarion 9 - sudoedit - absolute path**    |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p3.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenarion 10 - User impersonation I [X2]**  |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p4.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenarion 10 - User impersonation II**      |
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p5.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenarion 11 - CVE-2015-5602 sudoedit w/c** |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p6.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
+|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video ???**					      |	
+|.. raw:: html						   |.. raw:: html					      |
+|							   |							      |
+| <img src="./pictures/p7.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
++----------------------------------------------------------+----------------------------------------------------------+
 
 =============
 Coming functionality and improvement
