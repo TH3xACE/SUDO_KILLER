@@ -214,10 +214,12 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 
    <a href="https://youtu.be/s1KK6go1nGY"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p5.JPG" width="350" height="200" /> </a>
    
+   
 * **Video 6: Scenario 5 - Misconfiguration (Missing scripts)** 
 .. raw:: html
 
    <a href="https://youtu.be/zsxvsSYz4as"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p6.JPG" width="350" height="200" /> </a>
+
 
 * **Video 7: Scenario 6 - Credentials Harvesting** 
 .. raw:: html
@@ -230,19 +232,24 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 
    <a href="https://youtu.be/sGd8KW_eqhw "><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p8.JPG" width="350" height="200" /> </a>
 
+
 * **Video 9: Scenarion 8 - CVE-2019-14287 - runas** 
- Will soon be available
- 
- * **Video 10: Scenarion 9 - sudoedit - absolute path** 
- Will soon be available
- 
- * **Video 11: Scenarion 10 - User impersonation I [2 exploitations]** 
- Will soon be available
+Will soon be available
+
+
+* **Video 10: Scenarion 9 - sudoedit - absolute path** 
+Will soon be available
+
+
+* **Video 11: Scenarion 10 - User impersonation I [2 exploitations]** 
+Will soon be available
+
 
 * **Video 12: Scenarion 10 - User impersonation II** 
+Will soon be available
 
 * **Video 13: Scenarion 12 - Token Abuse** 
- Will soon be available
+Will soon be available
 
 
 =============
