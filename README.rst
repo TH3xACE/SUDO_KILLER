@@ -1,10 +1,4 @@
 .. raw:: html
-    <img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p1.JPG" width="350px" height="200px">
-
-.. raw:: html
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Cow_female_black_white.jpg" height="400px">
-    
-.. raw:: html
 
    <h1 align="center">
 
@@ -191,6 +185,8 @@ Several videos are provided below with different scenarios of exploitation.
 
 The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
 
+.. raw:: html
+    <img src="./pictures/p1.JPG" width="350px" height="200px">
 
 * **Video 1 : Docker - Setup vuln environment** 
 .. image:: ./pictures/p1.JPG
