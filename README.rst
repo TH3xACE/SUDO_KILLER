@@ -253,7 +253,10 @@ Will soon be available
 * **Video 12: Scenarion 10 - User impersonation II** 
 Will soon be available
 
-* **Video 13: Scenarion 11 - Token Abuse** 
+* **Video 13: Scenarion 11 - CVE-2015-5602 - sudoedit wildcard** 
+Will soon be available
+
+* **Video 14: Scenarion 12 - Token Abuse** 
 Will soon be available
 
 
