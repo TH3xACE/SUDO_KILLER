@@ -189,61 +189,66 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 .. raw:: html
 
    <a href="https://youtu.be/Q8iO9mYrfv8"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p1.JPG" width="350" height="200" /> </a>
-   
+ 
+-----------------------------------------------------
 
 * **Video 2 : Scenario 1 - CVE exploitation** 
 .. raw:: html
 
    <a href="https://youtu.be/CpLJ9kY6eig"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p2.JPG" width="350" height="200" /> </a>
-   
-
+ 
+-----------------------------------------------------
+ 
 * **Video 3: Scenario 2 - Dangerous Bins** 
 .. raw:: html
 
    <a href="https://youtu.be/cELFVC6cTyU"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p3.JPG" width="350" height="200" /> </a>
-   
+
+-----------------------------------------------------
 
 * **Video 4: Scenario 3 - Misconfiguration (Wildcard)** 
 .. raw:: html
 
    <a href="https://youtu.be/rKA55mis8-4"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p4.JPG" width="350" height="200" /> </a>
-   
+
+-----------------------------------------------------
 
 * **Video 5: Scenario 4 - Misconfiguration (Excessive Rights)** 
 .. raw:: html
 
    <a href="https://youtu.be/s1KK6go1nGY"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p5.JPG" width="350" height="200" /> </a>
-   
-   
+
+-----------------------------------------------------
+
 * **Video 6: Scenario 5 - Misconfiguration (Missing scripts)** 
 .. raw:: html
 
    <a href="https://youtu.be/zsxvsSYz4as"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p6.JPG" width="350" height="200" /> </a>
 
+-----------------------------------------------------
 
 * **Video 7: Scenario 6 - Credentials Harvesting** 
 .. raw:: html
 
    <a href="https://youtu.be/i7ixN0sv2Qw"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p7.JPG" width="350" height="200" /> </a>
 
-   
+-----------------------------------------------------   
+
 * **Video 8: Scenario 7 -  Environment Variable Exploitation** 
 .. raw:: html
 
    <a href="https://youtu.be/sGd8KW_eqhw "><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p8.JPG" width="350" height="200" /> </a>
 
+-----------------------------------------------------
 
 * **Video 9: Scenarion 8 - CVE-2019-14287 - runas** 
 Will soon be available
 
-
 * **Video 10: Scenarion 9 - sudoedit - absolute path** 
 Will soon be available
 
-
 * **Video 11: Scenarion 10 - User impersonation I [2 exploitations]** 
 Will soon be available
-
 
 * **Video 12: Scenarion 10 - User impersonation II** 
 Will soon be available
