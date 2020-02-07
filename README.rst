@@ -184,51 +184,65 @@ Demos
 Several videos are provided below with different scenarios of exploitation.
 
 The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
-
-.. raw:: html
-    <img src="./pictures/p1.JPG" width="350px" height="200px">
-
+  	
 * **Video 1 : Docker - Setup vuln environment** 
-.. image:: ./pictures/p1.JPG
-   :target: https://youtu.be/Q8iO9mYrfv8
+.. raw:: html
+
+   <a href="https://youtu.be/Q8iO9mYrfv8"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p1.JPG" width="350" height="200" /> </a>
+   
 
 * **Video 2 : Scenario 1 - CVE exploitation** 
+.. raw:: html
 
-.. image:: ./pictures/p2.JPG
-   :target: https://youtu.be/CpLJ9kY6eig
+   <a href="https://youtu.be/CpLJ9kY6eig"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p2.JPG" width="350" height="200" /> </a>
+   
 
 * **Video 3: Scenario 2 - Dangerous Bins** 
+.. raw:: html
 
-.. image:: ./pictures/p3.JPG
-   :target: https://youtu.be/cELFVC6cTyU
+   <a href="https://youtu.be/cELFVC6cTyU"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p3.JPG" width="350" height="200" /> </a>
+   
 
 * **Video 4: Scenario 3 - Misconfiguration (Wildcard)** 
+.. raw:: html
 
-.. image:: ./pictures/p4.JPG
-   :target: https://youtu.be/rKA55mis8-4
+   <a href="https://youtu.be/rKA55mis8-4"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p4.JPG" width="350" height="200" /> </a>
+   
 
 * **Video 5: Scenario 4 - Misconfiguration (Excessive Rights)** 
+.. raw:: html
 
-.. image:: ./pictures/p5.JPG
-   :target: https://youtu.be/s1KK6go1nGY
+   <a href="https://youtu.be/s1KK6go1nGY"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p5.JPG" width="350" height="200" /> </a>
    
 * **Video 6: Scenario 5 - Misconfiguration (Missing scripts)** 
+.. raw:: html
 
-.. image:: ./pictures/p6.JPG
-   :target: https://youtu.be/zsxvsSYz4as
+   <a href="https://youtu.be/zsxvsSYz4as"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p6.JPG" width="350" height="200" /> </a>
 
 * **Video 7: Scenario 6 - Credentials Harvesting** 
+.. raw:: html
 
-.. image:: ./pictures/p7.JPG
-   :target: https://youtu.be/i7ixN0sv2Qw  
+   <a href="https://youtu.be/i7ixN0sv2Qw"><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p7.JPG" width="350" height="200" /> </a>
+
    
 * **Video 8: Scenario 7 -  Environment Variable Exploitation** 
+.. raw:: html
 
-.. image:: ./pictures/p8.JPG
-   :target: https://youtu.be/sGd8KW_eqhw  
+   <a href="https://youtu.be/sGd8KW_eqhw "><img src="https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/pictures/p8.JPG" width="350" height="200" /> </a>
 
-* **Video 9: Scenarion 8 - Token Abuse** 
-Will soon be available
+* **Video 9: Scenarion 8 - CVE-2019-14287 - runas** 
+ Will soon be available
+ 
+ * **Video 10: Scenarion 9 - sudoedit - absolute path** 
+ Will soon be available
+ 
+ * **Video 11: Scenarion 10 - User impersonation I [2 exploitations]** 
+ Will soon be available
+
+* **Video 12: Scenarion 10 - User impersonation II** 
+
+* **Video 13: Scenarion 12 - Token Abuse** 
+ Will soon be available
 
 
 =============
