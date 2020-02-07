@@ -214,7 +214,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p4.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenario 10 - User impersonation II**      |
+|* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenario 10 - User impersonation II**       |
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/s1KK6go1nGY">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
