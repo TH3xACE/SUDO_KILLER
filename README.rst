@@ -189,37 +189,37 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |* **Video 1 : Docker - Setup vuln environment**	   |* **Video 8: Scenario 7 -  Environment Variable** 	      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p1.JPG" width="450" height="250"/>  | <img src="./pictures/p8.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p1.JPG" width="450" height="250"/>  | <img src="./pictures/p8.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 2 : Scenario 1 - CVE exploitation**		   |* **Video 9: Scenarion 8 - CVE-2019-14287 - runas**	      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p2.JPG" width="450" height="250"/>  | <img src="./pictures/p9.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p2.JPG" width="450" height="250"/>  | <img src="./pictures/p9.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenarion 9 - sudoedit - absolute path**    |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p3.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p3.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenarion 10 - User impersonation I [X2]**  |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p4.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p4.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenarion 10 - User impersonation II**      |
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p5.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p5.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenarion 11 - CVE-2015-5602 sudoedit w/c** |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p6.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p6.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video ???**					      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p7.JPG" width="450" height="250"/>  | <img src="./pictures/px.JPG" width="450" height="250"/>  |	
+| <img src="./pictures/p7.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 
 =============
