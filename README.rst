@@ -189,12 +189,12 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |* **Video 1 : Docker - Setup vuln environment**	   |* **Video 8: Scenario 7 -  Environment Variable** 	      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p1.JPG" width="450" height="250"/>  | <img src="./pictures/p8.jpg" width="450" height="250"/>  |	
+| <img src="./pictures/p1.JPG" width="450" height="250"/>  | <img src="./pictures/p8.JPG" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 2 : Scenario 1 - CVE exploitation**		   |* **Video 9: Scenarion 8 - CVE-2019-14287 - runas**	      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-| <img src="./pictures/p2.JPG" width="450" height="250"/>  | <img src="./pictures/p9.jpg" width="450" height="250"/>  |	
+| <img src="./pictures/p2.JPG" width="450" height="250"/>  | <img src="./pictures/px.jpg" width="450" height="250"/>  |	
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenarion 9 - sudoedit - absolute path**    |	
 |.. raw:: html						   |.. raw:: html					      |
