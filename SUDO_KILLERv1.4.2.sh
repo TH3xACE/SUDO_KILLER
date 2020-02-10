@@ -255,6 +255,13 @@ else
   :
 fi
 
+# Sudo users
+sudo_user=$(getent group sudo | cut -d":" -f 4)
+if [ "$sudo_user" ]; then
+  echo -e "${BOLD}${GREEN}[+] All sudo users: ${RESET}\n$sudo_user" 
+  echo -e "\n"
+fi 
+
 #check if selinux is enabled
 sestatus=`sestatus 2>/dev/null`
 if [ "$sestatus" ]; then
