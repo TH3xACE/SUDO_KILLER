@@ -76,6 +76,10 @@ if [ "$sudover1" ]; then
 versionToInt $sudover1
 fi
 
+if [ -z "$cnver" ]; then
+echo "Error: The tool has not been able to convert the sudo's version!"
+fi
+
 intro()
 {
 
@@ -937,7 +941,7 @@ if [ "$sudoenv" ]; then
 #sudover1=`echo "$sudover" | sed 's/Sudo version //g'`
 #if [ "$sudover1" ]; then
 #versionToInt $sudover1
-if [ "$cnver" ]
+
 #if [ "$cnver" -lt "1008025" ] ; then
 if [ "$cnver" -lt "1008005" ] && [ "$cnver" -gt "1006009" ] ; then
 echo -e "${BOLD}${GREEN}[+] env_reset being disabled, This means we can manipulate the environment of the command we are allowed to run (depending on sudo version).${RESET}"
@@ -948,8 +952,7 @@ fi
 
 else 
   :
-#fi
-fi
+
 
 else
   :
