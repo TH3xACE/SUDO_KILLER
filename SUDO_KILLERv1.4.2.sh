@@ -363,7 +363,7 @@ fi
 ##### The bug was found in sudoedit, which does not check the full path if a wildcard is used twice (e.g. /home/*/*/esc.txt), 
 #####  this allows a malicious user to replace the esc.txt real file with a symbolic link to a different location (e.g. /etc/shadow).
 
-if [ "$cnver" -lt "1008015" ]
+if [ "$cnver" -lt "1008015" ] ; then
 sudodblwildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/"`
 if [ "$sudodblwildcard" ]; then
   echo -e "\n"
