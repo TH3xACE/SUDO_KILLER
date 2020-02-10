@@ -478,7 +478,7 @@ fi
 
   
 #####  Check for absolute path to sudoedit
-if [ "$cnver" -lt "1008030" ]
+if [ "$cnver" -lt "1008030" ] ; then
 sudoeditpath=`echo '' | sudo -S -l -k 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit"`
 if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET}"
