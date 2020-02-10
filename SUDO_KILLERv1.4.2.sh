@@ -425,7 +425,7 @@ fi
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 sudowildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' `  
 if [ "$sudowildcard" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard was found in the suoders file: ${RESET}" 
+  echo -e "${BOLD}${GREEN}[+] Wildcard was found in the sudoers file: ${RESET}" 
   echo -e "$sudowildcard \n"
 else
   :
@@ -433,7 +433,7 @@ fi
 
 sudowildcardsh=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep ".sh"`
 if [ "$sudowildcardsh" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the suoders file: ${RESET}"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the sudoers file: ${RESET}"
   echo -e "$sudowildcardsh"
 else
   :
@@ -444,7 +444,7 @@ echo -e "${BOLD}${YELLOW}============ Checking for File owner hijacking ========
 #####  Chown file reference trick (file owner hijacking)
 sudowildcardchown=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chown"`
 if [ "$sudowildcardchown" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with chown was found in the suoders file: ${RESET} "
+  echo -e "${BOLD}${GREEN}[+] Wildcard with chown was found in the sudoers file: ${RESET} "
   echo -e "$sudowildcardchown"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (chown).txt \n"
@@ -455,7 +455,7 @@ fi
 #####  tar file reference trick (file owner hijacking)
 sudowildcardtar=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "tar"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "${BOLD}${GREEN}[+] Wildcard with tar was found in the suoders file: ${RESET}"
+  echo -e "${BOLD}${GREEN}[+] Wildcard with tar was found in the sudoers file: ${RESET}"
   echo -e "$sudowildcardtar"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (tar).txt \n"
@@ -466,7 +466,7 @@ fi
 #####  rsync file reference trick (file owner hijacking)
 sudowildcardrsync=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "rsync"`
 if [ "$sudowildcardtar" ]; then
-  echo -e "${BOLD}${GREEN} [+] Wildcard with rsync was found in the suoders file:  ${RESET}"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with rsync was found in the sudoers file:  ${RESET}"
   echo -e "$sudowildcardrsync"
   echo -e "[-] File owner hijacking possible."
   echo -e "[*] Exploit: /notes/file_owner_hijacking (rsync).txt \n"
@@ -479,7 +479,7 @@ echo -e "${BOLD}${YELLOW}============ Checking for File permission hijacking ===
 #####  Chmod file reference trick(file permission hijacking)
 sudowildcardchmod=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep "chmod"`
 if [ "$sudowildcardchmod" ]; then
-  echo -e "${BOLD}${GREEN} [+] Wildcard with chmod was found in the suoders file: ${RESET}"
+  echo -e "${BOLD}${GREEN} [+] Wildcard with chmod was found in the sudoers file: ${RESET}"
   echo -e "$sudowildcardchmod"
   echo -e "[-] File permission hijacking possible."
   echo -e "[*] Exploit: /notes/file_permission_hijacking.txt \n"
