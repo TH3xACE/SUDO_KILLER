@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 1.7.0"
+# Version="version 1.4.2"
 # Date Created : 08/12/2018
-# Date of last modification : 07/02/2020
+# Date of last modification : 10/02/2020
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -68,8 +68,13 @@ function versionToInt() {
   cnver=$val
 }
 
+sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null` # 152
+sudover1=`echo "$sudover" | sed 's/Sudo version //g'` # 927
 
-
+# return $cnver 
+if [ "$sudover1" ]; then
+versionToInt $sudover1
+fi
 
 intro()
 {
@@ -149,7 +154,7 @@ binarylist='nmap\|perl\|awk\|find\|bash\|sh\|man\|more\|less\|vi\|emacs\|vim\|nc
 
 
 ##### sudo version - check to see if there are any known vulnerabilities with this - CVE
-sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null`
+#sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null`
 if [ "$sudover" ]; then
   echo -e "${BOLD}${GREEN}[+] Sudo version:${RESET}\n$sudover " 
   echo -e "\n"
@@ -358,21 +363,23 @@ fi
 ##### The bug was found in sudoedit, which does not check the full path if a wildcard is used twice (e.g. /home/*/*/esc.txt), 
 #####  this allows a malicious user to replace the esc.txt real file with a symbolic link to a different location (e.g. /etc/shadow).
 
+if [ "$cnver" -lt "1008015" ]
 sudodblwildcard=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/"`
 if [ "$sudodblwildcard" ]; then
   echo -e "\n"
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected: ${RESET}" 
   echo -e "$sudodblwildcard"
-  echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14, check the version of sudo"  
+  echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
 #  echo -e "[-] run the command: sudo ./CVE-2015-5602.sh then su [RANDOM PASSWORD GENERATED]\n"  
 else
   :
 fi
+fi # check version
 
 ##### CVE-2019-14287
-
+if [ "$cnver" -lt "1008027" ]
 sudorunas=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)"`
 if [ "$sudorunas" ]; then
   cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2`
@@ -386,6 +393,7 @@ if [ "$sudorunas" ]; then
   echo -e "\n" 
 else
   :
+fi
 fi
 
 ##### CVE-2019-18634
@@ -469,6 +477,7 @@ fi
 
   
 #####  Check for absolute path to sudoedit
+if [ "$cnver" -lt "1008030" ]
 sudoeditpath=`echo '' | sudo -S -l -k 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit"`
 if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET}"
@@ -480,7 +489,7 @@ if [ "$sudoeditpath" ]; then
   echo -e "[-] :shell"
   echo -e "[*] Then use the appropriate exploit from /exploits/absolute_path-sudoedit.txt for the editor you invoked \n"
 fi
-
+fi
 #### check for scripts execution without password in sudoers
 
 echo -e "${BOLD}${YELLOW}============ Checking for Missing scripts from sudoers ================== ${RESET} \n"
@@ -924,11 +933,10 @@ echo -e "${BOLD}${YELLOW}============ Checking for Dangerous environment variabl
 sudoenv=`echo '' | sudo -S -l -k 2>/dev/null | grep "\!env\_reset" `  
 if [ "$sudoenv" ]; then
 
-sudover1=`echo "$sudover" | sed 's/Sudo version //g'`
-
-if [ "$sudover1" ]; then
-versionToInt $sudover1
-
+#sudover1=`echo "$sudover" | sed 's/Sudo version //g'`
+#if [ "$sudover1" ]; then
+#versionToInt $sudover1
+if [ "$cnver" ]
 #if [ "$cnver" -lt "1008025" ] ; then
 if [ "$cnver" -lt "1008005" ] && [ "$cnver" -gt "1006009" ] ; then
 echo -e "${BOLD}${GREEN}[+] env_reset being disabled, This means we can manipulate the environment of the command we are allowed to run (depending on sudo version).${RESET}"
@@ -939,6 +947,7 @@ fi
 
 else 
   :
+#fi
 fi
 
 else
