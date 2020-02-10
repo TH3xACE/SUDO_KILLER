@@ -950,12 +950,6 @@ echo -e "[-] Exploit for the CVE:  /exploits/CVE-2014-0106.txt \n"
 
 fi
 
-else 
-  :
-
-
-else
-  :
 fi
 
 
