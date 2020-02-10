@@ -379,7 +379,7 @@ fi
 fi # check version
 
 ##### CVE-2019-14287
-if [ "$cnver" -lt "1008027" ]
+if [ "$cnver" -lt "1008027" ] ; then
 sudorunas=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)"`
 if [ "$sudorunas" ]; then
   cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2`
