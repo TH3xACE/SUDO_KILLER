@@ -68,8 +68,8 @@ function versionToInt() {
   cnver=$val
 }
 
-sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null` # 152
-sudover1=`echo "$sudover" | sed 's/Sudo version //g'` # 927
+sudover=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null` 
+sudover1=`echo "$sudover" | sed 's/Sudo version //g' | cut -d"p" -f 1` 
 
 # return $cnver 
 if [ "$sudover1" ]; then
@@ -397,7 +397,7 @@ fi
 fi
 
 ##### CVE-2019-18634
-
+if [ "$cnver" -lt "1008026" ] && [ "$cnver" -gt "1007001" ] ; then
 sudopwfeedback=`echo '' | sudo -S -l -k 2>/dev/null | grep "pwfeedback"`
 if [ "$sudopwfeedback" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-18634: ${RESET}"
@@ -408,6 +408,7 @@ if [ "$sudopwfeedback" ]; then
   echo -e "\n" 
 else
   :
+fi
 fi
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
