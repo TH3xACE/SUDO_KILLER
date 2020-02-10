@@ -384,7 +384,7 @@ sudorunas=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)"`
 if [ "$sudorunas" ]; then
   cmd=`echo '' | sudo -S -l -k 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2`
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-14287: ${RESET}"
-  echo -e "[-] Vulnerable to CVE-2019-14287 if the sudo version is <=1.8.27, check the version of sudo"
+  echo -e "[-] Vulnerable to CVE-2019-14287 if the sudo version is <=1.8.27"
   echo -e "[-] Example : sudo -u#-1 /usr/bin/id"  
   echo -e "[-] Run command : sudo -u#-1 <cmd>"
   echo -e "[-] where <cmd> is one of the following:"
