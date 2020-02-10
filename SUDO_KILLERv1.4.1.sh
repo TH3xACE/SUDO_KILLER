@@ -929,8 +929,8 @@ sudover1=`echo "$sudover" | sed 's/Sudo version //g'`
 if [ "$sudover1" ]; then
 versionToInt $sudover1
 
-if [ "$cnver" -lt "1008025" ] ; then
-#if [ "$cnver" -lt "1008005" ] || [ "$cnver" -gt "1006009" ] ; then
+#if [ "$cnver" -lt "1008025" ] ; then
+if [ "$cnver" -lt "1008005" ] && [ "$cnver" -gt "1006009" ] ; then
 echo -e "${BOLD}${GREEN}[+] env_reset being disabled, This means we can manipulate the environment of the command we are allowed to run (depending on sudo version).${RESET}"
 echo -e "${BOLD}${GREEN}[+] Since the sudo version is > 1.6.9 and < 1.8.5, the environment variables are not removed and it is probably vulnerable to the CVE-2014-0106 ${RESET}" 
 echo -e "[-] Exploit for the CVE:  /exploits/CVE-2014-0106.txt \n"
