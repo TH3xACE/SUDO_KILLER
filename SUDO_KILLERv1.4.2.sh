@@ -97,7 +97,7 @@ echo -e "\n"
 
 
 if [ "$report" ]; then 
-	echo -e "${BOLD}${YELLOW}[+] Report name: ${RESET} $report " 
+	echo -e "${BOLD}${YELLOW}[+] Report saved here: ${RESET} $export$report "
 else 
 	:
 fi
@@ -1205,4 +1205,10 @@ call_each()
   footer
 }
 
-call_each | tee -a $report 2> /dev/null
+if [ "$report" ]; then
+call_each | tee -a $export$report 2> /dev/null
+else
+:
+call_each 2> /dev/null
+fi
+
