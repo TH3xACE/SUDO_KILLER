@@ -258,7 +258,7 @@ fi
 # Sudo users
 sudo_user=$(getent group sudo | cut -d":" -f 4)
 if [ "$sudo_user" ]; then
-  echo -e "${BOLD}${GREEN}[+] All sudo users: ${RESET}\n$sudo_user" 
+  echo -e "${BOLD}${GREEN}[+] All users present in the group sudo, they might have no rules in sudoers file: ${RESET}\n$sudo_user" 
   echo -e "\n"
 fi 
 
