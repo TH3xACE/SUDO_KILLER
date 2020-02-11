@@ -1178,15 +1178,15 @@ fn_bins "other"
 
 
 }
-
 while getopts "h:k:r:e:s:t:c" option; do
  case "${option}" in
     k) keyword=${OPTARG};;
-    r) report=${OPTARG}"-"`date +"%d-%m-%y"`;;
+#    r) report=${OPTARG}"-"`date +"%d-%m-%y"`;;
+    r) report=`date +"%d-%m-%y"`"-"${OPTARG};;
     e) export=${OPTARG};;
     s) sudopass=1;;
     c) sudocve=1;;
-  #  t) thorough=1;;
+  # t) thorough=1;;
     h) usage; exit;;
     *) usage; exit;;
  esac
