@@ -100,22 +100,33 @@ What version 2 of SK includes:
 Usage
 =============
 
-Example
+Example Online mode
 --------------------------
  .. code-block:: console
  
- 	./sudo_killer.sh -c -e -r report.txt -p /tmp/
+ 	./sudo_killer.sh -c -e -r report.txt -p /tmp
+	
+	
+Example Offline mode
+--------------------------
+Run extract.sh on system to be audited/victim machine.
+Copy the output from /tmp/sk_offline.txt on the system to be audited/victim machine to your host.
+Run SK with the below parameter:
 
+ .. code-block:: console
+ 
+ 	./sudo_killer.sh -c -i /path/sk_offline.txt
+	
 
 Optional arguments
 --------------------------
 
 * **-c : include CVE checks with respect to sudo version**
+* **-i : import (offline mode) from extract.sh**
 * **-e : include export of sudo rules / sudoers file**
 * **-r : report name (save the output)**
 * **-p : path where to save export and report**
 * **-s : supply user password for sudo checks (not recommended ++except for CTF)**
-* **-i : import path (offline mode - Currently being dev)**
 * **-h : help**
 
 
@@ -241,7 +252,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video ???**					      |	
+|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video offline mode**				      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
@@ -256,9 +267,10 @@ Coming functionality and improvement
 * **Credentials harvesting - done**
 * **Improve the way information on potential vuln and exploit are presented - partially done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
+* **Ability to extract data and do analysis offline - on your machine - done**
 * **Sudo token abuse**
 * **Dealing with aliases**
-* **Ability to extract data and do analysis offline - on your machine**
+
 * **If you want me to add any other one... please submit an issue**
 
 
