@@ -406,8 +406,6 @@ if [ "$sudodblwildcard" ]; then
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
 #  echo -e "[-] run the command: sudo ./CVE-2015-5602.sh then su [RANDOM PASSWORD GENERATED]\n"  
-else
-  :
 fi
 fi # check version
 
@@ -424,8 +422,6 @@ if [ "$sudorunas" ]; then
   echo -e "$cmdi"
   echo -e "[*] Exploit: /exploits/CVE-2019-14287.txt"  
   echo -e "\n" 
-else
-  :
 fi
 fi
 
@@ -439,8 +435,6 @@ if [ "$sudopwfeedback" ]; then
   echo -e "[-] if you have a segmentation fault then sudo is vulnerable"
   echo -e "[*] Notes: /exploits/pwfeedback.txt"  
   echo -e "\n" 
-else
-  :
 fi
 fi
 
@@ -450,16 +444,12 @@ sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*' )
 if [ "$sudowildcard" ]; then
   echo -e "${BOLD}${GREEN}[+] Wildcard was found in the sudoers file: ${RESET}" 
   echo -e "$sudowildcard \n"
-else
-  :
 fi
 
 sudowildcardsh=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "*" | grep ".sh")
 if [ "$sudowildcardsh" ]; then
   echo -e "${BOLD}${GREEN}[+] Wildcard with a bash was found in the sudoers file: ${RESET}"
   echo -e "$sudowildcardsh \n"
-else
-  :
 fi
 
 echo -e "${BOLD}${YELLOW}================== Checking for File owner hijacking ======================= ${RESET} \n"
