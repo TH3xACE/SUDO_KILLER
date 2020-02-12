@@ -90,7 +90,7 @@ What version 2 of SK includes:
 + Bug corrected (checks, export, report,...)
 + Continous improvement of the way output presented 
 + New videos will be added soon
-+ Annonying password input several time
++ Annonying password input several time removed
 + new functionalities:
 1. list of users in sudo group
 2. offline mode - ability to extract the required info from audited system and run SK on host.
