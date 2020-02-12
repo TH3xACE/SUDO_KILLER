@@ -79,11 +79,22 @@ Some of the checks/functionalities that are performed by the tool.
 * **Binaries that might be replaced**
 * **Identify missing scripts**
 
-New checks and/or scenarios
+What version 2 of SK includes: 
 -------------------------
++ New checks and/or scenarios:
 1. CVE-2019-14287 - runas
 2. No CVE yet - sudoedit - absolute path
 3. CVE-2019-18634 - pwfeedback
+
++ Performance improved
++ Bug corrected (checks, export, report,...)
++ Continous improvement of the way output presented 
++ New videos will be added soon
++ Annonying password input several time
++ new functionalities:
+1. list of users in sudo group
+2. offline mode - ability to extract the required info from audited system and run SK on host.
+
 
 =============
 Usage
@@ -93,16 +104,18 @@ Example
 --------------------------
  .. code-block:: console
  
- 	./sudo_killer.sh -c -r report.txt -e /tmp/
+ 	./sudo_killer.sh -c -e -r report.txt -p /tmp/
 
 
-Arguments
+Optional arguments
 --------------------------
-* **-k : Keywords**
-* **-e : export location (export /etc/sudoers)**
+
 * **-c : include CVE checks with respect to sudo version**
-* **-s : supply user password for sudo checks (not recommended ++except for CTF)**
+* **-e : include export of sudo rules / sudoers file**
 * **-r : report name (save the output)**
+* **-p : path where to save export and report**
+* **-s : supply user password for sudo checks (not recommended ++except for CTF)**
+* **-i : import path (offline mode - Currently being dev)**
 * **-h : help**
 
 
