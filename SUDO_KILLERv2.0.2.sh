@@ -513,7 +513,7 @@ fi
   
 #####  Check for absolute path to sudoedit
 if [ "$cnver" -lt "1008030" ] ; then
-sudoeditpathcmd=$(echo "$cmd" 2>/dev/null | grep -E "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit" | cut -d " " -f 7,8)
+sudoeditpathcmd=$(echo "$cmd" 2>/dev/null | grep -E "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit" | cut -d " " -f 8)
 sudoeditpath=$(echo "$cmd" 2>/dev/null | grep -Eo "(/bin/|/usr/bin/|/usr/local/bin/)sudoedit")
 if [ "$sudoeditpath" ]; then
   echo -e "${BOLD}${GREEN} [+] Absolute path to sudoedit was found in the sudoers file: ${RESET}"
