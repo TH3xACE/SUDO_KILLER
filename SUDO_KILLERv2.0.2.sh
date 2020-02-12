@@ -445,7 +445,8 @@ fi
 fi
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
-sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
+#sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
+sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*' ) 
 if [ "$sudowildcard" ]; then
   echo -e "${BOLD}${GREEN}[+] Wildcard was found in the sudoers file: ${RESET}" 
   echo -e "$sudowildcard \n"
