@@ -111,6 +111,9 @@ Example Offline mode
 --------------------------
 Run extract.sh on system to be audited/victim machine.
 Copy the output from /tmp/sk_offline.txt on the system to be audited/victim machine to your host.
+
+* **Note: Three checks are missing in the offline mode, still in dev... coming soon...**
+
 Run SK with the below parameter:
 
  .. code-block:: console
