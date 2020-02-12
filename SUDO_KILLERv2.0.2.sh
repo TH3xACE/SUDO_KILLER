@@ -1228,6 +1228,12 @@ mkdir -p /$path/sudo_killer-export-`date +"%d-%m-%y"` 2>/dev/null
 call_each | tee -a /$path/sudo_killer-export-`date +"%d-%m-%y"`/$report 2> /dev/null
 else
 :
+if [ "$report" ] || [ "$export" ]; then 
 mkdir -p /tmp/sudo_killer-export-`date +"%d-%m-%y"` 2>/dev/null
 call_each | tee -a /tmp/sudo_killer-export-`date +"%d-%m-%y"`/$report 2> /dev/null
+else
+:
+call_each 2> /dev/null
+fi
+
 fi
