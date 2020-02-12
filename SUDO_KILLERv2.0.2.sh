@@ -367,7 +367,7 @@ else
   :
 fi
 
-sudoimpuser=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/su")
+sudoimpuser=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep -w "/bin/su")
 if [ "$sudoimpuser" ]; then
   echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET}"
   echo -e "$sudoimpuser"
@@ -400,7 +400,6 @@ fi
 if [ "$cnver" -lt "1008015" ] ; then
 sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/")
 if [ "$sudodblwildcard" ]; then
-  echo -e "\n"
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected (CVE-2015-5602): ${RESET}" 
   echo -e "$sudodblwildcard"
   echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14"  
