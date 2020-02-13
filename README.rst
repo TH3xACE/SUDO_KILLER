@@ -63,7 +63,6 @@ The tool helps to identify misconfiguration within sudo rules, vulnerability wit
 It is worth noting that the tool does not perform any exploitation on your behalf, the exploitation will need to be performed manually and this is intended.
 
 
-
 =============
 Features
 =============
@@ -222,29 +221,29 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |* **Video 2 : Scenario 1 - CVE exploitation**		   |* **Video 9: Scenario 8 - CVE-2019-14287 - runas**	      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/CpLJ9kY6eig">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
-|  <img src="./pictures/p2.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <a href="https://youtu.be/CpLJ9kY6eig">   		   |  <a href="https://youtu.be/Dn1zfEcVHJY">   	      |
+|  <img src="./pictures/p2.JPG" width="350" height="200">  |  <img src="./pictures/p7.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenario 9 - sudoedit - absolute path**     |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/cELFVC6cTyU">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
-|  <img src="./pictures/p3.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <a href="https://youtu.be/cELFVC6cTyU">   		   |  <a href="https://youtu.be/TlWzT97pjr8">   	      |
+|  <img src="./pictures/p3.JPG" width="350" height="200">  |  <img src="./pictures/p6.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenario 10 - User impersonation I [X2]**   |
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/rKA55mis8-4">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
-|  <img src="./pictures/p4.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <a href="https://youtu.be/rKA55mis8-4">   		   |  <a href="https://youtu.be/9oV8xQrPcuY">   	      |
+|  <img src="./pictures/p4.JPG" width="350" height="200">  |  <img src="./pictures/p5.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenario 10 - User impersonation II**       |
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/s1KK6go1nGY">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
-|  <img src="./pictures/p5.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <a href="https://youtu.be/s1KK6go1nGY">   		   |  <a href="https://youtu.be/CvVIAERN_3s">   	      |
+|  <img src="./pictures/p5.JPG" width="350" height="200">  |  <img src="./pictures/p4.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2015-5602 sudoedit w/c**  |	
