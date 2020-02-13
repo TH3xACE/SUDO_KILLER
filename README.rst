@@ -142,7 +142,12 @@ Providing password (**Important**)
 
 If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
 
-**Important: If you are on a machine that has internet connection, just git clone the tool and run it. If you are on a machine that does not have internet, then git clone on your host, compress the tool (tar) then transfert the compressed file via http/smb (apache web server / python simplehttpserver / smb server / nc) then uncompressed the file and enjoy!**
+How to run SK on the targetted/audited machine
+--------------------------
+
+**If you are on a machine that has internet connection, just git clone the tool and run it. If you are on a machine that does not have internet, then git clone on your host, compress the tool (tar) then transfert the compressed file via http/smb (apache web server / python simplehttpserver / smb server / nc) then uncompressed the file on the targeted system and enjoy!**
+
+
 
 Notes
 --------------------------
