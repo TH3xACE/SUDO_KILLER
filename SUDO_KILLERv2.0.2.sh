@@ -520,6 +520,13 @@ fi
 #### check for scripts execution without password in sudoers
 
 echo -e "${BOLD}${YELLOW}=============== Checking for Missing scripts from sudo =================== ${RESET} \n"
+
+# offline mode check
+if [ "$import" ]; then 
+echo -e "${BOLD}${GREEN}[/] This check is excluded in the offline mode for now. ${RESET}"
+
+else
+:
 current_user="$(whoami)"
 
 groups > /tmp/groups.txt
@@ -648,9 +655,16 @@ fi  # check file missing
 done  
 
 echo -e "\n"
-
+fi # check offline mode
 
 echo -e "${BOLD}${YELLOW}=============== Checking for Excessive directory right ===================== ${RESET} \n"
+
+# offline mode check
+if [ "$import" ]; then 
+echo -e "${BOLD}${GREEN}[/] This check is excluded in the offline mode for now. ${RESET}"
+
+else
+:
 
 echo -e "${BOLD}${GREEN}[+] The script/s found in sudoers can be found at: /tmp/script_list.txt ${RESET}"
 
@@ -764,12 +778,20 @@ fi
 
 
 done
-
-
 # clear the scripts list
 # rm /tmp/sh_list.txt
 
+fi # offline mode check
+
+
 echo -e "${BOLD}${YELLOW}============= Checking for Writable scripts within sudo  ==================== ${RESET} \n"
+
+# offline mode check
+if [ "$import" ]; then 
+echo -e "${BOLD}${GREEN}[/] This check is excluded in the offline mode for now. ${RESET}"
+
+else
+:
 
 ####### [FILE]
 
@@ -899,8 +921,17 @@ fi # exists
 
 done 
 
+fi # offline mode check
 
 echo -e "${BOLD}${YELLOW}================= Checking for Credential Harvesting ======================== ${RESET} \n"
+
+# offline mode check
+if [ "$import" ]; then 
+echo -e "${BOLD}${GREEN}[/] This check is excluded in the offline mode for now. ${RESET}"
+
+else
+:
+
 echo "Current User: $current_user"
 current_user="$(whoami)"
 #echo $current_user
@@ -946,6 +977,8 @@ done <<< "$hdir"
 echo -e "\n"
 
 #rm /tmp/sh_list1.txt
+
+fi # offline mode check
 
 }
 
