@@ -80,19 +80,19 @@ Some of the checks/functionalities that are performed by the tool.
 
 What version 2 of SK includes: 
 -------------------------
-+ New checks and/or scenarios:
-1. CVE-2019-14287 - runas
-2. No CVE yet - sudoedit - absolute path
-3. CVE-2019-18634 - pwfeedback
-4. User Impersonation
-5. list of users in sudo group
-+ Performance improved
-+ Bug corrected (checks, export, report,...)
-+ Continous improvement of the way output presented 
-+ New videos will be added soon
-+ Annonying password input several time removed
-+ New functionality:
-1. offline mode - ability to extract the required info from audited system and run SK on host.
+  * New checks and/or scenarios
+	 1. CVE-2019-14287 - runas
+	 2. No CVE yet - sudoedit - absolute path
+	 3. CVE-2019-18634 - pwfeedback
+	 4. User Impersonation
+	 5. list of users in sudo group
+  * Performance improved
+  * Bugs corrected (checks, export, report,...)
+  * Continous improvement of the way output presented 
+  * New videos will be added soon
+  * Annonying password input several time removed
+  * New functionality: offline mode - ability to extract the required info from audited system and run SK on host.
+
 
 =============
 Usage
@@ -280,6 +280,7 @@ Credits
 =============
 The script was developed from myself with the help of online resources found on github and in the wild. Credits also to the authors of the exploits related to CVEs.
 The authors information and links can be found in the exploit and in the notes provided when running the tool. Special kudos to Vincent Puydoyeux, who gave me the idea to develop this tool and Koutto, for helping me with the docker thing and for improving the tool.
+
 
 =============
 Disclaimer
