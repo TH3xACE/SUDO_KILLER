@@ -32,7 +32,7 @@
 
 Linux Privilege Escalation through SUDO abuse.
 
-If you like the tool and for my personal motivation so as to develop other tools please a +1 star * 
+* **If you like the tool and for my personal motivation so as to develop other tools please a +1 star** 
 
 The tool can be used by pentesters, system admins, CTF players, students, System Auditors and trolls :).
 
