@@ -272,11 +272,14 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 Coming functionality and improvement
 =============
 * **Credentials harvesting - done**
-* **Improve the way information on potential vuln and exploit are presented - partially done**
+* **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
-* **Ability to extract data and do analysis offline - on your machine - done**
+* **Ability to extract data and do analysis offline - on your machine - partially done**
 * **Sudo token abuse**
 * **Dealing with aliases**
+* **Extracting sudo rules remotely via SSH (fully automated)**
+* **Blind SUDO - This is a new sub-project (whenever you need a password to run sudo -l but you don't have it)**
+* **A new check : related to service - submitted by a fan :) - Need to test it! before**
 
 * **If you want me to add any other one... please submit an issue**
 
