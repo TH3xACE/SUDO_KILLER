@@ -279,7 +279,6 @@ Coming functionality and improvement
 * **Dealing with aliases**
 * **Extracting sudo rules remotely via SSH (fully automated)**
 * **Blind SUDO - This is a new sub-project (whenever you need a password to run sudo -l but you don't have it)**
-* **A new check : related to service - submitted by a fan :) - Need to test it! before**
 * **Audit mode (need to have read access to /etc/sudoers)**
 
 * **If you want me to add any other one... please submit an issue**
