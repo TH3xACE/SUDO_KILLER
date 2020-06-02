@@ -114,6 +114,7 @@ intro()
 who=`whoami` 2>/dev/null 
 echo -e "${BLUE} @TH3_ACE - BLAIS David"
 echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE"
+echo -e "${BLUE} Please consider to give a +1 star on github to show your support! ${RESET}"
 echo -e "\n" 
 echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
 echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
