@@ -287,7 +287,7 @@ Coming functionality and improvement
 =============
 Credits
 =============
-The script was developed from myself with the help of online resources found on github and in the wild. Credits also to the authors of the exploits related to CVEs.
+The script was developed by myself with the help of online resources found on github and in the wild. Credits also to the authors of the exploits related to CVEs.
 The authors information and links can be found in the exploit and in the notes provided when running the tool. Special kudos to Vincent Puydoyeux, who gave me the idea to develop this tool and Koutto, for helping me with the docker thing and for improving the tool.
 
 
