@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 2.0.2"
+# Version="version 2.0.4"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
 # Date of last modification : 12/02/2020
@@ -428,7 +428,7 @@ fi
 
 ##### CVE-2019-18634
 if [ "$cnver" -lt "1008026" ] && [ "$cnver" -gt "1007001" ] ; then
-sudopwfeedback=$(echo "$cmd" 2>/dev/null | grep "pwfeedback")
+sudopwfeedback=$(echo "$cmd" 2>/dev/null | grep " pwfeedback")
 if [ "$sudopwfeedback" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-18634: ${RESET}"
   echo -e "[-] Vulnerable to CVE-2019-18634 if the sudo version is 1.7.1 to 1.8.25p1 inclusive"
