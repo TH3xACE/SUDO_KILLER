@@ -187,7 +187,7 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
     :alt: Docker Size
 
 
-1. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub (This version maybe a bit more up-to-date):**
+1. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub :**
 
     .. code-block:: console
 
@@ -195,7 +195,7 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
 	docker pull th3xace/sudo_killer_demo
 	docker run --rm -it th3xace/sudo_killer_demo		
 
-2. **Build locally from Dockerfile :**
+2. **Build locally from Dockerfile (This version maybe a bit more up-to-date):**
 
     .. code-block:: console
 
