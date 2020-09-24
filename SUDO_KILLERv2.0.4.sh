@@ -303,7 +303,7 @@ checkcve()
 
   echo -e "${BOLD}${GREEN}[+] Sudo version vulnerable to the following CVEs:${RESET}"
   echo -e "${BOLD}${GREEN}[+] Despite the version being vulnerable based on the version,${RESET}" 
-  echo -e "${BOLD}${GREEN}some requirements might be needed for exploitation.${RESET} \n"
+  echo -e "${BOLD}${GREEN}    some requirements might be needed for exploitation.${RESET} \n"
    
   sver_tmp=`sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null | cut -d" " -f 3 2>/dev/null`
   sver=$(echo $sver_tmp | tr -d ' ' | sed 's/P/p/g')
