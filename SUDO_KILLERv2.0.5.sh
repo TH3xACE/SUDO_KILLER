@@ -499,7 +499,7 @@ if [ "$sudoinj" ]; then
   echo -e "[-] All processes can be debugged, as long as they have same uid"
   echo -e "[-] It is possible to inject process that have valid sudo token and activate our own sudo token."
   echo -e "[*] Notes: refer to: https://github.com/nongiach/sudo_inject for more information"
-  echo -e "[*] Exploit: /exploits/sudo_inject \n"
+  echo -e "[*] Exploit: /exploits/sudo_injec \n"
 fi
 
 echo -e "${BOLD}${YELLOW}============= Checking for File permission hijacking ===================== ${RESET} \n"
