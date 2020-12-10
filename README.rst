@@ -288,12 +288,10 @@ Coming functionality and improvement
 * **If you want me to add any other one... please submit an issue**
 
 =============
-Support
+Support - Stargazers over time
 =============
 
 Thank you all for your support!
-
-## Stargazers over time
 
 |Ask Me Anything !|
 
