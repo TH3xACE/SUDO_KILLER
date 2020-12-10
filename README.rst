@@ -296,6 +296,7 @@ Thank you all for your support!
 ## Stargazers over time
 
 |Ask Me Anything !|
+
 .. |Ask Me Anything !| image:: https://starchart.cc/TH3xACE/SUDO_KILLER.svg
    :target: https://starchart.cc/TH3xACE/SUDO_KILLER
 
