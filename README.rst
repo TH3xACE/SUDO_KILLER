@@ -287,6 +287,16 @@ Coming functionality and improvement
 
 * **If you want me to add any other one... please submit an issue**
 
+=============
+Support
+=============
+
+Thank you all for your support!
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/TH3xACE/SUDO_KILLER.svg)](https://starchart.cc/TH3xACE/SUDO_KILLER)
+
 
 =============
 Credits
