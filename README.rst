@@ -166,7 +166,7 @@ Notes
 =============
 Why is it possible to run "sudo -l" without a password?
 =============
-By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, he or she will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
+By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
 
 However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
 
