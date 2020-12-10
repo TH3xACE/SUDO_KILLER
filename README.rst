@@ -294,9 +294,13 @@ Support
 Thank you all for your support!
 
 ## Stargazers over time
+https://starchart.cc/TH3xACE/SUDO_KILLER.svg
 
-[![Stargazers over time](https://starchart.cc/TH3xACE/SUDO_KILLER.svg)](https://starchart.cc/TH3xACE/SUDO_KILLER)
 
+|Ask Me Anything !|
+
+.. |Ask Me Anything !| image:: https://starchart.cc/TH3xACE/SUDO_KILLER.svg
+   :target: https://starchart.cc/TH3xACE/SUDO_KILLER
 
 =============
 Credits
