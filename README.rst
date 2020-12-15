@@ -291,7 +291,7 @@ Coming functionality and improvement
 Support - Stargazers over time
 =============
 
-Thank you all for your support!
+Thank you all for your support! When reaching 1K stargazers, I will release another tool from my own arsenal (for Lateral movement and PE on Windows Domain Environment).
 
 |Ask Me Anything !|
 
