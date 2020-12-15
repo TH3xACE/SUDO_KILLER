@@ -3,7 +3,7 @@
 # Version="version 2.0.4"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
-# Date of last modification : 12/02/2020
+# Date of last modification : 15/12/2020
 # @TH3_ACE - BLAIS David
 
 # Future updates :
