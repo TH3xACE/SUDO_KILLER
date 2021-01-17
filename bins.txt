@@ -32,7 +32,7 @@
 "fmt"| "LFILE=file_to_readnfmt -pNON_EXISTING_PREFIX "$LFILE"n", 
 "fold"| "LFILE=file_to_readnfold -w99999999 "$LFILE"n", 
 "ftp"| "ftpn!/bin/shn", 
-"gdb"| "gdb -nx -ex '!sh' -ex quit", 
+"gdb"| "gdb -nx -ex '!sh' -ex quit" OR "sudo gdb -q then shell", 
 "git"| "PAGER='sh -c "exec sh 0<&1"' git -p help", 
 "head"| "LFILE=file_to_readnhead -c1G "$LFILE"n", 
 "ionice"| "ionice /bin/sh", 
