@@ -275,6 +275,8 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 =============
 Coming functionality and improvement
 =============
+* **Adding CVE-2021-3156 scenario to docker - coming**
+* **Detection of CVE-2021-3156 - done** 
 * **Credentials harvesting - done**
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
