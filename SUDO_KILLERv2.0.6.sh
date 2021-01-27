@@ -460,6 +460,24 @@ fi
 
 fi
 
+#### CVE-2021-3156
+sudoescapevschk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2021-3156" | cut -d"+" -f 1`
+if [ "$sudoescapevschk" ]; then
+  sudounescapeof=$(echo "$cmd" 2>/dev/null | grep -w "(root) NOPASSWD: sudoedit /")
+  if [ "$sudounescapeof" ]; then
+   #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
+   #sudo_escape=$("sudoedit -s /")
+   #if [ "$sudo_escape" ]; then
+    echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-3156 ${RESET}"
+    echo -e "[*] Run command: sudoedit -s / - If output starts with { sudoedit: } vulnerable else { usage: } not vulnerable "
+    echo -e "Example of output: { sudoedit: /: not a regular file } means it is Vulnerable to CVE-2021-3156"
+    echo -e "[*] Notes: /exploits/CVE-2021-3156.txt, please not that from time of writing no public POC available."
+    echo -e "\n"
+   #fi
+    
+  fi
+fi
+
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 #sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
