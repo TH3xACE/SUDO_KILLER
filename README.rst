@@ -281,7 +281,7 @@ Coming functionality and improvement
 =============
 
 * **Detection of CVE-2021-3156 - done** 
-* **Adding CVE-2021-3156 scenario to docker + exploit - coming**
+* **Adding CVE-2021-3156 scenario to docker - done**
 * **Detection of CVE-2021-23240 - done**
 * **Adding CVE-2021-23240 scenario to docker + exploit - coming**
 * **Credentials harvesting - done**
