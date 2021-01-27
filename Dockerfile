@@ -46,7 +46,8 @@ RUN echo 'Defaults pwfeedback' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/local/bin/sudoedit /etc/printcap' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/cp *' >> /etc/sudoers && \
     echo 'user ALL=(victim) NOPASSWD: /usr/bin/find *' >> /etc/sudoers && \
-    echo 'user ALL=(victim) NOPASSWD: /usr/bin/cpan *' >> /etc/sudoers 
+    echo 'user ALL=(victim) NOPASSWD: /usr/bin/cpan *' >> /etc/sudoers && \
+    echo 'user ALL=(root) NOPASSWD: sudoedit / >> /etc/sudoers'
 
 # create vulnerable scripts
 RUN mkdir -p /home/user/support && \  
