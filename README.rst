@@ -94,6 +94,10 @@ What version 2 of SK includes:
   * New functionality: offline mode - ability to extract the required info from audited system and run SK on host.
   * Testing environment : A docker to play with the tool and different scenarios, you can also train on PE.
 
+New
+-------------------
+  * Detection for CVE-2021-3156 was added
+
 
 =============
 Usage
