@@ -97,7 +97,7 @@ What version 2 of SK includes:
 New
 -------------------
   * Detection for CVE-2021-3156 was added
-
+  * Detection for CVE-2021-23240 was added
 
 =============
 Usage
@@ -281,9 +281,9 @@ Coming functionality and improvement
 =============
 
 * **Detection of CVE-2021-3156 - done** 
-* **Adding CVE-2021-3156 scenario to docker - coming**
-* **Detection of CVE-2021-23240 - coming**
-* **Adding CVE-2021-23240 scenario to docker - coming**
+* **Adding CVE-2021-3156 scenario to docker + exploit - coming**
+* **Detection of CVE-2021-23240 - done**
+* **Adding CVE-2021-23240 scenario to docker + exploit - coming**
 * **Credentials harvesting - done**
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
