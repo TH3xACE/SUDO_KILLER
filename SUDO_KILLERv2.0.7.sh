@@ -435,7 +435,8 @@ sudopwfeedback=$(echo "$cmd" 2>/dev/null | grep " pwfeedback")
 if [ "$sudopwfeedback" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-18634: ${RESET}"
   echo -e "[-] Vulnerable to CVE-2019-18634 if the sudo version is 1.7.1 to 1.8.25p1 inclusive"
-  echo -e "[-] Run command : perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id"
+# echo -e "[-] Run command : perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id"
+  echo -e "[-] Run command : perl -e 'print((\"A\" x 100 . \"\\x{00}\") x 50)' | sudo -S id"
   echo -e "[-] if you have a segmentation fault then sudo is vulnerable"
   echo -e "[*] Notes: /exploits/pwfeedback.txt"  
   echo -e "[*] Exploit: /exploits/CVE-2019-16634-pwfeedback/CVE-2019-18634.sh"
