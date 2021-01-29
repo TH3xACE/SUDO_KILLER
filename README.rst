@@ -224,8 +224,7 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
 	docker pull th3xace/sudo_killer_demo2
 	docker run --rm -it th3xace/sudo_killer_demo2
 	
-Then follow guidance from the tool. It should be noted that the version 1.8.25 was used for the demo and for other version slight changes should be made.
-Refer to the readme in the exploit folder for more info. There is also a video for the exploitation. Credits to the POC exploit's developper refer to notes.
+	Then follow guidance from the tool, It should be noted that the version 1.8.25 was used for the demo and that for other versions slight changes should be 	  made.Refer to the readme in the exploit folder for more info. There is also a video for the exploitation. Credits to the POC exploit's developper refer to 	     notes.
 
 
 **Note: It is important to note that the docker is just an environment that can be used to play with the tool since it contains several vulns to exploit. The tool is meant to be used on its own.**
