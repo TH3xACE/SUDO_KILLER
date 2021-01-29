@@ -438,6 +438,7 @@ if [ "$sudopwfeedback" ]; then
   echo -e "[-] Run command : perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id"
   echo -e "[-] if you have a segmentation fault then sudo is vulnerable"
   echo -e "[*] Notes: /exploits/pwfeedback.txt"  
+  echo -e "[*] Exploit: /exploits/CVE-2019-16634-pwfeedback/CVE-2019-18634.sh"
   echo -e "\n" 
 fi
 fi
