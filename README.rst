@@ -278,11 +278,11 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video: Scenario 11 - CVE-2019-18634 - pwfeedback**					      |	
+|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video: Scenario 11 - CVE-2019-18634 - pwfeedback**    |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p8.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 
