@@ -213,6 +213,17 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
 	docker build -t th3xace/sudo_killer_demo . 
 	docker run --rm -it th3xace/sudo_killer_demo
 
+3. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub : (if you want to test CVE-2019-18634 (pwfeedback)) **
+
+    .. code-block:: console
+
+        service docker start 
+	docker pull th3xace/sudo_killer_demo2
+	docker run --rm -it th3xace/sudo_killer_demo2
+	
+Then follow guidance from the tool. It should be noted that the version 1.8.25 was used for the demo and for other version slight changes should be made.
+Refer to the readme in the exploit folder for more info. There is also a video for the exploitation. Credits to the POC exploit's developper refer to notes.
+
 
 **Note: It is important to note that the docker is just an environment that can be used to play with the tool since it contains several vulns to exploit. The tool is meant to be used on its own.**
 
@@ -267,10 +278,10 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video ???????**					      |	
+|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video: Scenario 11 - CVE-2019-18634 - pwfeedback**					      |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/Q8iO9mYrfv8">   	      |
+|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
 |  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
