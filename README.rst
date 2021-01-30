@@ -216,7 +216,7 @@ https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on off
 	docker build -t th3xace/sudo_killer_demo . 
 	docker run --rm -it th3xace/sudo_killer_demo
 
-3. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub : (if you want to test CVE-2019-18634 (pwfeedback)) **
+3. **Pull SUDO_KILLER_DEMO2 Docker Image from the docker hub : (if you want to test CVE-2019-18634 (pwfeedback))**
 
     .. code-block:: console
 
