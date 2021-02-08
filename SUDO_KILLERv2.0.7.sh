@@ -474,7 +474,7 @@ if [ "$sudoescapevschk" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-3156 ${RESET}"
     echo -e "[*] Run command: sudoedit -s / - If output starts with { sudoedit: } vulnerable else { usage: } not vulnerable "
     echo -e "Example of output: { sudoedit: /: not a regular file } means it is Vulnerable to CVE-2021-3156"
-    echo -e "[*] Notes: /exploits/CVE-2021-3156.txt, please not that from time of writing no public POC available."
+    echo -e "[*] Notes: /exploits/CVE-2021-3156.txt, Exploit: refer to /exploits/CVE-2021-3156/, several exploits are provided and be aware then some of them can pose some risks to be run on production environment and most of them are version specific... read the readme."
     echo -e "\n"
    #fi
     
