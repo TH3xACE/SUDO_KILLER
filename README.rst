@@ -96,6 +96,7 @@ What version 2 of SK includes:
 
 New - 2021
 -------------------
+  * Exploit for CVE-2021-3156 was added
   * Detection for CVE-2021-3156 was added
   * Detection for CVE-2021-23240 was added
   * Exploit for CVE-2019-18634 was added
