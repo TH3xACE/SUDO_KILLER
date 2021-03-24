@@ -178,7 +178,7 @@ checkinitial()
 echo -e "${BOLD}${YELLOW}================== Initial check - Quick overview ========================= ${RESET} \n"
 
 # useful binaries (thanks to https://gtfobins.github.io/)
-binarylist='cp\|nmap\|perl\|awk\|find\|bash\|sh\|man\|more\|less\|vi\|emacs\|vim\|nc\|netcat\|python\|ruby\|lua\|irb\|tar\|zip\|gdb\|pico\|scp\|git\|rvim\|script\|ash\|csh\|curl\|dash\|ed\|env\|expect\|ftp\|sftp\|node\|php\|rpm\|rpmquery\|socat\|strace\|taskset\|tclsh\|telnet\|tftp\|wget\|wish\|zsh\|ssh'
+binarylist='cp\|nmap\|perl\|awk\|find\|bash\|sh\|man\|more\|less\|vi\|emacs\|vim\|nc\|netcat\|python\|ruby\|lua\|irb\|tar\|zip\|gdb\|pico\|scp\|git\|rvim\|script\|ash\|csh\|curl\|dash\|ed\|env\|expect\|ftp\|sftp\|node\|php\|rpm\|rpmquery\|socat\|strace\|taskset\|tclsh\|telnet\|tftp\|wget\|wish\|zsh\|ssh|grep\|csplit'
 
 
 ##### sudo version - check to see if there are any known vulnerabilities with this - CVE
@@ -1262,6 +1262,8 @@ fn_dngbin2 "xargs" "$1"
 fn_dngbin2 "xxd" "$1"
 fn_dngbin2 "zip" "$1"
 fn_dngbin2 "zsh" "$1"
+fn_dngbin2 "grep" "$1"
+fn_dngbin2 "csplit" "$1"
 
 }
 
