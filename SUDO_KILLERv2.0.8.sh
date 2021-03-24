@@ -1,9 +1,9 @@
 #!/bin/bash
 # This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
-# Version="version 2.0.4"
+# Version="version 2.0.8"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
-# Date of last modification : 29/01/2021
+# Date of last modification : 24/03/2021
 # @TH3_ACE - BLAIS David
 
 # Future updates :
