@@ -1,0 +1,3 @@
+[submodule "exploits/dirtycow"]
+	path = exploits/dirtycow
+	url = https://github.com/FireFart/dirtycow
