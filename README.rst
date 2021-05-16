@@ -34,7 +34,7 @@ Linux Privilege Escalation through SUDO abuse.
 
 * **If you like the tool and for my personal motivation so as to develop other tools please a +1 star** 
 
-The tool can be used by pentesters, system admins, CTF players, students, System Auditors and trolls :).
+The tool can be used by pentesters, security auditors, system admins, CTF players, Infosec students and trolls :).
 
 
 .. contents:: 
@@ -314,7 +314,7 @@ Coming functionality and improvement
 Support - Stargazers over time
 =============
 
-Thank you all for your support! I will release another tool from my own arsenal in the coming weeks (for Lateral movement and PE on Windows Domain Environment).
+Thank you all for your support!
 
 |Ask Me Anything !|
 
