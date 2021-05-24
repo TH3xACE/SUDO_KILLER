@@ -274,7 +274,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p5.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2019-18634 - pwfeedback** |	
+|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2019-18634-pwfeedback**   | 	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/zsxvsSYz4as">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
