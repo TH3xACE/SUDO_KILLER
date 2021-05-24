@@ -278,7 +278,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/zsxvsSYz4as">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/p6.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video 14: Scenario 11 - CVE-2021-3156**               |	
