@@ -285,14 +285,14 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p7.JPG" width="350" height="200">  |
+|  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p7.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 |* **Video 15 : offline mode**	                           |* **Video 16: TBD**                                       |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/px.JPG" width="350" height="200">  |  <img src="./pictures/px.JPG" width="350" height="200">  |
+|  <img src="./pictures/px.jpg" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 
