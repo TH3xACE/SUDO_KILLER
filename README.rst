@@ -284,7 +284,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video 14: Scenario 11 - CVE-2021-3156**               |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
+|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/AJSSRrGt-Dw">   	      |
 |  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
