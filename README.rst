@@ -128,7 +128,7 @@ Run SK with the below parameter:
  	./sudo_killer.sh -c -i /path/sk_offline.txt
 	
 
-Optional arguments
+Optional arguments (a bug was identified and I am on it... only -c, -h and -i working! > correction in progress)
 --------------------------
 
 * **-c : include CVE checks with respect to sudo version**
