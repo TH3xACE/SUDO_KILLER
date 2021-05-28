@@ -1140,7 +1140,7 @@ fi
 fi
 
 if [ "$var2" ]; then
-  echo -e "Run the following commands :"
+  #echo -e "Run the following commands :"
   resgrep=`echo '' | cat exploits/"$1".txt | grep -v "\* Sudo \*"`
   echo -e "$resgrep"
   resgrep=""
