@@ -137,7 +137,7 @@ echo -e "\n"
 #fi
 
 if [ "$import" ]; then 
-cmd=$(cat $import | grep -v "Sudo version")
+  cmd=$(cat $import | grep -v "Sudo version")
 else
 :
 if [ "$sudopass" ]; then 
