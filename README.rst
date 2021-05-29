@@ -139,7 +139,7 @@ Optional arguments (Now fully functional : bug corrected)
 * **-e : include export of sudo rules / sudoers file**
 * **-r : report name (save the output)**
 * **-p : path where to save export and report**
-* **-s : supply user password for sudo checks (not recommended ++except for CTF)**
+* **-s : supply user password for sudo checks (If sudo rules is not accessible without current user's password)**
 * **-h : help**
 
 **It is worth noting that when using the -c argument, the CVEs identified are only based on the sudo version in used.**
