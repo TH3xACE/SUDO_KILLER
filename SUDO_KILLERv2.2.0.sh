@@ -126,10 +126,10 @@ echo -e "\n"
 if [ "$sudopass" ]; then 
   #echo -e "${RED} [+] Please enter the password of the current user: ${RESET}"
   #read -s userpassword
-  #echo -n "${RED} [+] Please enter the password of the current user: ${RESET}"
-  echo -n "[+] Please enter the password of the current user: "
+  echo -n "${RED} [+] Please enter the password of the current user: ${RESET}"
+  #echo -n "[+] Please enter the password of the current user: "
   echo -e "\n"
-  read -s $userpassword
+  read -s userpassword
   echo "*********"
   cmdwp=`echo $userpassword | sudo -S -l -k 2>/dev/null`
 else 
