@@ -102,6 +102,9 @@ New - 2021
   * Exploit for CVE-2019-18634 was added
   * Docker environment to test CVE-2019-18634 was added
   * Video showing exploitation of CVE-2019-18634 was added
+  * Video showing exploitation of CVE-2021-3156 was added
+  * Arguments bug correction
+  * New dangerous bins added (more than 70)
 
 =============
 Usage
