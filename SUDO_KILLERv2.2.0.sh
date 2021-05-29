@@ -1439,13 +1439,15 @@ fn_bins "other"
 
 }
 
-while getopts "hcei:r:p:" opt; do
+while getopts "hcesi:r:p:" opt; do
   case $opt in
     h) usage;
     ;;	
     c) sudocve="1"
     ;;
     e) exports="1"
+    ;;
+    s) sudopass="1"
     ;;
     i) import="$OPTARG"
     ;;
@@ -1457,6 +1459,7 @@ while getopts "hcei:r:p:" opt; do
     ;;
   esac
 done
+
 
 call_each()
 {
