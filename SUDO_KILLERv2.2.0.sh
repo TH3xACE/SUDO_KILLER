@@ -141,9 +141,9 @@ if [ "$import" ]; then
 else
 :
 if [ "$sudopass" ]; then 
-  #echo -e "${RED} [+] Please enter the password of the current user: ${RESET}"
+  echo -e "${RED} [+] Please enter the password of the current user: ${RESET}"
   #read -s userpassword
-  echo -n "${RED} [+] Please enter the password of the current user: ${RESET}"
+  #echo -n "${RED} [+] Please enter the password of the current user: ${RESET}"
   #echo -n "[+] Please enter the password of the current user: "
   echo -e "\n"
   read -s userpassword
