@@ -154,6 +154,8 @@ else
   cmd=$(sudo -S -l -k)
 fi  
 
+fi
+
 if [ "$report" ]; then 
 	echo -e "${BOLD}${YELLOW}[+] Report saved here: ${RESET} $vpath/$report " 
 else 
