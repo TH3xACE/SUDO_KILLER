@@ -124,7 +124,7 @@ echo -e "\n"
 
 
 if [ "$sudopass" ]; then 
-  echo -e "${RED} [+] Please enter password - NOT RECOMMENDED - For CTF use! ${RESET}"
+  echo -e "${RED} [+] Please enter password ${RESET}"
   read -s userpassword
   cmdwp=`echo $userpassword | sudo -S -l -k 2>/dev/null`
 else 
