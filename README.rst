@@ -312,6 +312,7 @@ Coming functionality and improvement
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
 * **Ability to extract data and do analysis offline - on your machine - partially done**
+* **Perform the checks (identify vulnerabilities) even if the sudo's rules not accessible without password provided you have current user's password and provided by using the argument -s and waiting for password prompt**
 * **Sudo token abuse - done**
 * **Dealing with aliases**
 * **Extracting sudo rules remotely via SSH (fully automated)**
