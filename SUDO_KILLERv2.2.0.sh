@@ -123,6 +123,23 @@ echo -e "Current user: $who"
 echo -e "\n" 
 
 
+#if [ "$sudopass" ]; then 
+#  #echo -e "${RED} [+] Please enter the password of the current user: ${RESET}"
+#  #read -s userpassword
+#  echo -n "${RED} [+] Please enter the password of the current user: ${RESET}"
+#  #echo -n "[+] Please enter the password of the current user: "
+#  echo -e "\n"
+#  read -s userpassword
+#  echo "*********"
+#  cmdwp=`echo $userpassword | sudo -S -l -k 2>/dev/null`
+#else 
+#  :
+#fi
+
+if [ "$import" ]; then 
+cmd=$(cat $import | grep -v "Sudo version")
+else
+:
 if [ "$sudopass" ]; then 
   #echo -e "${RED} [+] Please enter the password of the current user: ${RESET}"
   #read -s userpassword
@@ -134,14 +151,8 @@ if [ "$sudopass" ]; then
   cmdwp=`echo $userpassword | sudo -S -l -k 2>/dev/null`
 else 
   :
-fi
-
-if [ "$import" ]; then 
-cmd=$(cat $import | grep -v "Sudo version")
-else
-:  
-cmd=$(sudo -S -l -k)
-fi
+  cmd=$(sudo -S -l -k)
+fi  
 
 if [ "$report" ]; then 
 	echo -e "${BOLD}${YELLOW}[+] Report saved here: ${RESET} $vpath/$report " 
