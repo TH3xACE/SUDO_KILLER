@@ -308,6 +308,9 @@ if [ "$sestatus" ]; then
   echo -e "\n"
 fi
 
+#30/05/21 - TBC
+cmd=$cmdwp
+
 }
 
 
