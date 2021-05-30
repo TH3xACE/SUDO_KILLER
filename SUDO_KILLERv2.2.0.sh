@@ -270,7 +270,7 @@ if [ "$sudopass" ]; then
       :
     else
       #sudopermscheck=`echo $userpassword | sudo -S -l -k 2>/dev/null | xargs -n 1 2>/dev/null|sed 's/,*$//g' 2>/dev/null | grep -w $binarylist 2>/dev/null`
-      sudopermscheck=$(echo $cmdwp | xargs -n 1 2>/dev/null|sed 's/,*$//g' 2>/dev/null | grep -w $binarylist 2>/dev/null)
+      sudopermscheck=$(echo "$cmdwp" | xargs -n 1 2>/dev/null|sed 's/,*$//g' 2>/dev/null | grep -w $binarylist 2>/dev/null)
       if [ "$sudopermscheck" ]; then
         echo -e "${BOLD}${GREEN}[+] Possible sudo pwnage!${RESET}\n$sudopermscheck" 
         echo -e "\n" 
