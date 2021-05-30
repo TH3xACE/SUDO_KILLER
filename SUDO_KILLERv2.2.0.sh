@@ -151,7 +151,8 @@ if [ "$sudopass" ]; then
   cmdwp=`echo $userpassword | sudo -S -l -k 2>/dev/null`
 else 
   :
-  cmd=$(sudo -S -l -k) 
+# cmd=$(sudo -S -l -k) # in case a password is needed... stdin keeps waiting for a password. 
+  cmd=$(sudo -l -k) 
   if [ -z "$cmd" ]; then 
     echo -e "${BOLD}${RED}[**] It seems that sudo's rules cannot be accessed without a password, try using the argument -s and provide the current's user password. ${RESET} \n"
     echo -e "${BOLD}${YELLOW}[+] This occur when there is not at least a rule with NOPASSWD or when root has configure sudo to explicitly ask password to list rules. ${RESET}\n"
