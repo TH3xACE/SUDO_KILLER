@@ -240,7 +240,7 @@ fi
 #sudoperms=`echo '' | sudo -S -l -k 2>/dev/null`
 sudoperms="$cmd"
 if [ "$sudoperms" ]; then
-  echo -e "${BOLD}${GREEN}[+] SUDO possible without a password!${RESET}\n$sudoperms" 
+  echo -e "${BOLD}${GREEN}[+] SUDO possible without a password!${RESET}\n\n$sudoperms" 
   echo -e "\n" 
 else 
   :
@@ -254,7 +254,7 @@ if [ "$sudopass" ]; then
       #sudoauth=`echo $userpassword | sudo -S -l -k 2>/dev/null`
       sudoauth=$cmdwp
       if [ "$sudoauth" ]; then
-        echo -e "${BOLD}${GREEN}[+] SUDO possible with a password supplied!${RESET}\n$sudoauth" 
+        echo -e "${BOLD}${GREEN}[+] SUDO possible with a password supplied!${RESET}\n\n$sudoauth" 
         echo -e "\n" 
       else 
         :
