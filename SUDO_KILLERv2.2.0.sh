@@ -318,8 +318,10 @@ if [ "$sestatus" ]; then
   echo -e "\n"
 fi
 
+if [ "$sudopass" ]; then
 #30/05/21 - TBC
 cmd=$cmdwp
+fi
 
 }
 
