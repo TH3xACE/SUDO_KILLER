@@ -1471,6 +1471,15 @@ fn_bins "other"
 
 }
 
+# trap ctrl-c and call ctrl_c()
+trap ctrl_c INT
+
+function ctrl_c() {
+        echo "--------"
+}
+
+
+
 while getopts "hcesi:r:p:" opt; do
   case $opt in
     h) usage;
