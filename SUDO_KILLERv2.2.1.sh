@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script was to developed to check for common misconfigurations and vulnerabilities of the sudo 
+# This script was developed to check for common misconfigurations and vulnerabilities of the sudo 
 # Version="version 2.2.1"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
