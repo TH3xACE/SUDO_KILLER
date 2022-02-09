@@ -34,6 +34,7 @@ RUN useradd -d /home/victim \
 RUN echo 'Defaults pwfeedback' >> /etc/sudoers && \
     echo 'Defaults env_reset' >> /etc/sudoers && \
     echo 'Defaults env_keep += LD_PRELOAD' >> /etc/sudoers && \
+    echo 'Defaults env_keep += LD_LIBRARY_PATH' >> /etc/sudoers && \
     echo 'user ALL=NOPASSWD: sudoedit /home/*/*/esc.txt' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /home/user/directory/user*/setup.sh' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/chown -hR * /home/user/directory/* ' >> /etc/sudoers && \
@@ -50,6 +51,7 @@ RUN echo 'Defaults pwfeedback' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: sudoedit /' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/sbin/start-stop-daemon *' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/bin/csvtool * --help' >> //etc/sudoers && \
+    echo 'user ALL=(root) NOPASSWD: /usr/sbin/apache2' >> //etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /bin/kill, /usr/bin/cat, /usr/bin/tail' >> /etc/sudoers
 
 # create vulnerable scripts
