@@ -1106,7 +1106,7 @@ echo -e "${BOLD}${GREEN}[+] LD_PRELOAD is set and is a dangerous environment var
 echo -e "[-] Notes on the exploitation of LD_PRELOAD : /notes/env_exploit.txt"
 echo -e "[-] Exploit :" 
 echo -e "     Step 1: Copy the library /exploits/Env_exploit.so to tmp directory."
-echo -e "     Step 2: sudo LD_PRELOAD=/tmp/Env_exploit.so [a bin that can be executed with sudo such as cp/find] \n"
+echo -e "     Step 2: sudo LD_PRELOAD=/tmp/Env_exploit.so [a bin that can be executed with sudo such as ping/apache2/cp/find] \n"
 
 else
   :
