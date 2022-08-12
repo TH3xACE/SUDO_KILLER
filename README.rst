@@ -28,7 +28,7 @@
 
    </h1>
 
-#sudo exploitation #Abusing sudo #Exploiting Sudo #Linux Privilege Escalation #OSCP
+#sudoExploitation #Abusingsudo #ExploitingSudo #LinuxPrivilegeEscalation #OSCP #sudoAudit
 
 Linux Privilege Escalation through SUDO abuse.
 
