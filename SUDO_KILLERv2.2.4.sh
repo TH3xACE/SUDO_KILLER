@@ -217,6 +217,19 @@ else
   :
 fi
 
+###check the timestamp
+
+timestamp=$(sudo -l | grep -i timestamp_timeout | sed 's/,/\n/g' | grep -i timestamp_timeout | cut -d "=" -f 2)
+echo -e "Timestamp is the amount of time in minutes between instances of sudo before it will re-prompt for a password."
+if [ "$timestamp" ]; then
+echo -e "${BOLD}${GREEN}[+] Timestamp:${RESET}\n$timestamp mins " 
+else
+:
+echo -e "${BOLD}${GREEN}[+] Timestamp:${RESET}\n$5 mins " 
+fi
+echo -e "\n"
+
+
 #pull out vital sudoers info
 sudoers=`grep -v -e '^$' /etc/sudoers 2>/dev/null |grep -v "#" 2>/dev/null`
 if [ "$sudoers" ]; then
