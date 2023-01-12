@@ -1187,7 +1187,13 @@ var2=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "
 
 if [ "$var2" ]; then
 echo -e "[+] Sudo $1, was found "
-usr=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ")" -f 1 | sed 's/(//g' )
+# usr=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ")" -f 1 | sed 's/(//g' )
+ usr=$(echo $cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ")" -f 1 | sed 's/(//g' | sed 's/ //g' )
+   if [ "$usr" = "ALL" ];
+   then
+     usr="root"
+   fi
+
 path1=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ":" -f 2 | sed 's/(//g')
 echo "[+] run the command: sudo -u "$usr" "$path1" <cmd>"
 echo "[*] where <cmd> is as below:"
