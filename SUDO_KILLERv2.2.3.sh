@@ -1194,7 +1194,9 @@ echo -e "[+] Sudo $1, was found "
      usr="root"
    fi
 
-path1=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ":" -f 2 | sed 's/(//g')
+#path1=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | grep -w "bin/$1" | cut -d ":" -f 2 | sed 's/(//g')
+path1=$(echo "$cmd" 2>/dev/null | grep ") NOPASSWD:" | grep -v "root" | sed 's/,/\n/g' | sed 's/NOPASSWD://g' | cut -d ")" -f 2 | sed -e 's/^[ \t]*//' | cut -d " " -f 1 | sort -u | grep -w "bin/$1")
+
 echo "[+] run the command: sudo -u "$usr" "$path1" <cmd>"
 echo "[*] where <cmd> is as below:"
 fi
