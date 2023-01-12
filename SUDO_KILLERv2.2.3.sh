@@ -3,7 +3,7 @@
 # Version="version 2.2.1"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
-# Date of last modification : 01/09/2021
+# Date of last modification : 12/01/2023
 # @TH3xACE - BLAIS David
 
 # Future updates :
@@ -1519,7 +1519,7 @@ echo -e "${BOLD}${GREEN}[+] Dangerous bins to escalate to root: ${RESET}"
 fn_bins "root"
 
 echo -e "${BOLD}${GREEN}[+] Dangerous bins to escalate to other users: ${RESET}"
-echo -e "Remember to run command as follow sudo -u [USER] /path/bin" 
+echo -e "Remember to run command as follow sudo -u [USER] /path/bin <cmd>" 
 # check bins for other users
 fn_bins "other"
 
