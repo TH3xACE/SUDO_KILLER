@@ -487,7 +487,7 @@ if [ "$sudoeditrockchk" ]; then
    #if [ "$sudo_escape" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
     echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
-    
+    echo -e "[-] current $sudover | vuln version: 1.8.0 to 1.9.12p1 inclusive"
     #echo -e "[*] Run command: "
     echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
     #echo -e "[*] Exploit: "
