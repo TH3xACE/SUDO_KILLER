@@ -392,7 +392,7 @@ checkcve()
 #####  this allows a malicious user to replace the esc.txt real file with a symbolic link to a different location (e.g. /etc/shadow).
 
 if [ "$cnver" -lt "1008015" ] ; then
-sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/")
+sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep -F $"/*/*/")
 if [ "$sudodblwildcard" ]; then
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was detected (CVE-2015-5602): ${RESET}" 
   echo -e "$sudodblwildcard"
