@@ -297,7 +297,7 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 15 : offline mode**	                           |* **Video 16: Scenario 12 -eX**                                       |	
+|* **Video 15 : offline mode**	                           |* **Video 16: Scenario 12 - CVE-2023-22809**              |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
 |  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/EYGdHwkaqmA">   	      |
