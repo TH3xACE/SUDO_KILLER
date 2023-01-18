@@ -105,6 +105,12 @@ New - 2021
   * Video showing exploitation of CVE-2021-3156 was added
   * Arguments bug correction
   * New dangerous bins added (more than 70)
+  
+New - 2023
+-------------------
+  * Display Timestamp (amount of time in minutes between instances of sudo before it will re-prompt for a password) was added.
+  * Bug Correction
+  * Detection CVE-2023-22809 - detection was added
 
 =============
 Usage
@@ -309,6 +315,8 @@ Coming functionality and improvement
 * **Detection of CVE-2021-23240 - done**
 * **Adding CVE-2021-23240 scenario to docker + exploit - coming**
 * **Credentials harvesting - done**
+* **Detection CVE-2023-22809 - detection - done **
+* **Adding CVE-2023-22809 scenario to docker + exploit - coming**
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
 * **Ability to extract data and do analysis offline - on your machine - partially done**
