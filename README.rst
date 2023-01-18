@@ -151,7 +151,7 @@ Optional arguments (Now fully functional : bug corrected)
 **It is worth noting that when using the -c argument, the CVEs identified are only based on the sudo version in used.**
 **Very often, a sudo version might be vulnerable but specific condition must be met for exploitation.**
 
-**SK also check if some conditions are met for several CVEs without the -c such as CVE-2014-0106, CVE-2015-5602, CVE-2017-1000367, CVE-2019-14287, CVE-2019-18634, CVE-2021-3156 and CVE-2021-23240**
+**SK also check if some conditions are met for several CVEs without the -c such as CVE-2014-0106, CVE-2015-5602, CVE-2017-1000367, CVE-2019-14287, CVE-2019-18634, CVE-2021-3156, CVE-2021-23240 and CVE-2023-22809.**
 
 CVEs check
 --------------------------
