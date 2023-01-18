@@ -110,7 +110,7 @@ New - 2023
 -------------------
   * Display Timestamp (amount of time in minutes between instances of sudo before it will re-prompt for a password) was added.
   * Bug Correction
-  * Detection CVE-2023-22809 - detection was added
+  * Detection CVE-2023-22809 was added
 
 =============
 Usage
