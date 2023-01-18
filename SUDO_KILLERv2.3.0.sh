@@ -483,7 +483,7 @@ fi
 ### CVE-2023-22809
 sudoeditrockchk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2023-22809" | cut -d"+" -f 1`
 if [ "$sudoeditrockchk" ]; then
-  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -w "(root) NOPASSWD: sudoedit /")
+  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /")
   if [ "$sudoeditrock" ]; then
    #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
    #sudo_escape=$("sudoedit -s /")
