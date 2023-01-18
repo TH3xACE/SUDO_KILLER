@@ -344,9 +344,9 @@ checkcve()
 {
 
   if [ "$sudocve" ]; then
-  echo -e "${BOLD}${YELLOW}============= Checking for disclosed vulnerabilities (CVE) =================== ${RESET} \n"
+  echo -e "${BOLD}${YELLOW}============= Checking for disclosed vulnerabilities (CVE) - Based on version =================== ${RESET} \n"
 
-  echo -e "${BOLD}${GREEN}[+] Sudo version vulnerable to the following CVEs:${RESET}"
+  echo -e "${BOLD}${GREEN}[+] Sudo version is vulnerable to the following CVEs:${RESET}"
   echo -e "${BOLD}${GREEN}[+] Despite the version being vulnerable to a CVE or several,${RESET}" 
   echo -e "${BOLD}${GREEN}    some requirements might be needed for exploitation.${RESET} \n"
    
@@ -382,67 +382,12 @@ checkcve()
   else 
   :
   fi
-
-}
-
-
-checkmisconfig()
-{
-
-echo -e "${BOLD}${YELLOW}============== Checking for Common Misconfiguration ==================== ${RESET} \n"
-
-#sudochownrec=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR"`
-sudochownrec=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR")
-if [ "$sudochownrec" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo chown with recursive, was found: ${RESET}"
-  echo -e "$sudochownrec"
-  echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n"
-  # echo -e "[-] run the command: sudo chown -hR [new_owner:old_owner] [/parent/children] "
-  # echo -e "[-] you can then modify or create .sh script that can be run with root right "
-  # echo -e "[-] Refer to Possible sudo pwnag! from above "
-  # echo -e "[-] #! /bin/bash "
-  # echo -e "[-] bash "	
-  # echo -e "[-] sudo ./[appp].sh \n"
-else
-  :
-fi
-
-sudochown=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown")
-if [ "$sudochown" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: ${RESET}"
-  echo -e "$sudochown"
-  echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n "
-else
-  :
-fi
-
-sudoimpuser=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep -w "/bin/su")
-if [ "$sudoimpuser" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET}"
-  echo -e "$sudoimpuser"
-  echo -e "[-] You can impersonate users, by running the cmd: sudo su - [USER] "
-  echo -e "[+] Run the tool AGAIN for the impersonated user! \n"
-else
-  :
-fi
-
-#sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | cut -d " " -f 5`
-
-# comment due to issue > Checking sudo without password #9
-#sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | grep "/bin\|/sbin"`
-
-sudonopassuser=$(echo "$cmd" 2>/dev/null | grep "NOPASSWD:" | grep -v "root" | sed 's/NOPASSWD//g' | sed 's/(//g' | sed 's/)//g' | sed 's/://g')
-if [ "$sudonopassuser" ]; then
-echo -e "${BOLD}${GREEN}[+] Sudo without password for other user, was found: ${RESET}"
-echo -e "$sudonopassuser"
-echo -e "[-] You can impersonate users, by running the cmd: sudo -u [USER] /path/bin"
-echo -e "[-] Refer to section [Dangerous bins to escalate to other users] for the exact commands \n"
-
-else
-  :
-fi
-
-##### CVE-2015-5602
+  
+ echo -e "${BOLD}${YELLOW}============= Checking for disclosed vulnerabilities (CVE) =================== ${RESET} \n"
+ echo -e "${BOLD}${GREEN}[+] The prerequisite for the below CVEs have been checked (not all CVEs checked - refer to readme).:${RESET}" 
+ echo -e "${BOLD}${RED}[+] Highly probable that sudo is VULNERABLE to the below CVEs.:${RESET}" 
+ 
+  ##### CVE-2015-5602
 ##### The bug was found in sudoedit, which does not check the full path if a wildcard is used twice (e.g. /home/*/*/esc.txt), 
 #####  this allows a malicious user to replace the esc.txt real file with a symbolic link to a different location (e.g. /etc/shadow).
 
@@ -545,6 +490,66 @@ if [ "$sudoeditrockchk" ]; then
     
   fi
 fi
+
+}
+
+
+checkmisconfig()
+{
+
+echo -e "${BOLD}${YELLOW}============== Checking for Common Misconfiguration ==================== ${RESET} \n"
+
+#sudochownrec=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR"`
+sudochownrec=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR")
+if [ "$sudochownrec" ]; then
+  echo -e "${BOLD}${GREEN}[+] Sudo chown with recursive, was found: ${RESET}"
+  echo -e "$sudochownrec"
+  echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n"
+  # echo -e "[-] run the command: sudo chown -hR [new_owner:old_owner] [/parent/children] "
+  # echo -e "[-] you can then modify or create .sh script that can be run with root right "
+  # echo -e "[-] Refer to Possible sudo pwnag! from above "
+  # echo -e "[-] #! /bin/bash "
+  # echo -e "[-] bash "	
+  # echo -e "[-] sudo ./[appp].sh \n"
+else
+  :
+fi
+
+sudochown=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown")
+if [ "$sudochown" ]; then
+  echo -e "${BOLD}${GREEN}[+] Sudo chown, was found: ${RESET}"
+  echo -e "$sudochown"
+  echo -e "[-] You can change the owner of directories, refer to /notes/chown-hR.txt \n "
+else
+  :
+fi
+
+sudoimpuser=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep -w "/bin/su")
+if [ "$sudoimpuser" ]; then
+  echo -e "${BOLD}${GREEN}[+] Sudo su, was found: ${RESET}"
+  echo -e "$sudoimpuser"
+  echo -e "[-] You can impersonate users, by running the cmd: sudo su - [USER] "
+  echo -e "[+] Run the tool AGAIN for the impersonated user! \n"
+else
+  :
+fi
+
+#sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | cut -d " " -f 5`
+
+# comment due to issue > Checking sudo without password #9
+#sudonopassuser==`echo '' | sudo -S -l -k 2>/dev/null | grep "NOPASSWD:" | grep "/bin\|/sbin"`
+
+sudonopassuser=$(echo "$cmd" 2>/dev/null | grep "NOPASSWD:" | grep -v "root" | sed 's/NOPASSWD//g' | sed 's/(//g' | sed 's/)//g' | sed 's/://g')
+if [ "$sudonopassuser" ]; then
+echo -e "${BOLD}${GREEN}[+] Sudo without password for other user, was found: ${RESET}"
+echo -e "$sudonopassuser"
+echo -e "[-] You can impersonate users, by running the cmd: sudo -u [USER] /path/bin"
+echo -e "[-] Refer to section [Dangerous bins to escalate to other users] for the exact commands \n"
+
+else
+  :
+fi
+
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 #sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
