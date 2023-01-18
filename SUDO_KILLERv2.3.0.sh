@@ -463,7 +463,7 @@ if [ "$sudoescapevschk" ]; then
   sudounescapeof=$(echo "$cmd" 2>/dev/null | grep -w "(root) NOPASSWD: sudoedit /")
   if [ "$sudounescapeof" ]; then
    sudo_escape1=$(sudoedit -s / 2>&1)
-   sudo_escape=$(echo "$sedt" | grep -w "sudoedit: /: not a regular file")
+   sudo_escape=$(echo "$sudo_escape1" | grep -w "sudoedit: /: not a regular file")
    #sudo_escape=$("sudoedit -s /")
    if [ "$sudo_escape" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-3156 ${RESET}"
