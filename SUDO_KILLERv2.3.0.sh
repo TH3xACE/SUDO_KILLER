@@ -462,17 +462,20 @@ sudoescapevschk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2021-3156"
 if [ "$sudoescapevschk" ]; then
   sudounescapeof=$(echo "$cmd" 2>/dev/null | grep -w "(root) NOPASSWD: sudoedit /")
   if [ "$sudounescapeof" ]; then
-   #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
+   sudo_escape1=$(sudoedit -s / 2>&1)
+   sudo_escape=$(echo "$sedt" | grep -w "sudoedit: /: not a regular file")
    #sudo_escape=$("sudoedit -s /")
-   #if [ "$sudo_escape" ]; then
+   if [ "$sudo_escape" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-3156 ${RESET}"
-    echo -e "[*] Run command: sudoedit -s / - If output starts with { sudoedit: } vulnerable else { usage: } not vulnerable "
-    echo -e "Example of output: { sudoedit: /: not a regular file } means it is Vulnerable to CVE-2021-3156"
+        echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2021-3156${RESET}"
+    echo -e "[-] current $sudover | vuln version: 1.7.7-1.7.10p9, 1.8.2-1.8.31p2, and 1.9.0-1.9.5p1"
+    #echo -e "[*] Run command: sudoedit -s / - If output starts with { sudoedit: } vulnerable else { usage: } not vulnerable "
+    #echo -e "Example of output: { sudoedit: /: not a regular file } means it is Vulnerable to CVE-2021-3156"
     echo -e "[*] Notes: /exploits/CVE-2021-3156.txt"
     echo -e "[*] Exploit: refer to /exploits/CVE-2021-3156/, several exploits are provided and be aware then some of them can pose some risks"
     echo -e "    to be run on production environment and most of them are version specific... read the readme/note."
     echo -e "\n"
-   #fi
+   fi
     
   fi
 fi
