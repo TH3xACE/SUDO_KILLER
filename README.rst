@@ -297,11 +297,11 @@ The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40F
 |  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 15 : offline mode**	                           |* **Video 16: TBD**                                       |	
+|* **Video 15 : offline mode**	                           |* **Video 16: Scenario 12 -eX**                                       |	
 |.. raw:: html						   |.. raw:: html					      |
 |							   |							      |
-|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/px.jpg" width="350" height="200">  |  <img src="./pictures/px.jpg" width="350" height="200">  |
+|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/EYGdHwkaqmA">   	      |
+|  <img src="./pictures/px.jpg" width="350" height="200">  |  <img src="./pictures/p4.jpg" width="350" height="200">  |
 |  </a>							   |  </a>						      |
 +----------------------------------------------------------+----------------------------------------------------------+
 
