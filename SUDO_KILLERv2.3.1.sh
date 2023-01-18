@@ -225,7 +225,7 @@ if [ "$timestamp" ]; then
 echo -e "${BOLD}${GREEN}[+] Timestamp:${RESET}\n$timestamp mins " 
 else
 :
-echo -e "${BOLD}${GREEN}[+] Timestamp:${RESET}\n$5 mins " 
+echo -e "${BOLD}${GREEN}[+] Timestamp:${RESET}\n5 mins " 
 fi
 echo -e "\n"
 
