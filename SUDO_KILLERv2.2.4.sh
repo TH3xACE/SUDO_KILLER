@@ -449,7 +449,7 @@ fi
 if [ "$cnver" -lt "1008015" ] ; then
 sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | grep "/*/*/")
 if [ "$sudodblwildcard" ]; then
-  echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was found was detected (CVE-2015-5602): ${RESET}" 
+  echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was detected (CVE-2015-5602): ${RESET}" 
   echo -e "$sudodblwildcard"
   echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
@@ -519,13 +519,32 @@ if [ "$sudoescapevschk" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2021-3156 ${RESET}"
     echo -e "[*] Run command: sudoedit -s / - If output starts with { sudoedit: } vulnerable else { usage: } not vulnerable "
     echo -e "Example of output: { sudoedit: /: not a regular file } means it is Vulnerable to CVE-2021-3156"
-    echo -e "[*] Notes: /exploits/CVE-2021-3156.txt, Exploit: refer to /exploits/CVE-2021-3156/, several exploits are provided and be aware then some of them can pose some risks to be run on production environment and most of them are version specific... read the readme."
+    echo -e "[*] Notes: /exploits/CVE-2021-3156.txt"
+    echo -e "[*] Exploit: refer to /exploits/CVE-2021-3156/, several exploits are provided and be aware then some of them can pose some risks"
+    echo -e "    to be run on production environment and most of them are version specific... read the readme/note."
     echo -e "\n"
    #fi
     
   fi
 fi
 
+### CVE-2023-22809
+sudoeditrockchk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2023-22809" | cut -d"+" -f 1`
+if [ "$sudoeditrockchk" ]; then
+  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -w "(root) NOPASSWD: sudoedit /")
+  if [ "$sudoeditrock" ]; then
+   #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
+   #sudo_escape=$("sudoedit -s /")
+   #if [ "$sudo_escape" ]; then
+    echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809 ${RESET}"
+    #echo -e "[*] Run command: "
+    echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
+    #echo -e "[*] Exploit: "
+    echo -e "\n"
+   #fi
+    
+  fi
+fi
 
 # grep '*/\|/*\|*'  or | grep '*/"\|"/*"\|"*''
 #sudowildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep '*/\|/*\|*' ) 
