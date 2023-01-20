@@ -530,6 +530,14 @@ checkmisconfig()
 
 echo -e "${BOLD}${YELLOW}============== Checking for Common Misconfiguration ==================== ${RESET} \n"
 
+sudoexcess=$(echo "$cmd" 2>/dev/null | grep "(ALL:ALL) NOPASSWD: ALL\|(ALL : ALL) NOPASSWD: ALL\|(ALL) NOPASSWD: ALL\|(root) NOPASSWD: ALL")
+if [ "$sudoexcess" ]; then
+  echo -e "${BOLD}${GREEN}[+] Excessive sudo rights, ${RESET}${BOLD}${RED}this rule implies that the user's account $who is root: ${RESET}"
+  echo -e "$sudoexcess \n"
+else
+  :
+fi
+
 #sudochownrec=`echo '' | sudo -S -l -k 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR"`
 sudochownrec=$(echo "$cmd" 2>/dev/null | grep "(root) NOPASSWD:" | grep "/bin/chown -hR")
 if [ "$sudochownrec" ]; then
