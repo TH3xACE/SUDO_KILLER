@@ -117,6 +117,7 @@ echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://gith
 echo -e "${RED} Please consider to give a +1 star on github to show your support! ${RESET}"
 echo -e "\n" 
 echo -e "${RED} IMPORTANT! Always run the latest version, run a git pull or download the project again. ${RESET}"
+echo -e "\n" 
 echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
 echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
 echo -e "\n"
