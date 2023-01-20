@@ -114,6 +114,7 @@ New - 2023
   * Exploit for CVE-2023-22809 was added  
   * Video showing exploitation of CVE-2023-22809 was added
   * Adding excessive sudo rights check - implies a user is root
+  * Adding check for MITRE Attack TTP T1548.003 (sudo caching)
 
 =============
 Usage
@@ -316,7 +317,8 @@ Coming functionality and improvement
 * **Credentials harvesting - done**
 * **Detection CVE-2023-22809 - detection - done**
 * **Adding CVE-2023-22809 scenario to docker + exploit - coming**
-* **Adding excessive sudo rights check - implies a user is root** 
+* **Adding excessive sudo rights check - implies a user is root- done** 
+* **Adding check for MITRE Attack TTP T1548.003 (sudo caching)- done**
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
 * **Ability to extract data and do analysis offline - on your machine - partially done**
