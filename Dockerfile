@@ -54,7 +54,8 @@ RUN echo 'Defaults pwfeedback' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/sbin/start-stop-daemon *' >> /etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/bin/csvtool * --help' >> //etc/sudoers && \
     echo 'user ALL=(root) NOPASSWD: /usr/sbin/apache2' >> //etc/sudoers && \
-    echo 'user ALL=(root) NOPASSWD: /bin/kill, /usr/bin/cat, /usr/bin/tail' >> /etc/sudoers
+    echo 'user ALL=(root) NOPASSWD: /bin/kill, /usr/bin/cat, /usr/bin/tail' >> /etc/sudoers && \
+    echo 'user ALL=(ALL:ALL) NOPASSWD: sudoedit /etc/custom/service.conf' >> /etc/sudoers
 
 # create vulnerable scripts
 RUN mkdir -p /home/user/support && \  
