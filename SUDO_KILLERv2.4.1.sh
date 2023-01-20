@@ -3,7 +3,7 @@
 # Version="version 2.2.1"
 # V1: Date Created : 08/12/2018
 # V2: Date Created : 11/02/2020
-# Date of last modification : 18/01/2023
+# Date of last modification : 20/01/2023
 # @TH3xACE - BLAIS David
 
 # Future updates :
@@ -613,6 +613,15 @@ if [ "$sudoinj" ]; then
   echo -e "[*] Notes: refer to: https://github.com/nongiach/sudo_inject for more information"
   echo -e "[*] Exploit: /exploits/sudo_injec \n"
 fi
+
+sudocache=$(echo "$cmd" 2>/dev/null | grep " !tty_tickets")
+if [ "$sudocache" ]; then
+  echo -e "${BOLD}${GREEN}[+] Checking whether sudo caching is possible: ${RESET}"
+  echo -e "$[-] Potentially vulnerable to MITRE Attack TTP T1548.003" 
+  echo -e "[*] Notes: /notes/sudo_caching.txt"  
+  echo -e "\n" 
+fi
+
 
 echo -e "${BOLD}${YELLOW}================== Checking for File owner hijacking ======================= ${RESET} \n"
 
