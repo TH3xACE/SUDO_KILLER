@@ -316,12 +316,11 @@ Coming functionality and improvement
 * **Detection of CVE-2021-23240 - done**
 * **Adding CVE-2021-23240 scenario to docker + exploit - dome**
 * **Credentials harvesting - done**
-* **Detection CVE-2023-22809 - detection - done**
-* **Adding CVE-2023-22809 scenario to docker + exploit - coming**
 * **Adding excessive sudo rights check - implies a user is root- done** 
 * **Adding check for MITRE Attack TTP T1548.003 (sudo caching)- done**
 * **Improve the way information on potential vuln and exploit are presented - done**
 * **Adding scenario + detection exploit for CVE-2019-14287 - done**
+* **Adding scenario exploit for CVE-2019-14287 - done**
 * **Ability to extract data and do analysis offline - on your machine - partially done**
 * **Perform the checks (identify vulnerabilities) even if the sudo's rules not accessible without password provided you have current user's password and provided by using the argument -s and waiting for password prompt**
 * **Sudo token abuse - done**
@@ -329,6 +328,9 @@ Coming functionality and improvement
 * **Extracting sudo rules remotely via SSH (fully automated)**
 * **Blind SUDO - This is a new sub-project (whenever you need a password to run sudo -l but you don't have it)**
 * **Audit mode (need to have read access to /etc/sudoers)**
+* **Detection CVE-2023-22809 - detection - done**
+* **Adding CVE-2023-22809 scenario to docker - done**
+* **Adding CVE-2023-22809 exploit - done**
 
 * **If you want me to add any other one... please submit an issue**
 
