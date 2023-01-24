@@ -157,6 +157,7 @@ Optional arguments (Now fully functional : bug corrected)
 
 **SK also check if some conditions are met for several CVEs without the -c such as CVE-2014-0106, CVE-2015-5602, CVE-2017-1000367, CVE-2019-14287, CVE-2019-18634, CVE-2021-3156, CVE-2021-23240 and CVE-2023-22809.**
 
+**IMPORTANT: It has been observed that the workaround for the CVE-2023-22809 does not work on some old version of sudo, it is important to check before and after applying workaround.**
 
 
 Providing password (**Important**)
