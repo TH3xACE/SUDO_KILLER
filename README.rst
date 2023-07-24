@@ -16,9 +16,13 @@
    :target: https://github.com/TH3xACE/SUDO_KILLER
    :alt: Last Commit
 
-.. image:: https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo?style=plastic
+.. ..
+
+ <!---  image:: https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo?style=plastic
     :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
     :alt: Docker Size
+ --->
+
 
 .. image:: https://img.shields.io/docker/cloud/build/koutto/jok3r.svg
     :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
