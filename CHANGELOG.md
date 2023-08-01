@@ -18,6 +18,8 @@ All notable changes to the project SUDO_KILLER will be documented in this file.
   - Bug Correction
 
 
+
+
 ## [Version 2] - 2021
  
 ### Added
@@ -34,6 +36,8 @@ All notable changes to the project SUDO_KILLER will be documented in this file.
  
 ### Fixed
   - Arguments bug correction
+
+
 
 
 ## [Version 2] - 2020-02-11
