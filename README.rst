@@ -3,7 +3,7 @@
    <h1 align="center">
 
 .. image:: ./pictures/SUDO KILLER2.JPG
- 	:width: 700px
+ 	:width: 550px
  	:alt: Project
 
 .. raw:: html
@@ -36,9 +36,20 @@
 
 Linux Privilege Escalation through SUDO abuse.
 
+
+.. image:: https://images.contentstack.io/v3/assets/blt36c2e63521272fdc/blt811f388a9c9f85ab/64c3ab6807e9bc92cd57b0eb/DMA_Awards_-_470x382.jpg
+ 	:width: 600px
+	:height: 382px
+
+The project was nominated for the SANS Difference Award 2023 in the category open-source tool. SUPPORT the project by voting for it by following this link https://sans.org/u/1sVZ
+
+------
+
 * **If you like the tool and for my personal motivation so as to develop other tools please a +1 star** 
 
 The tool can be used by pentesters, security auditors, system admins, CTF players, Infosec students and trolls :).
+
+IMPORTANT: I am currently working on version 3 and will includes lots of interesting features... stay in touch by following me on Twitter for release date!
 
 
 .. contents:: 
