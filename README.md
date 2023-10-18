@@ -60,7 +60,7 @@ Below is a list of checks that are perform by `SUDO_KILLER`
 <a name="usage"></a>
 ## Usage 
 
-To get started with Amplication, the hosted version of the product can be used. You can get started immediately at [app.amplication.com](https://app.amplication.com). After the login page you will be guided through creating your first service. The [website](https://amplication.com) provides an overview of the application, additional information on the product and guides can be found on the [docs](https://docs.amplication.com).
+To get started with SUDO_KILLER, you can either git clone or download the zip. If you want to practice and/or test it, there is a vulnerable testing enviroment (docker) see the video on it which provides an overview on how to setup the docker and run SUDO_KILLER. Several scenarios can be setup in the docker environment and can be used for testing different misconfigurations or flaws. Alternatively, you can run it on the system to be audited to check for misconfigurations and/or flaws related to sudo.
 
 ```shell
 ./SUDO_KILLERv<version>.sh -c -a -e -r report.txt -p /tmp
