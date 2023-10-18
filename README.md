@@ -18,20 +18,20 @@
 !!!!!!!!!!!!!!!!!!!!WORK IN PROGRESS
 
 
-- [ Intro. ](#intro)
-- [ Usage. ](#usage)
-- [ Docker. ](#docker)
-- [ Checks. ](#check)
-- [ Scenarios. ](#scenarios)
-- [ Video (demo). ](#videos)
-- [ CVEs. ](#CVEs)
-- [ SK-Tools. ](#sk-tools)
-- [ Stargazers. ](#stars)
-- [ Contribution. ](#contribute)
-- [ Support. ](#support)
-- [ Credits. ](#credits)
-- [ Disclaimers. ](#disclaimer)
-- [ License. ](#license)
+- [ Intro ](#intro)
+- [ Usage ](#usage)
+- [ Docker ](#docker)
+- [ Checks ](#check)
+- [ Scenarios ](#scenarios)
+- [ Video (demo) ](#videos)
+- [ CVEs ](#CVEs)
+- [ SK-Tools ](#sk-tools)
+- [ Stargazers ](#stars)
+- [ Contribution ](#contribute)
+- [ Support ](#support)
+- [ Credits ](#credits)
+- [ Disclaimers ](#disclaimer)
+- [ License ](#license)
 
 <a name="intro"></a>
 ## Introduction
