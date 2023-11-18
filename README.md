@@ -17,7 +17,7 @@
  :bulb: Best Viewed in Dark Mode
 
 
-!!!!!!!!!!!!!!!!!!!!WORK IN PROGRESS
+:wrench::wrench::wrench::wrench: WORK IN PROGRESS - Not officially Launch
 
 
 - [ Intro ](#intro)
