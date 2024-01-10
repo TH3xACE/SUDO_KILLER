@@ -7,7 +7,7 @@
 :star: Star us on GitHub — to show your support!
 
 <p align="left">
-    <img width="100%" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjkza24wN3B5czd1cW1hM2ZzdXl0c3RtcTZjZXdkZjJycGs4dDhkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LRDkSmSfmqVM8SlvDv/giphy.gif" alt="logo"/>
+    <img width="100%" src="./img/sk-logo.gif" alt="logo"/>
 </p>
 
 
@@ -89,7 +89,7 @@ Optional arguments:
 ## Docker (Vulnerable testing environment)
 
 <p align="left">
-    <img width="25%" src="https://i.pinimg.com/originals/f5/5e/80/f55e8059ea945abfd6804b887dd4a0af.gif" alt="-dockerlogo"/>
+    <img width="25%" src="./img/docker.gif" alt="-dockerlogo"/>
 </p>
 
 A range of Docker containers is made available to offer a deliberately vulnerable environment for testing and hands-on experimentation with `SUDO_KILLER` as well as with the vulnerabilities. 
