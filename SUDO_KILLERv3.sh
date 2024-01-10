@@ -23,7 +23,8 @@ usage() {
   echo -e " Example: ./sudo_killer.sh -c -r report.txt -e /tmp/  \n"
 
   echo "OPTIONS:"
-  echo "-c  Include sudo CVE"
+  echo "-c  Includes CVEs related to sudo's version"
+  echo "-a  Includes CVEs related to third party apps/devices"
   echo "-i  import (offline mode) from extract.sh"
   echo "-e  Include export of sudo rules / sudoers file"
   echo "-r  Enter report name"
