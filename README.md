@@ -100,6 +100,7 @@ docker pull th3xace/sudo_killer_demo
 docker run --rm -it th3xace/sudo_killer_demo3
 ```
 ```shell
+(This docker is only to test the CVE-2019-18634 (pwfeedback))
 service docker start 
 docker pull th3xace/sudo_killer_demo2
 docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
@@ -108,7 +109,7 @@ docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
 <a name="scenarios"></a>
 ## Scenarios
 
-To switch scenario (To prevent conflicts between the different scenarios) :
+To switch scenario (To prevent conflicts between the different scenarios) on the docker (demo3):
 
 ```shell
 switchScenario <scenario_number>
