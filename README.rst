@@ -1,189 +1,191 @@
-.. raw:: html
+![Static Badge](https://img.shields.io/badge/Version-3.0.1-blue)
+[![Last Commit](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic)](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic)
+![Static Badge](https://img.shields.io/badge/Maintain-Yes-purple)
+![Static Badge](https://img.shields.io/badge/Author-TH3xACE-red)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/TH3xACE/SUDO_KILLER/)
 
-   <h1 align="center">
+:star: Star us on GitHub — to show your support!
 
-.. image:: ./pictures/SUDO KILLER2.JPG
- 	:width: 700px
- 	:alt: Project
-
-.. raw:: html
-
-   <br class="title">
-   KILLER PROJECT
-   <br>
-
-.. image:: https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic
-   :target: https://github.com/TH3xACE/SUDO_KILLER
-   :alt: Last Commit
-
-.. image:: https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo?style=plastic
-    :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
-    :alt: Docker Size
-
-.. image:: https://img.shields.io/docker/cloud/build/koutto/jok3r.svg
-    :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
-    :alt: Docker Build Status
-	
-.. raw:: html
-
-   </h1>
-
-#sudoExploitation #Abusingsudo #ExploitingSudo #LinuxPrivilegeEscalation #OSCP #sudoAudit
-
-Linux Privilege Escalation through SUDO abuse.
-
-* **If you like the tool and for my personal motivation so as to develop other tools please a +1 star** 
-
-The tool can be used by pentesters, security auditors, system admins, CTF players, Infosec students and trolls :).
+<p align="left">
+    <img width="100%" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjkza24wN3B5czd1cW1hM2ZzdXl0c3RtcTZjZXdkZjJycGs4dDhkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LRDkSmSfmqVM8SlvDv/giphy.gif" alt="logo"/>
+</p>
 
 
-.. contents:: 
-    :local:
-    :depth: 1
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=%40TH3xACE)](https://twitter.com/th3xace)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=blue)](https://www.linkedin.com/in/adblais)
 
-=============
-INTRO
-=============
-
-**WARNING: SUDO_KILLER is part of the KILLER project. SUDO_KILLER is still under development 
-and there might be some issues, please create an issue if you found any. **
-
-**Other tool will be added to the KILLER project in the coming months so stay tuned up. Also ideas, bug reports, contributions are more than welcome !**
-
-** Stay tuned : Follow me on twitter @ https://twitter.com/TH3xACE **
-
-=============
-Overview
-=============
-
-*SUDO_KILLER* is a tool that can be used for privilege escalation on linux environment by abusing SUDO in several ways. 
-The tool helps to identify misconfiguration within sudo rules, vulnerability within the version of sudo being used (CVEs and vulns) and the use of dangerous binary, all of these could be abused to elevate privilege to ROOT.
-
-*SUDO_KILLER* will then provide a list of commands or local exploits which could be exploited to elevate privilege. 
-It is worth noting that the tool does not perform any exploitation on your behalf, the exploitation will need to be performed manually and this is intended.
+ :bulb: Best Viewed in Dark Mode
 
 
-=============
-Features
-=============
-
-Some of the checks/functionalities that are performed by the tool. 
---------------------------
-* **Misconfigurations**
-* **Dangerous Binaries**
-* **Vulnerable versions of sudo - CVEs**
-* **Dangerous Environment Variables**
-* **Credential Harvesting**
-* **Writable directories where scripts reside**
-* **Binaries that might be replaced**
-* **Identify missing scripts**
-
-What version 2 of SK includes: 
--------------------------
-  * New checks and/or scenarios
-	 1. CVE-2019-14287 - runas
-	 2. No CVE yet - sudoedit - absolute path
-	 3. CVE-2019-18634 - pwfeedback
-	 4. User Impersonation
-	 5. list of users in sudo group
-  * Performance improved
-  * Bugs corrected (checks, export, report,...)
-  * Continous improvement of the way output presented 
-  * New videos will be added soon
-  * Annonying password input several time removed
-  * New functionality: offline mode - ability to extract the required info from audited system and run SK on host.
-  * Testing environment : A docker to play with the tool and different scenarios, you can also train on PE.
-
-New - 2021
--------------------
-  * Exploit for CVE-2021-3156 was added
-  * Detection for CVE-2021-3156 was added
-  * Detection for CVE-2021-23240 was added
-  * Exploit for CVE-2019-18634 was added
-  * Docker environment to test CVE-2019-18634 was added
-  * Video showing exploitation of CVE-2019-18634 was added
-  * Video showing exploitation of CVE-2021-3156 was added
-  * Arguments bug correction
-  * New dangerous bins added (more than 70)
-  
-New - 2023
--------------------
-  * Display Timestamp (amount of time in minutes between instances of sudo before it will re-prompt for a password) was added.
-  * Bug Correction
-  * Detection CVE-2023-22809 was added
-  * Exploit for CVE-2023-22809 was added  
-  * Video showing exploitation of CVE-2023-22809 was added
-  * Adding excessive sudo rights check - implies a user is root
-  * Adding check for MITRE Attack TTP T1548.003 (sudo caching)
-
-=============
-Usage
-=============
-
-Example Online mode
---------------------------
- .. code-block:: console
- 
- 	./sudo_killer.sh -c -e -r report.txt -p /tmp
-	
-	
-Example Offline mode
---------------------------
-Run extract.sh on system to be audited/victim machine.
-Copy the output from /tmp/sk_offline.txt on the system to be audited/victim machine to your host.
-
-* **Note: Three checks are missing in the offline mode, still in dev... coming soon...**
-
-Run SK with the below parameter:
-
- .. code-block:: console
- 
- 	./sudo_killer.sh -c -i /path/sk_offline.txt
-	
-
-Optional arguments (Now fully functional : bug corrected)
---------------------------
-
-* **-c : include CVE checks with respect to sudo version**
-* **-i : import (offline mode) from extract.sh**
-* **-e : include export of sudo rules / sudoers file**
-* **-r : report name (save the output)**
-* **-p : path where to save export and report**
-* **-s : supply user password for sudo checks (If sudo rules is not accessible without current user's password)**
-* **-h : help**
-
-**It is worth noting that when using the -c argument, the CVEs identified are only based on the sudo version in used.**
-**Very often, a sudo version might be vulnerable but specific condition must be met for exploitation.**
-
-**SK also check if some conditions are met for several CVEs without the -c such as CVE-2014-0106, CVE-2015-5602, CVE-2017-1000367, CVE-2019-14287, CVE-2019-18634, CVE-2021-3156, CVE-2021-23240 and CVE-2023-22809.**
-
-**IMPORTANT: It has been observed that the workaround for the CVE-2023-22809 does not work on some old version of sudo, it is important to check before and after applying workaround.**
+:wrench::wrench::wrench::wrench: WORK IN PROGRESS - Not officially Launch
 
 
-Providing password (**Important**)
---------------------------
+- [ Intro ](#intro)
+- [ Usage ](#usage)
+- [ Docker ](#docker)
+- [ Checks ](#check)
+- [ Scenarios ](#scenarios)
+- [ Video (demo) ](#videos)
+- [ CVEs ](#CVEs)
+- [ SK-Tools ](#sk-tools)
+- [ Stargazers ](#stars)
+- [ Contribution ](#contribute)
+- [ Support ](#support)
+- [ Credits ](#credits)
+- [ Disclaimers ](#disclaimer)
+- [ License ](#license)
 
-If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
+<a name="intro"></a>
+## Introduction
 
-How to run SK on the targetted/audited machine
---------------------------
+`SUDO_KILLER` is a tool geared towards cyber security practitioners (pentesters, security auditors, system admins, CTF players and Infosec students ), facilitating privilege escalation within Linux environments. It focuses on vulnerabilities tied to SUDO usage, including misconfigurations in sudo rules, version-based weaknesses (CVEs and vulnerabilities), and risky binary deployments (GTFOBINS). These weak points can be exploited to gain ROOT-level privileges or impersonate users.
 
-**If you are on a machine that has internet connection, just git clone the tool and run it. If you are on a machine that does not have internet, then git clone on your host, compress the tool (tar) then transfert the compressed file via http/smb (apache web server / python simplehttpserver / smb server / nc) then uncompressed the file on the targeted system and enjoy!**
+`SUDO_KILLER` provides a catalog of potential commands and local exploits for manual privilege elevation. Importantly, it refrains from automated exploitation, requiring users to carry out the exploitation process themselves as per its intended usage.
 
+<a name="check"></a>
+## Checks
 
+Below is a list of checks that are perform by `SUDO_KILLER`
+- Misconfigurations
+- Dangerous Binaries (GTFOBINS)
+- Vulnerable versions of sudo - CVEs
+- Sudo vulnerability and misconfiguration related to 3rd party apps
+- Dangerous Environment Variables
+- Credential Harvesting
+- Writable directories where scripts reside
+- Binaries that might be replaced
+- Identify missing scripts
 
-Notes
---------------------------
+> **Warning**
+> The check list above is NOT exhaustive.
 
-**NOTE : sudo_killer does not exploit automatically by itself, it was designed like this on purpose but check for misconguration and vulnerabilities and then propose you the following (if you are lucky the route to root is near!) :
+<a name="usage"></a>
+## Usage 
 
-* **a list of commands to exploit** 
-* **a list of exploits**
-* **some description on how and why the attack could be performed**
+To get started with SUDO_KILLER, you can either git clone or download the zip. If you want to practice and/or test it, there is a vulnerable testing enviroment (docker) see the video on it which provides an overview on how to setup the docker and run SUDO_KILLER. Several scenarios can be setup in the docker environment and can be used for testing different misconfigurations or flaws. Alternatively, you can run it on the system to be audited to check for misconfigurations and/or flaws related to sudo.
 
-=============
-Why is it possible to run "sudo -l" without a password?
-=============
+```shell
+./SUDO_KILLERv<version>.sh -c -a -e -r report.txt -p /tmp
+```
+
+Optional arguments:
+</br>-c : includes CVE checks</br>
+-a : includes CVEs related to third party apps/devices </br>
+-i : import (offline mode) from extract.sh </br>
+-e : include export of sudo rules / sudoers file </br>
+-r : report name (save the output) </br>
+-p : path where to save export and report </br>
+-s : supply user password for sudo checks (If sudo rules is not accessible without current user's password) </br>
+-h : help
+
+> **Note**
+> It is worth noting that when using the -c argument, two types of check are provided one for which the CVE identified is solely based on the current sudo version being used and another where the requirements are also checked.
+> Very often, a sudo version might be vulnerable but some pre-requisites might be needed for a successful exploitation.
+
+> **Note**
+> Providing password: If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
+
+<a name="docker"></a>
+## Docker (Vulnerable testing environment)
+
+<p align="left">
+    <img width="25%" src="https://i.pinimg.com/originals/f5/5e/80/f55e8059ea945abfd6804b887dd4a0af.gif" alt="-dockerlogo"/>
+</p>
+
+A range of Docker containers is made available to offer a deliberately vulnerable environment for testing and hands-on experimentation with `SUDO_KILLER` as well as with the vulnerabilities. 
+
+```shell
+service docker start 
+docker pull th3xace/sudo_killer_demo
+docker run --rm -it th3xace/sudo_killer_demo
+```
+```shell
+service docker start 
+docker pull th3xace/sudo_killer_demo2
+docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
+```
+
+<a name="scenarios"></a>
+## Scenarios
+
+To switch scenario (To prevent conflicts between the different scenarios) :
+
+```shell
+switchScenario <scenario_number>
+
+Available scenarios: 0 to 10
+All Scenarios 0 - Conflict might occur!
+Scenario 1: [2-3] CVE - Rules
+Scenario 2: [4] Excessive permissions
+Scenario 2: [5] Excessive permissions (Authentication required)
+Scenario 3: [6] User Impersonation
+Scenario 4:  [7] Common Misconfiguration (Change owner)
+Scenario 4: [8-11] Common Misconfiguration (Wildcard)
+Scenario 5: [13] Missing scripts from sudo rules
+Scenario 6: [17] Dangerous Environment Variables
+Scenario 7: [18] Dangerous binaries (gtfobins)
+Scenario 8: [19] Recursive Impersonation check
+Scenario 9: [20] Environment Path Hijacking
+Scenario 10: [21] App Specific sudo vuln/misconfig
+```
+<a name="videos"></a>
+## Videos - Demo 
+
+The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
+
+> **Warning**
+> The video list below is not exhaustive, to have access to all the videos, please check the playlist link.
+
+<details open>
+<summary>
+     Several videos are provided below with different scenarios of exploitation.
+</summary> <br />
+    
+<p align="center">
+    <img width="49%" src="sk1.png" alt="apis"/>
+&nbsp;
+   <img width="49%" src="sk1.png" alt="apis"/>
+</p>
+
+<p align="center">
+   <img width="49%" src="sk1.png" alt="apis"/>
+&nbsp;
+    <img width="49%" src="sk1.png" alt="apis"/>
+</p> 
+    
+<p align="center">
+    <img width="49%" src="https://github.com/amplication/amplication/assets/73097785/a51e166b-07ec-4c80-99ed-8792a81c4064.png" alt="own-your-code"/>
+&nbsp;
+    <img width="49%" src="https://github.com/amplication/amplication/assets/73097785/1cca9721-b8d6-425b-a1a9-d10d3cdcc9b8.png" alt="customize-code"/>
+</p>
+    
+</details>
+
+<a name="CVEs"></a>
+## CVEs
+
+<details>
+<summary>
+  (click to expand) Recent sudo CVEs that SUDO_KILLER detects (including pre-requisites): 
+</summary> <br />
+
+- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/angular-todos)
+- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/react-todos)
+</details>
+
+<details>
+<summary>
+  (click to expand) Recent CVEs of 3rd party apps/devices related to sudo that SUDO_KILLER detects (including pre-requisites): 
+</summary> <br />
+
+- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/angular-todos)
+- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/react-todos)
+</details>
+
+</br>
+
+## Why is it possible to run "sudo -l" without a password?
+
 By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
 
 However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
@@ -191,173 +193,55 @@ However, these rules only affect the current user, so if user impersonation is p
 Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
 
 
-============
-Docker - Vulnerable testing environment
-============
-**IMPORTANT: The recommended way to test the tool is to use the docker image created on purpose for the testing. The image contained several vulnerabilities and misconfigurations related to
-the usage of SUDO.
 
-Everything is tested from the Docker container available on Docker Hub !**
+<a name="sk-tools"></a>
+## SK-Tools
+Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SK/SUDO_KILLERv3/res`
 
-.. image:: https://raw.githubusercontent.com/koutto/jok3r/master/pictures/docker-logo.png
+- $\color{cyan}\large{\textsf{SK-ImperBruteForce.sh:}}$ Perform an impersonation bruteforce using users from /etc/passwd, starting from user with uid 1000.
+- $\color{cyan}\large{\textsf{SK-credHarvest2.sh:}}$ Perform a credential capture by creating a fake sudo via alias then re-direct to real sudo.
+- $\color{cyan}\large{\textsf{SK-app-check.sh:}}$ Perform check of sudo vulnerabilities related to a specifc third-party app or device or programming lang [still in progress].
+- $\color{cyan}\large{\textsf{SK-ttyInject.sh:}}$ Abusing TTY pushback so that if the user root su - on a controlled user we make him run an arbitrary command.
+- $\color{cyan}\large{\textsf{SK-recursive-impersonate.sh:}}$ Perform identification of recursive impersonation with a default depth of 3.
+- $\color{cyan}\large{\textsf{SK-alias-report.sh:}}$ Perform search on alias with different criteria.
+- $\color{cyan}\large{\textsf{SK-csuid-with-sudo.sh:}}$ Perform identification of custom suid binary then check whether sudo command is run without full path.
+- $\color{cyan}\large{\textsf{SK-su-BruteForce.sh:}}$ Perform password bruteforce or password spray for a specific user via sudo.
+- $\color{cyan}\large{\textsf{SK-search-sudoers.sh:}}$ Perform an identification of possible sudoers backup files on the current host.
 
-A Docker image is available on Docker Hub and automatically re-built at each update: 
-https://hub.docker.com/r/th3xace/sudo_killer_demo . It is initially based on official debian:jessie Docker image (debian:jessie).
+<a name="contribute"></a>
+## Contributing
 
-.. image::https://img.shields.io/microbadger/image-size/th3xace/sudo_killer_demo ?style=plastic
-    :target: https://hub.docker.com/r/th3xace/sudo_killer_demo
-    :alt: Docker Size
+`SUDO_KILLER` is an open-source project and highly appreciate any contributions. Whether you are helping us fix bugs, proposing new features, improving our documentation or spreading the word - we would love to have you as a contributor. Please reach me on twitter or Linkedin if you have any suggestions, feedback or want to contribute, you can also create a Pull Request. I am looking for contribution on the sudo CVEs related to 3rd party (I have a list of about 175) and any help would be appreciated.
 
+- Bug Report: If you see an error message or run into an issue while using `SUDO_KILLER`, please create a [bug report](https://github.com/TH3xACE/SUDO_KILLER/issues/new?assignees=&labels=type%3A+bug&template=bug.yaml&title=%F0%9F%90%9B+Bug+Report%3A+).
 
-1. **Pull SUDO_KILLER_DEMO Docker Image from the docker hub :**
+- Feature Request: If you have an idea or you're missing a capability that would make development easier and more robust, please submit a [feature request](https://github.com/TH3xACE/SUDO_KILLER/issues/new?assignees=&labels=type%3A+feature+request&template=feature.yml).
 
-    .. code-block:: console
-
-        service docker start 
-	docker pull th3xace/sudo_killer_demo
-	docker run --rm -it th3xace/sudo_killer_demo		
-
-2. **Build locally from Dockerfile (This version maybe a bit more up-to-date):**
-
-    .. code-block:: console
-
-        service docker start 
-	git clone https://github.com/TH3xACE/SUDO_KILLER.git 
-	cd SUDO_KILLER 
-	docker build -t th3xace/sudo_killer_demo . 
-	docker run --rm -it th3xace/sudo_killer_demo
-
-3. **Pull SUDO_KILLER_DEMO2 Docker Image from the docker hub : (if you want to test CVE-2019-18634 (pwfeedback))**
-
-    .. code-block:: console
-
-        service docker start 
-	docker pull th3xace/sudo_killer_demo2
-	docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
-	
-	Then follow guidance from the tool, It should be noted that the version 1.8.25 was used for the demo and that for other versions slight changes should be made.Refer to the readme in the exploit folder for more info. There is also a video for the exploitation. Credits to the POC exploit's developper refer to 	    notes.
-
-
-**Note: It is important to note that the docker is just an environment that can be used to play with the tool since it contains several vulns to exploit. The tool is meant to be used on its own.**
-
-============
-Demos
-============
-
-Several videos are provided below with different scenarios of exploitation.
-
-The playlist url: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
-
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 1 : Docker - Setup vuln environment**	   |* **Video 8: Scenario 7 -  Environment Variable** 	      |
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/Q8iO9mYrfv8">   		   |  <a href="https://youtu.be/sGd8KW_eqhw">   	      |
-|  <img src="./pictures/p1.JPG" width="350" height="200">  |  <img src="./pictures/p8.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 2 : Scenario 1 - CVE exploitation**		   |* **Video 9: Scenario 8 - CVE-2019-14287 - runas**	      |	
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/CpLJ9kY6eig">   		   |  <a href="https://youtu.be/Dn1zfEcVHJY">   	      |
-|  <img src="./pictures/p2.JPG" width="350" height="200">  |  <img src="./pictures/p7.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 3 : Scenario 2 - Dangerous Bins**		   |* **Video 10: Scenario 9 - sudoedit - absolute path**     |	
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/cELFVC6cTyU">   		   |  <a href="https://youtu.be/TlWzT97pjr8">   	      |
-|  <img src="./pictures/p3.JPG" width="350" height="200">  |  <img src="./pictures/p6.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 4 : Scenario 3 - Misconfig (Wildcard)**  	   |* **Video 11: Scenario 10 - User impersonation I [X2]**   |
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/rKA55mis8-4">   		   |  <a href="https://youtu.be/9oV8xQrPcuY">   	      |
-|  <img src="./pictures/p4.JPG" width="350" height="200">  |  <img src="./pictures/p5.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 5 : scenario 4 - Misconfig (Excessive Rights)** |* **Video 12: Scenario 10 - User impersonation II**       |
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/s1KK6go1nGY">   		   |  <a href="https://youtu.be/CvVIAERN_3s">   	      |
-|  <img src="./pictures/p5.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 6 : Scenario 5 - Misconfig (Missing scripts)**  |* **Video 13: Scenario 11 - CVE-2019-18634-pwfeedback**   | 	
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/zsxvsSYz4as">   		   |  <a href="https://youtu.be/LhqbExt5oq0">   	      |
-|  <img src="./pictures/p6.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 7 : Scenario 6 - Credentials Harvesting**	   |* **Video 14: Scenario 11 - CVE-2021-3156**               |	
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/AJSSRrGt-Dw">   	      |
-|  <img src="./pictures/p7.JPG" width="350" height="200">  |  <img src="./pictures/p4.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-|* **Video 15 : offline mode**	                           |* **Video 16: Scenario 12 - CVE-2023-22809 (New)**        |	
-|.. raw:: html						   |.. raw:: html					      |
-|							   |							      |
-|  <a href="https://youtu.be/i7ixN0sv2Qw">   		   |  <a href="https://youtu.be/EYGdHwkaqmA">   	      |
-|  <img src="./pictures/px.jpg" width="350" height="200">  |  <img src="./pictures/p5.JPG" width="350" height="200">  |
-|  </a>							   |  </a>						      |
-+----------------------------------------------------------+----------------------------------------------------------+
-
-
-=============
-Coming functionality and improvement
-=============
-
-* **Detection of CVE-2021-3156 - done** 
-* **Adding CVE-2021-3156 scenario to docker - done**
-* **Detection of CVE-2021-23240 - done**
-* **Adding CVE-2021-23240 scenario to docker + exploit - dome**
-* **Credentials harvesting - done**
-* **Adding excessive sudo rights check - implies a user is root- done** 
-* **Adding check for MITRE Attack TTP T1548.003 (sudo caching)- done**
-* **Improve the way information on potential vuln and exploit are presented - done**
-* **Adding scenario + detection exploit for CVE-2019-14287 - done**
-* **Adding scenario exploit for CVE-2019-14287 - done**
-* **Ability to extract data and do analysis offline - on your machine - partially done**
-* **Perform the checks (identify vulnerabilities) even if the sudo's rules not accessible without password provided you have current user's password and provided by using the argument -s and waiting for password prompt**
-* **Sudo token abuse - done**
-* **Dealing with aliases**
-* **Extracting sudo rules remotely via SSH (fully automated)**
-* **Blind SUDO - This is a new sub-project (whenever you need a password to run sudo -l but you don't have it)**
-* **Audit mode (need to have read access to /etc/sudoers)**
-* **Detection CVE-2023-22809 - detection - done**
-* **Adding CVE-2023-22809 scenario to docker - done**
-* **Adding CVE-2023-22809 exploit - done**
-
-* **If you want me to add any other one... please submit an issue**
-
-=============
-Support - Stargazers over time
-=============
+<a name="stars"></a>
+## Stargazers over time 
 
 Thank you all for your support!
 
-|Ask Me Anything !|
+[![Stargazers over time](https://starchart.cc/TH3xACE/SUDO_KILLER.svg)](https://starchart.cc/TH3xACE/SUDO_KILLER)
 
-.. |Ask Me Anything !| image:: https://starchart.cc/TH3xACE/SUDO_KILLER.svg
-   :target: https://starchart.cc/TH3xACE/SUDO_KILLER
+<a name="support"></a>
+## Support
 
-=============
-Credits
-=============
-The script was developed by myself with the help of online resources found on github and in the wild. Credits also to the authors of the exploits related to CVEs.
-The authors information and links can be found in the exploit and in the notes provided when running the tool. Special kudos to Vincent Puydoyeux, who gave me the idea to develop this tool and Koutto, for helping me with the docker thing and for improving the tool.
+<a href="https://www.patreon.com/TH3xACE">
+	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
+<a name="credits"></a>
+## Credits
 
-=============
-Disclaimer
-=============
-This script is for Educational purpose ONLY. Do not use it without permission of the owner of the system you are running it. The usual disclaimer applies, especially the fact that me (TH3xACE) is not liable for any damages 
-caused by direct or indirect use of the information or functionality provided by these programs. The author or any Internet provider bears NO responsibility for content or misuse 
-of these programs or any derivatives thereof. By using these programs you accept the fact that any damage (dataloss, system crash, system compromise, etc.) caused by the use of 
-the script is not my responsibility.
+I crafted the script independently, leveraging online resources from GitHub and other sources in the wild. Acknowledgments are also due to the creators of exploits associated with CVEs. You can trace their details and references in the exploit itself, as well as in the accompanying notes when the tool is executed. Notable recognition extends to Vincent Puydoyeux, whose inspiration spurred the development of this tool, and Koutto, for invaluable assistance in handling Docker intricacies and enhancing the tool's functionality. Additionally, a heartfelt thank you goes out to Emilio Pinna (norbemi) and Andrea Cardaci (cyrus_and) for their invaluable contributions to GTFO Bins, which significantly influenced this project's development.
 
+<a name="disclaimer"></a>
+## Disclaimer
 
+This script is for Educational purpose ONLY. Do not use it without permission of the owner of the system you are running it. The usual disclaimer applies, especially the fact that me (TH3xACE) is not liable for any damages caused by direct or indirect use of the information or functionality provided by this project. The author (TH3xACE) or any Internet provider bears NO responsibility for content or misuse of these programs or any derivatives thereof. By using these programs you accept the fact that any damage (dataloss, system crash, system compromise, etc.) caused by the use of the script is not the author responsibility.
+
+<a name="license"></a>
+## License
+
+`SUDO_KILLER` is licensed under the MIT license, proper credits is expected whenever used. Please consider to donate for any commercial use.
