@@ -196,7 +196,7 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 <a name="sk-tools"></a>
 ## SK-Tools
-Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SK/SUDO_KILLERv3/res`
+Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SUDO_KILLERv3/SK-Tools`
 
 - $\color{cyan}\large{\textsf{SK-ImperBruteForce.sh:}}$ Perform an impersonation bruteforce using users from /etc/passwd, starting from user with uid 1000.
 - $\color{cyan}\large{\textsf{SK-credHarvest2.sh:}}$ Perform a credential capture by creating a fake sudo via alias then re-direct to real sudo.
