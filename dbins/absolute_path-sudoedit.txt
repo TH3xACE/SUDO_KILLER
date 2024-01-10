@@ -1,0 +1,100 @@
+Sudo version: 1.8.29
+Platform: Ubuntu 19.10
+
+The ability to run an editor like vi with sudo access permits a privilege escalation scenario as the editor is invoked in the root context and existing editor features can be used to spawn child processes. This can allow a non-privileged user to execute arbitrary commands as root.
+
+Fortunately, the sudoedit feature allows users to invoke an editor to edit a file, but in their own user context, not root. This is to prevent the privilege escalation scenario described above.
+
+Let's assume the editor being invoked is vi. When the sudoers entry looks like so, the feature works fine:
+bob ALL = sudoedit /etc/printcap
+
+$ sudoedit /etc/printcap
+< vi is running, enter !:id in command mode >
+uid=1001(bob) gid=1001(bob) groups=1001(bob)
+
+-+++++++++++++++++++++++++++++++++++++++++++++++-
+If you are practising in the docker test provided :
+sudo /usr/local/bin/sudoedit /etc/printcap
+
+then type the following command in command mode to get a shell : 
+:set shell=/bin/sh
+:shell
+
+-+++++++++++++++++++++++++++++++++++++++++++++++-
+
+# Feature works as intended
+
+
+If, however, the sudoers entry contains a leading path, sudoedit works, visudo doesn't catch any syntax error, but privilege escalation is possible.
+bob ALL = /bin/sudoedit /etc/printcap
+
+$ sudo /bin/sudoedit /etc/printcap
+< vi is running, enter !:id in command mode >
+uid=0(root) gid=0(root) groups=0(root)
+
+# Ruh roh
+
+
+Take note of the difference in calling convention. `sudo /bin/sudoedit` should invoke sudoedit, but with root as the invoking user. Thus when sudoedit properly sets the uid and euid [1], it sets uid and euid to root which is not intended.
+
+Even though vi is used in this particular example, other editors have similar functionality [2].
+
+Yes, the documentation [3] explicitly states that sudoedit "must be specified in the sudoers file without a leading path."
+
+Even though this is noted in the documentation, users do still use the insecure option because they're accustomed to specifying the absolute path to commands (this is typically best practice). With the symlinks in place and the fact that nothing noticeable breaks, users who are attempting to enable safe file editing accidentally open themselves to privilege escalation as root.
+
+Note that several distros include symlinks to sudoedit which makes this issue more likely to occur. Those symlinks can include:
+/bin/sudoedit
+/usr/bin/sudoedit
+
+Here are some examples [4][5] from Github where users attempting to do the right thing have accidentally created a privilege escalation opportunity due to this bug.
+
+Considering the syntax with a leading path is already considered invalid, visudo should detect and prevent this misconfiguration.
+
+Alternatively, the sudoedit feature could be modified to support leading paths.
+
+Please let me know if you need any other information.
+
+
+[1] https://github.com/millert/sudo/blob/master/src/sudo_edit.c#L1040
+[2] https://gtfobins.github.io/
+[3] https://www.sudo.ws/man/1.8.28/sudoers.man.html
+[4] https://github.com/amplify-education/asiaq/blob/2cf5b6238165bc4e33b913d950f865959b69717d/sample_configuration/discoroot/etc/sudoers#L81
+[5] https://github.com/chvdr/PCoD/blob/master/eda-dev-amq01#L67
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Sudo version: 1.8.23
+Platform: CentOS 7.6.1810
+
+The sudoedit feature allows users to invoke an editor to edit a file, but prevents users from using features in the editor to run arbitrary commands as root. It does this by dropping privileges back to that of the invoking user.
+
+When the sudoers entry looks like so, the feature works fine:
+operator ALL = sudoedit /etc/printcap
+
+If, however, the sudoers entry contains a leading path, sudoedit works, but privileges are not dropped. Example:
+operator ALL = /bin/sudoedit /etc/printcap
+
+Note that several distros include symlinks to sudoedit at:
+/bin/sudoedit
+/usr/bin/sudoedit
+
+The second example permits arbitrary code execution as root via the vi feature to invoke shell commands from the editor. Other editors have similar features. To reproduce, enter ":!id" from vi and note that the id command executed as root.
+
+Yes, I am aware that the documentation [1] explicitly states that sudoedit "must be specified in the sudoers file without a leading path."
+
+Even though this is noted in the documentation, users do still use the insecure option because they're accustomed to specifying the absolute path to commands. With the symlinks in place and the fact that nothing noticeable breaks, users who are attempting to enable safe file editing accidentally open themselves to full privilege escalation as root. 
+
+Here are some examples from Github [2][3].
+
+This line [4] appears to be the offending line and could be modified to support the leading path. Alternatively, it could be considered invalid syntax in the sudoers file to include a leading path on sudoedit.
+
+Please let me know if you need any other information.
+
+
+[1] https://www.sudo.ws/man/1.8.23/sudoers.man.html
+[2] https://github.com/thavone/dt-prod/blob/d7966c8e7818e0797b0c6df871160736cd3132ef/usr/local/etc/sudoers_sapdr#L84
+[3] https://github.com/amplify-education/asiaq/blob/2cf5b6238165bc4e33b913d950f865959b69717d/sample_configuration/discoroot/etc/sudoers#L81
+[4] https://github.com/millert/sudo/blob/master/src/parse_args.c#L264
+Comment 1Todd C. Miller 2019-11-05 12:30:13 MST

