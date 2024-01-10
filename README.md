@@ -7,7 +7,7 @@
 :star: Star us on GitHub — to show your support!
 
 <p align="left">
-    <img width="100%" src="./img/sk-logo.gif" alt="logo"/>
+    <img width="100%" src="https://github.com/TH3xACE/res/blob/main/SK/sk-logo.gif" alt="logo"/>
 </p>
 
 
@@ -89,7 +89,7 @@ Optional arguments:
 ## Docker (Vulnerable testing environment)
 
 <p align="left">
-    <img width="25%" src="./img/docker.gif" alt="-dockerlogo"/>
+    <img width="25%" src="https://github.com/TH3xACE/res/blob/main/SK/docker.gif" alt="-dockerlogo"/>
 </p>
 
 A range of Docker containers is made available to offer a deliberately vulnerable environment for testing and hands-on experimentation with `SUDO_KILLER` as well as with the vulnerabilities. 
@@ -143,15 +143,15 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 </summary> <br />
     
 <p align="center">
-    <img width="49%" src="sk1.png" alt="apis"/>
+    <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
 &nbsp;
-   <img width="49%" src="sk1.png" alt="apis"/>
+   <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
 </p>
 
 <p align="center">
-   <img width="49%" src="sk1.png" alt="apis"/>
+   <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
 &nbsp;
-    <img width="49%" src="sk1.png" alt="apis"/>
+    <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
 </p> 
     
 <p align="center">
