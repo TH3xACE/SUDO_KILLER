@@ -180,21 +180,21 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide17.png" alt="apis"/>
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide17.PNG" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.png" alt="apis"/>
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.PNG" alt="apis"/>
    </a>
 </p>
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide7.png" alt="apis"/>
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide7.PNG" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.png" alt="apis"/>
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.PNG" alt="apis"/>
    </a>
 </p>
 
