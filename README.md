@@ -134,7 +134,7 @@ Scenario 10: [21] App Specific sudo vuln/misconfig
 
 The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
 
-> **Important**
+> **Important**:
 > Quick videos on how to properly do the testing on the provided docker.
 
 <details open>
@@ -144,11 +144,11 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
     
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
+      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
+      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
    </a>
 </p>
 
@@ -157,7 +157,7 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 </p>    
 </details>
 
-> **Warning**
+> **Warning**:
 > The video list below is not exhaustive, to have access to all the videos, please check the playlist link.
 
 <details open>
@@ -167,28 +167,28 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
     
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
    </a>
 </p>
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
    </a>
 &nbsp;
     <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
    </a>
 </p> 
     
 <p align="center">
-    <img width="49%" src="https://github.com/amplication/amplication/assets/73097785/a51e166b-07ec-4c80-99ed-8792a81c4064.png" alt="own-your-code"/>
+    <img width="39%" src="https://github.com/amplication/amplication/assets/73097785/a51e166b-07ec-4c80-99ed-8792a81c4064.png" alt="own-your-code"/>
 &nbsp;
-    <img width="49%" src="https://github.com/amplication/amplication/assets/73097785/1cca9721-b8d6-425b-a1a9-d10d3cdcc9b8.png" alt="customize-code"/>
+    <img width="39%" src="https://github.com/amplication/amplication/assets/73097785/1cca9721-b8d6-425b-a1a9-d10d3cdcc9b8.png" alt="customize-code"/>
 </p>
     
 </details>
@@ -203,40 +203,68 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide17.png" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide17.png" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.PNG" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.PNG" alt="apis"/>
    </a>
 </p>
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide5.PNG" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide5.PNG" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide7.PNG" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide7.PNG" alt="apis"/>
    </a>
 </p>
 
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide6.PNG" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide6.PNG" alt="apis"/>
    </a>
 &nbsp;
 </p>
 
 </details>
 
-<details>
+<details open>
 <summary>
   (click to expand) Recent CVEs of 3rd party apps/devices related to sudo that SUDO_KILLER detects (including pre-requisites): 
 </summary> <br />
 
-- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/angular-todos)
-- [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/react-todos)
+
+
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide17.png" alt="apis"/>
+   </a>
+&nbsp;
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide4.PNG" alt="apis"/>
+   </a>
+&nbsp;
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide5.PNG" alt="apis"/>
+   </a>
+&nbsp;
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide7.PNG" alt="apis"/>
+   </a>
+
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide6.PNG" alt="apis"/>
+   </a>
+&nbsp;
+
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="29%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide6.PNG" alt="apis"/>
+   </a>
+&nbsp;
+</p>
+
 </details>
 
 
@@ -261,11 +289,11 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
     
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
+      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
    </a>
 &nbsp;
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
+      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
    </a>
 </p>
 
