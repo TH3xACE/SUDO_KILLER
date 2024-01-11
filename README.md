@@ -137,7 +137,7 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 > **Important**
 > Quick videos on how to properly do the testing on the provided docker.
 
-<details>
+<details open>
 <summary>
      (click to expand) Usage : How to setup and use the provided testing environment (docker)
 </summary> <br />
@@ -152,9 +152,11 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
    </a>
 </p>
 
+<p></p>
+
 </p>    
 </details>
-&nbsp;&nbsp;
+
 > **Warning**
 > The video list below is not exhaustive, to have access to all the videos, please check the playlist link.
 
