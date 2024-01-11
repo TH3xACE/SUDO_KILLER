@@ -147,13 +147,19 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
    </a>
 &nbsp;
-   <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+   </a>
 </p>
 
 <p align="center">
-   <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+   </a>
 &nbsp;
-    <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+    <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+   </a>
 </p> 
     
 <p align="center">
@@ -171,6 +177,17 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 <summary>
   (click to expand) Recent sudo CVEs that SUDO_KILLER detects (including pre-requisites): 
 </summary> <br />
+
+<p align="center">  
+ <a href="https://youtu.be/Q8iO9mYrfv8">  
+ <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/> 
+ </a>
+	
+ <a href="https://youtu.be/Q8iO9mYrfv8">  
+ <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/sk1.png" alt="apis"/>
+ </a>
+</p>
+
 
 - [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/angular-todos)
 - [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/react-todos)
