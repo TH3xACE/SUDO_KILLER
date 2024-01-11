@@ -239,17 +239,6 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 - [CVE-2023-XXXXX](https://docs.amplication.com/tutorials/react-todos)
 </details>
 
-</br>
-
-## Why is it possible to run "sudo -l" without a password?
-
-By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
-
-However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
-
-Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
-
-
 
 <a name="sk-tools"></a>
 ## SK-Tools
@@ -264,6 +253,37 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
 - $\color{cyan}\large{\textsf{SK-csuid-with-sudo.sh:}}$ Perform identification of custom suid binary then check whether sudo command is run without full path.
 - $\color{cyan}\large{\textsf{SK-su-BruteForce.sh:}}$ Perform password bruteforce or password spray for a specific user via sudo.
 - $\color{cyan}\large{\textsf{SK-search-sudoers.sh:}}$ Perform an identification of possible sudoers backup files on the current host.
+
+<details open>
+<summary>
+     (click to expand) Usage : SK-Tools
+</summary> <br />
+    
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
+   </a>
+&nbsp;
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+      <img width="49%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
+   </a>
+</p>
+
+<p></p>
+
+</p>    
+</details>
+
+</br>
+
+## Why is it possible to run "sudo -l" without a password?
+
+By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
+
+However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
+
+Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
+
 
 <a name="contribute"></a>
 ## Contributing
