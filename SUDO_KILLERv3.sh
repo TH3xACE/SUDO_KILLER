@@ -2045,7 +2045,9 @@ function ctrl_c() {
 while getopts "hcaesi:r:p:" opt; do
   case $opt in
   h)
+    header
     usage
+    exit
     ;;
   c)
     sudocve="1"
