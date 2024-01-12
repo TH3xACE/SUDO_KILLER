@@ -19,7 +19,7 @@ RESET="\033[00m"     # Normal
 ##### help function
 usage() {
   #####  echo -e " $version \n"
-  printf " %s \n" "$version"
+  # printf " %s \n" "$version"
   echo -e " Example: ./sudo_killer.sh -c -r report.txt -e /tmp/  \n"
 
   echo "OPTIONS:"
