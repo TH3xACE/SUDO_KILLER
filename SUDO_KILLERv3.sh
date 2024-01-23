@@ -1152,7 +1152,7 @@ fn_excessive_dir_perm() {
           #msgright2+=$liney
 
           echo -e "[-] $msgright2"
-          echo -e "[*] Exploit, refer to /notes/Excessive_directory_rights.txt \n"
+          echo -e "[*] Exploit, refer to notes/Excessive_directory_rights.txt \n"
 
         else
           echo -e "[-] The user $direc_user1 is the directory owner of the script. \n"
