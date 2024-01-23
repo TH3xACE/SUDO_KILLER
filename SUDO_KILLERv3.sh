@@ -1155,7 +1155,7 @@ fn_excessive_dir_perm() {
           echo -e "[*] Exploit, refer to /notes/Excessive_directory_rights.txt \n"
 
         else
-          echo -e "[-] The user $direc_user1 is the directory owner of the missing file. \n"
+          echo -e "[-] The user $direc_user1 is the directory owner of the script. \n"
         fi # current user
 
         echo -e ">>> Checking Directory Group Ownership of the scripts"
