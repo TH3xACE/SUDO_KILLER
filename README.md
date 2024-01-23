@@ -122,7 +122,7 @@ Scenario 2: [5] Excessive permissions (Authentication required)
 Scenario 3: [6] User Impersonation
 Scenario 4: [7] Common Misconfiguration (Change owner)
 Scenario 4: [8-11] Common Misconfiguration (Wildcard)
-Scenario 5: [13] Missing scripts from sudo's rules
+Scenario 5: [13] Missing scripts from sudo rules
 Scenario 6: [17] Dangerous Environment Variables
 Scenario 7: [18] Dangerous binaries (gtfobins)
 Scenario 8: [19] Recursive Impersonation test
