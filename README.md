@@ -115,19 +115,20 @@ To switch scenario (To prevent conflicts between the different scenarios) on the
 switchScenario <scenario_number>
 
 Available scenarios: 0 to 10
-All Scenarios 0 - Conflict might occur!
+All Scenarios 0 : Conflict might occur!
 Scenario 1: [2-3] CVE - Rules
 Scenario 2: [4] Excessive permissions
 Scenario 2: [5] Excessive permissions (Authentication required)
 Scenario 3: [6] User Impersonation
-Scenario 4:  [7] Common Misconfiguration (Change owner)
+Scenario 4: [7] Common Misconfiguration (Change owner)
 Scenario 4: [8-11] Common Misconfiguration (Wildcard)
-Scenario 5: [13] Missing scripts from sudo rules
+Scenario 5: [13] Missing scripts from sudo's rules
 Scenario 6: [17] Dangerous Environment Variables
 Scenario 7: [18] Dangerous binaries (gtfobins)
-Scenario 8: [19] Recursive Impersonation check
+Scenario 8: [19] Recursive Impersonation test
 Scenario 9: [20] Environment Path Hijacking
 Scenario 10: [21] App Specific sudo vuln/misconfig
+
 ```
 <a name="videos"></a>
 ## Videos - Demo 
