@@ -14,7 +14,7 @@
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=%40TH3xACE)](https://twitter.com/th3xace)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=blue)](https://www.linkedin.com/in/adblais)
 
- :bulb: Best Viewed in Dark Mode
+ :bulb: Best Viewed in Dark Mode :)
 
 
 :wrench::wrench::wrench::wrench: WORK IN PROGRESS - Not officially Launch
