@@ -1,0 +1,11 @@
+***** Sudo *****
+If the binary is allowed to run as superuser by sudo, it does not drop the
+elevated privileges and may be used to access the file system, escalate or
+maintain privileged access.
+    * Start the following command to open the TUI interface, then:
+         1. press Ctrl-A o and select Filenames and paths;
+         2. press e, type /bin/sh, then Enter;
+         3. Press Esc twice;
+         4. Press Ctrl-A k to drop the shell. After the shell, exit with Ctrl-
+            A x.
+      sudo minicom -D /dev/null
