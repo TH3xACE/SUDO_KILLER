@@ -116,12 +116,12 @@ switchScenario <scenario_number>
 
 Available scenarios: 0 to 10
 All Scenarios 0 : Conflict might occur!
-Scenario 1: [2-3] CVE - Rules
+Scenario 1: [2,3] CVE - Rules
 Scenario 2: [4] Excessive permissions
 Scenario 2: [5] Excessive permissions (Authentication required)
 Scenario 3: [6] User Impersonation
 Scenario 4: [7] Common Misconfiguration (Change owner)
-Scenario 4: [8-11] Common Misconfiguration (Wildcard)
+Scenario 4: [8,11] Common Misconfiguration (Wildcard)
 Scenario 5: [13] Missing scripts from sudo rules
 Scenario 6: [17] Dangerous Environment Variables
 Scenario 7: [18] Dangerous binaries (gtfobins)
