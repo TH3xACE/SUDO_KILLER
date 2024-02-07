@@ -1,4 +1,6 @@
 #!/bin/bash
+# https://github.com/TH3xACE/SUDO_KILLER
+
 
 ##### (Cosmetic) Colour output
 RED="\033[01;31m"      # Issues/Errors

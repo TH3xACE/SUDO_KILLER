@@ -4,6 +4,7 @@
 # Version="version 1.0"
 # Date of last modification : 31/07/2023
 # @TH3xACE - BLAIS David
+# https://github.com/TH3xACE/SUDO_KILLER
 
 ##### (Cosmetic) Colour output
 RED="\033[01;31m"    # Issues/Errors

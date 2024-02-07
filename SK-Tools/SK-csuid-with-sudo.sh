@@ -1,4 +1,12 @@
 #!/bin/bash
+# This script was developed to parse and search for specifc aliases by providing sudoers file 
+# V1: Date Created : 08/12/2018
+# V2: Date Created : 11/02/2020
+# V3: Date Created : 20/07/2023
+# Date of last modification : 20/07/2023
+# @TH3xACE - BLAIS David 
+# https://github.com/TH3xACE/SUDO_KILLER
+
 
 ##### (Cosmetic) Colour output
 RED="\033[01;31m"      # Issues/Errors

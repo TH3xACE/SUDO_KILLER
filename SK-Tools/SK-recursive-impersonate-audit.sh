@@ -17,14 +17,14 @@ echo -e "${RED}  [-] Please consider giving a +1 star on GitHub to show your sup
 echo -e "[*] This script aims at identifying recursive impersonation with a default depth of 3."
 echo -e "\n"
 
+echo -e "This is script is for audit and this rules should be added: <current-user> ALL=(ALL:ALL): NOPASSWD ALL to /etc/sudoers!"
+
 # Intial - Get a list of potential users that can be impersonated from initial user sudo's rules
 #user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*//g' | sort -u`
-user=$(sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -iv "\-c" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u)
+user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -iv "\-c" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u`
 
 # Clean
 echo "" > impuser.txt
-
-cp SK-runas.sh /tmp/skras.sh
 
 if [ "$user" ]; then
     
@@ -38,7 +38,7 @@ if [ "$user" ]; then
         #to decomment - just for lab test since using number in username to track easier
         #cat /etc/passwd | cut -d: -f 1 | grep -iw "$line" >> impuser.txt 
         #imusr=`cat /etc/passwd | cut -d: -f 1 | grep -iw "$line\$"` 
-        imusr=$(cat /etc/passwd | cut -d: -f 1 | grep -ia "$line") 
+        imusr=`cat /etc/passwd | cut -d: -f 1 | grep -ia "$line"` 
         #echo $line
         if [ "$imusr" ]; then
         echo $imusr >> impuser.txt 
@@ -58,45 +58,30 @@ if [ "$user" ]; then
 
         # Check level 1 - Impersonation
         
-            cat "$PWD"/impuser.txt | sort -u | while read line1
+            cat $PWD/impuser.txt | sort -u | while read line1
             do  
                 
-              # user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u`
+               # user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u`
               # user1=`sudo /bin/su $line1 -c "export PATH="/usr/local/bin:$PATH"; sudo -l | grep "NOPASSWD:" | grep -iw "/\*bin/su \*" | grep -v "su root" | grep -v "/\*bin/su \-\$\|/\*bin/su \*\$\|/\*bin/su \- \*\$" | awk '{print $NF}'"` 
-                #sdr1=$(sudo /bin/su "$line1" 2>/dev/null -c "export PATH="/usr/local/bin:$PATH"; sudo -l 2>/dev/null") 
-                sdr1=$(bash SK-runas.sh $line1 "sudo -l")
-                #echo $sdr1
+                sdr1=`sudo /bin/su "$line1" 2>/dev/null -c "export PATH="/usr/local/bin:$PATH"; sudo -l 2>/dev/null"` 
                 if [ "$sdr1" ]; then
                 
                 #$echo "$sdr1"
                 #user1=`echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/\*/\/*/g' | grep -v root | sort -u | awk '{print $NF}' | sed '/^[[:space:]]*$/d'`
-                 user1=$(echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/*/\/*/g' | grep -iv "\-c" | awk '{print $NF}')                       
+                 user1=`echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/*/\/*/g' | grep -iv "\-c" | awk '{print $NF}'`                       
                     #echo "$user1"
                     echo "$user1" | while IFS= read -r line2; 
                         do
                           if [ "$line2" ]; then
                             #imusr=`cat /etc/passwd | cut -d: -f 1 | grep -iw "$line\$"` 
-                            imusr1=$(cat /etc/passwd | cut -d: -f 1 | grep -ia "$line2" 2>/dev/null) 
+                            imusr1=`cat /etc/passwd | cut -d: -f 1 | grep -ia "$line2" 2>/dev/null` 
                             #echo $line
                             if [ "$imusr1" ]; then
-
-
-                            # Split the variable into an array using space as the delimiter
-                            #IFS=' ' read -ra elements <<< "$imusr1"
-
-                            # Iterate over each element in the array
-                              for element in $imusr1; do
-                              #for element in "${elements[@]}"; do
-                                  #echo "$element"
-                                   #echo "$line1,$imusr1" >> impuser1.txt 
-                                   #echo -e "${BOLD}${RED}[+] "$USER" -> "$line1" -> "$imusr1" ${RESET}" 
-                                   echo "$line1,$element" >> impuser1.txt 
-                                   echo -e "${BOLD}${RED}[+] "$USER" -> "$line1" -> "$element" ${RESET}" 
-                                   sr1=$(echo "$sdr1" | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -iv "\-c" | grep -i $line2) 
-                                   echo "$sr1"
-                                   echo -e "\n"
-                              done
-
+                            echo "$line1,$imusr1" >> impuser1.txt 
+                            echo -e "${BOLD}${RED}[+] "$USER" -> "$line1" -> "$imusr1" ${RESET}" 
+                            sr1=`echo "$sdr1" | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -iv "\-c" | grep -i $line2` 
+                            echo "$sr1"
+                            echo -e "\n"
                             fi   
                          fi 
                         done
@@ -116,34 +101,30 @@ if [ "$user" ]; then
 
             # Check level 1 - Impersonation
         
-            #cat $PWD/impuser1.txt
             cat $PWD/impuser1.txt | sort -u | while read line3
             do  
                 
-                prlvl=$(echo $line3 | cut -d"," -f1)
-                crlvl=$(echo $line3 | cut -d"," -f2)
-
-                if [ "$crlvl" ]; then
-                # user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u`
-                # user1=`sudo /bin/su $line1 -c "export PATH="/usr/local/bin:$PATH"; sudo -l | grep "NOPASSWD:" | grep -iw "/\*bin/su \*" | grep -v "su root" | grep -v "/\*bin/su \-\$\|/\*bin/su \*\$\|/\*bin/su \- \*\$" | awk '{print $NF}'"` 
-                sdr1=$(bash /tmp/skras.sh $prlvl "bash /tmp/skras.sh $crlvl "sudo -l 2>/dev/null"")                #echo $crlvl
-                #sdr1=$(sudo /bin/su "$crlvl" 2>/dev/null -c "export PATH="/usr/local/bin:$PATH"; sudo -l 2>/dev/null") 
+                prlvl=`echo $line3 | cut -d"," -f1`
+                crlvl=`echo $line3 | cut -d"," -f2`
+               # user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u`
+              # user1=`sudo /bin/su $line1 -c "export PATH="/usr/local/bin:$PATH"; sudo -l | grep "NOPASSWD:" | grep -iw "/\*bin/su \*" | grep -v "su root" | grep -v "/\*bin/su \-\$\|/\*bin/su \*\$\|/\*bin/su \- \*\$" | awk '{print $NF}'"` 
+                sdr1=`sudo /bin/su "$crlvl" 2>/dev/null -c "export PATH="/usr/local/bin:$PATH"; sudo -l 2>/dev/null"` 
                 if [ "$sdr1" ]; then
                 
                 #$echo "$sdr1"
                 #user1=`echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/\*/\/*/g' | grep -v root | sort -u | awk '{print $NF}' | sed '/^[[:space:]]*$/d'`
-                 user1=$(echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/*/\/*/g' |  awk '{print $NF}')                       
+                 user1=`echo "$sdr1" | grep "NOPASSWD:"| grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | sed 's/*/\/*/g' |  awk '{print $NF}'`                       
                     #echo "$user1"
                     echo "$user1" | while IFS= read -r line4; 
                         do
                           if [ "$line4" ]; then
                             #imusr=`cat /etc/passwd | cut -d: -f 1 | grep -iw "$line\$"` 
-                            imusr2=$(cat /etc/passwd | cut -d: -f 1 | grep -ia "$line4" 2>/dev/null) 
+                            imusr2=`cat /etc/passwd | cut -d: -f 1 | grep -ia "$line4" 2>/dev/null` 
                             #echo $line
                             if [ "$imusr2" ]; then
                             echo "$imusr2" >> impuser2.txt 
                            echo -e "${BOLD}${RED}[+] "$USER" -> "$prlvl" -> "$crlvl" -> "$imusr2" ${RESET} " 
-                            sr1=$(echo "$sdr1" | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -i $line4) 
+                            sr1=`echo "$sdr1" | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -i $line4` 
                             echo "$sr1"
                             echo -e "\n"
                             fi   
@@ -151,8 +132,6 @@ if [ "$user" ]; then
                         done
 
                 fi
-
-              fi
 
             done
 
@@ -163,7 +142,7 @@ if [ "$user" ]; then
 fi # initial check
 
 
-rm /tmp/skras.sh
+
 
 
 

@@ -5,6 +5,7 @@
 # V3: Date Created : 20/07/2023
 # Date of last modification : 20/07/2023
 # @TH3xACE - BLAIS David
+# https://github.com/TH3xACE/SUDO_KILLER
 
  version="version 3.0.1"
 
