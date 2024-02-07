@@ -162,7 +162,7 @@ if [ "$user" ]; then
 
 fi # initial check
 
-
+rm impuser*.txt
 rm /tmp/skras.sh
 
 

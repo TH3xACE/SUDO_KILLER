@@ -1,6 +1,0 @@
-
-adriano,kajol
-adriano,kathleen
-adriano,ckan
-john,tianne
-john,tatiana

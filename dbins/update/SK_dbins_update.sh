@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #file=$1
-file=$(ls | grep bins)
+file=$(ls | grep bins*.txt)
 tempf="conca-temp.txt"
 tempu="conca-new.txt"
 
@@ -12,6 +12,9 @@ line_count_old=$(cat "$file" | grep ".md" | wc -l)
 
 FILENAME="bins_$(date +'%d-%m-%y').txt"
 
+
+echo "[-] Last Check:" $file
+echo "[-] Current CHeck" $FILENAME
 
 
   if [ $file != $FILENAME ]; then
@@ -59,6 +62,7 @@ FILENAME="bins_$(date +'%d-%m-%y').txt"
 
         else
             echo "[-] The are no additions, please check again later!"
+            mv $file old/
         
         fi
 
