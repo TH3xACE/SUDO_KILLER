@@ -326,7 +326,8 @@ Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible wi
 
 Thank you all for your support!
 
-[![Stargazers over time](https://starchart.cc/TH3xACE/SUDO_KILLER.svg?variant=dark)](https://starchart.cc/TH3xACE/SUDO_KILLER)
+[![Stargazers over time](https://starchart.cc/TH3xACE/SUDO_KILLER.svg?variant=adaptive)](https://starchart.cc/TH3xACE/SUDO_KILLER)
+
 
 
 <a name="support"></a>
