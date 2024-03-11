@@ -1,5 +1,5 @@
 ![Static Badge](https://img.shields.io/badge/Version-3.0.1-blue)
-[![Last Commit](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic)](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER?style=plastic)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/TH3xACE/SUDO_KILLER/V3)
 ![Static Badge](https://img.shields.io/badge/Maintain-Yes-purple)
 ![Static Badge](https://img.shields.io/badge/Author-TH3xACE-red)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/TH3xACE/SUDO_KILLER/)
