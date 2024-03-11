@@ -333,7 +333,8 @@ For the currrent user (cuser):
 ```shell
 ./SK-credHarvest2.sh cuser <new|old> ; source /home/<currentuser>/.bashrc
 ```
-TO STOP the credential harvesting: run the same script again with same argument
+> [!CAUTION]
+> TO STOP the credential harvesting: run the same script again with same argument
 
 output: the log /tmp/sk-crds.log will contains the credentials
 
