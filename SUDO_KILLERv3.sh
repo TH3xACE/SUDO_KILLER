@@ -1755,7 +1755,7 @@ fn_recur_impersonate() {
 
   # fi # initial check
 
-  # Intial - Get a list of potential users that can be impersonated from initial user sudo's rules
+  # dddial - Get a list of potential users that can be impersonated from initial user sudo's rules
   #user=`sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | awk '{print $NF}' | sed 's/\*//g' | sort -u`
   user=$(sudo -l | grep "NOPASSWD:" | grep -iw "/*bin/su *" | grep -v "su root" | grep -v "/*bin/su -$\|/*bin/su \*$\|/*bin/su \- \*$" | grep -iv "\-c" | awk '{print $NF}' | sed 's/\*/\/*/g' | sort -u)
 
@@ -2021,7 +2021,8 @@ checksudoappvuln()
 {
 echo -e "${BOLD}${YELLOW}[21/21] ====== App/Device Related Sudo vuln/misconfig ====== ${RESET} \n"
    if [ "$appsudocve" ]; then
-    ./res/SK-app-check.sh
+    #./res/SK-app-check.sih
+    ./SK-Tools/SK-app-check.sh
    else
     echo -e "${BOLD}${RED}Checks related to App/Device were skipped. To include them use the flag -a ${RESET} \n"
    fi

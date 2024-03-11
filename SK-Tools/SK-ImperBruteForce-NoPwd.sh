@@ -20,15 +20,15 @@ echo -e "\n"
 #1 > path to output /tmp
 path=$1
 
-if [ -z "$path" ] || [ "$path" == "-h" ] ; then
+#if [ -z "$path" ] || [ "$path" == "-h" ] ; then
  #echo -e "[+] Output Path: $path"
- echo -e "[+] Usage: ./$0 /<path>"
- exit 1
-else
+# echo -e "[+] Usage: ./$0 /<path>"
+# exit 1
+#else
  #echo -e "[+] Usage: ./$0 /<path>"
  #exit 1
- echo -e "[+] Output Path: $path"
-fi
+# echo -e "[+] Output Path: $path"
+#fi
 
 for I in $(cat /etc/passwd | grep -aw "1[0-9][0-9][0-9]" | cut -d: -f1); 
 do 
@@ -37,10 +37,12 @@ do
    #echo "--" >> $1/$I.log
    sri=`sudo -l -U $I 2>/dev/null | grep -v "not allowed"`
    if [ "$sri" ]; then
-   echo "[+] User $I can be impersonated without password! Sudo rules saved to $path/$I.log"
-   echo "$I" >> $path/$I.log	
-   echo "--" >> $path/$I.log
-   echo "$sri" >> $path/$I.log
+   echo "[+] User $I can be impersonated without password!"
+   echo " [-] Exploit: sudo su $I"
+   echo " "
+  # echo "$I" >> $path/$I.log	
+  # echo "--" >> $path/$I.log
+  # echo "$sri" >> $path/$I.log
    fi
    #>>$1/$I.log;
    #sudo -l -U 2>/dev/null $I>>$1/$I.log;

