@@ -56,7 +56,7 @@ Below is a list of checks that are perform by `SUDO_KILLER`
 - Binaries that might be replaced
 - Identify missing scripts
 
-> **Warning**
+> [!WARNING]
 > The check list above is NOT exhaustive.
 
 <a name="usage"></a>
@@ -78,11 +78,11 @@ Optional arguments:
 -s : supply user password for sudo checks (If sudo rules is not accessible without current user's password) </br>
 -h : help
 
-> **Note**
+> [!NOTE]
 > It is worth noting that when using the -c argument, two types of check are provided one for which the CVE identified is solely based on the current sudo version being used and another where the requirements are also checked.
 > Very often, a sudo version might be vulnerable but some pre-requisites might be needed for a successful exploitation.
 
-> **Note**
+> [!NOTE]
 > Providing password: If you need to input a password to run sudo -l then the script will not work if you don't provide a password with the argument -s.
 
 <a name="docker"></a>
@@ -146,7 +146,7 @@ Scenario 12: [16] Backdooring sudo (Credentials Capture)
 
 The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
 
-> **Important**:
+> [!IMPORTANT]
 > Quick videos on how to properly do the testing on the provided docker.
 
 <details open>
@@ -169,7 +169,7 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 </p>    
 </details>
 
-> **Warning**:
+> [!WARNING]
 > The video list below is not exhaustive, to have access to all the videos, please check the playlist link.
 
 <details open>
@@ -320,8 +320,9 @@ The script SK-credHarvest2.sh from SK-Tools allow to perform a credential captur
 The displayed message when asking for credential when using sudo differs from the version being used. It is possible to choose between two options (differ based on OS version).
 Example of the displayed message (new and old)
 
-new: [sudo] password for user:
-old: Password:
+> [!TIP]
+> (new) [sudo] password for user: <br />
+> (old) Password: 
 
 For All Users (auser):
 When you have root privilege or excessive rights on users' home and you want an easy way to gather credentials:
