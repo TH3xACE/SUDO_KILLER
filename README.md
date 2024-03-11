@@ -282,15 +282,15 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
 ## SK-Tools
 Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SUDO_KILLERv3/SK-Tools`
 
-- $\color{cyan}\large{\textsf{SK-ImperBruteForce-NoPwd.sh:}}$ Perform an impersonation bruteforce using users from /etc/passwd, starting from user with uid 1000.
-- $\color{cyan}\large{\textsf{SK-credHarvest2.sh:}}$ Perform a credential capture by creating a fake sudo via alias then re-direct to real sudo.
-- $\color{cyan}\large{\textsf{SK-app-check.sh:}}$ Perform check of sudo vulnerabilities related to a specifc third-party app or device or programming lang [still in progress].
-- $\color{cyan}\large{\textsf{SK-ttyInject.sh:}}$ Abusing TTY pushback so that if the user root su - on a controlled user we make him run an arbitrary command.
-- $\color{cyan}\large{\textsf{SK-recursive-impersonate.sh:}}$ Perform identification of recursive impersonation with a default depth of 3.
-- $\color{cyan}\large{\textsf{SK-alias-report.sh:}}$ Perform search on alias with different criteria.
-- $\color{cyan}\large{\textsf{SK-csuid-with-sudo.sh:}}$ Perform identification of custom suid binary then check whether sudo command is run without full path.
-- $\color{cyan}\large{\textsf{SK-su-BruteForce.sh:}}$ Perform password bruteforce or password spray for a specific user via sudo.
-- $\color{cyan}\large{\textsf{SK-search-sudoers.sh:}}$ Perform an identification of possible sudoers backup files on the current host.
+- $\color{#f0a015}\large{\textsf{SK-ImperBruteForce-NoPwd.sh:}}$ Perform an impersonation bruteforce using users from /etc/passwd, starting from user with uid 1000.
+- $\color{#f0a015}\large{\textsf{SK-credHarvest2.sh:}}$ Perform a credential capture by creating a fake sudo via alias then re-direct to real sudo.
+- $\color{#f0a015}\large{\textsf{SK-app-check.sh:}}$ Perform check of sudo vulnerabilities related to a specifc third-party app or device or programming lang [still in progress].
+- $\color{#f0a015}\large{\textsf{SK-ttyInject.sh:}}$ Abusing TTY pushback so that if the user root su - on a controlled user we make him run an arbitrary command.
+- $\color{#f0a015}\large{\textsf{SK-recursive-impersonate.sh:}}$ Perform identification of recursive impersonation with a default depth of 3.
+- $\color{#f0a015}\large{\textsf{SK-alias-report.sh:}}$ Perform search on alias with different criteria.
+- $\color{#f0a015}\large{\textsf{SK-csuid-with-sudo.sh:}}$ Perform identification of custom suid binary then check whether sudo command is run without full path.
+- $\color{#f0a015}\large{\textsf{SK-su-BruteForce.sh:}}$ Perform password bruteforce or password spray for a specific user via sudo.
+- $\color{#f0a015}\large{\textsf{SK-search-sudoers.sh:}}$ Perform an identification of possible sudoers backup files on the current host.
 
 <details open>
 <summary>
