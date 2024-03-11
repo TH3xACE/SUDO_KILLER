@@ -106,6 +106,15 @@ docker pull th3xace/sudo_killer_demo2
 docker run --user 1000 --rm -it th3xace/sudo_killer_demo2
 ```
 
+## Why is it possible to run "sudo -l" without a password?
+
+By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
+
+However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
+
+Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
+
+
 <a name="scenarios"></a>
 ## Scenarios
 
@@ -303,14 +312,27 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
 
 </br>
 
-## Why is it possible to run "sudo -l" without a password?
+## Capturing Credentials (via sudo redirect)
+The script SK-credHarvest2.sh from SK-Tools allow to perform a credential capture by creating a fake sudo via alias then re-direct to real sudo. Actually works only for bash (not working/implemented for ZSH or else for now)configured linux.
 
-By default, if the NOPASSWD tag is applied to any of the entries for a user on a host, you will be able to run "sudo -l" without a password. This behavior may be overridden via the verifypw and listpw options.
+The displayed message when asking for credential when using sudo differs from the version being used. It is possible to choose between two options (differ based on OS version).
+Example of the displayed message (new and old)
 
-However, these rules only affect the current user, so if user impersonation is possible (using su) sudo -l should be launched from this user as well.
+new: [sudo] password for user:
+old: Password:
 
-Sometimes the file /etc/sudoers can be read even if sudo -l is not accessible without password.
+For All Users (auser):
+When you have root privilege or excessive rights on users' home and you want an easy way to gather credentials:
+```shell
+./SK-credHarvest2.sh auser <new|old> ; source /home/*/.bashrc
+```
+For the currrent user (cuser):
+```shell
+./SK-credHarvest2.sh cuser <new|old> ; source /home/<currentuser>/.bashrc
+```
+TO STOP the credential harvesting: run the same script again with same argument
 
+output: the log /tmp/sk-crds.log will contains the credentials
 
 <a name="contribute"></a>
 ## Contributing
