@@ -137,6 +137,8 @@ Scenario 7: [18] Dangerous binaries (gtfobins)
 Scenario 8: [19] Recursive Impersonation test
 Scenario 9: [20] Environment Path Hijacking
 Scenario 10: [21] App Specific sudo vuln/misconfig
+Scenario 11: [5] Excessive permissions (Authentication required)
+Scenario 12: [16] Backdooring sudo (Credentials Capture)
 ```
 
 <a name="videos"></a>
