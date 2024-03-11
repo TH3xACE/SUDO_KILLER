@@ -14,7 +14,7 @@ BLUE="\033[01;34m"   # Heading
 BOLD="\033[01;01m"   # Highlight
 RESET="\033[00m"     # Normal
 
-echo -e "${YELLOW}[+] Possible sudoers backup files: ${RESET}\n"
+echo -e "${YELLOW}[+] Potential sudoers backup files: ${RESET}\n"
 
-grep --color=always -ri "includedir /etc/sudoers.d" /mnt/ /opt/ /etc/ /etc/ /home/ /app*/ $1 2>/dev/null | sort -u | cut -d ":" -f 1
+grep --color=always -ri "includedir /etc/sudoers.d\|NOPASSWD\:\|(ALL)" /mnt/ /opt/ /etc/ /home/ /app*/ $1 2>/dev/null | sort -u | cut -d ":" -f 1 | grep -v "SK-search-sudoers.sh\|.sh\|.py\|.pl\|.c\|.perl\|.viminfo" | sort -u
 

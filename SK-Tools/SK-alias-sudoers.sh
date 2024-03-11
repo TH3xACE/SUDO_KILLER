@@ -76,7 +76,8 @@ cat $sudoers_path | grep -i "$alias_typ" | awk -F= -v search="$alias_keyword" 'B
 
 # Check if any arguments are provided
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 -p <sudoers_path> -k "<keyword>" [-u] [-r] [-m] [-c] | [-a]"
+    echo "Usage: $0 -p <sudoers_path> -k <keyword> [-u] [-r] [-m] [-c] | [-a]"
+    echo "-u: user | -r: runas | -m: host | -c: command | -a: all "
     exit 1
 fi
 

