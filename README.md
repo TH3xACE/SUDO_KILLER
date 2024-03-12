@@ -283,6 +283,14 @@ The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list
   (click to expand) Recent CVEs of 3rd party apps/devices related to sudo that SUDO_KILLER detects (including pre-requisites): 
 </summary> <br />
 
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide27.JPG" alt="apis"/>
+   </a>
+&nbsp;
+    
+</p> 
+
 
 
 </details>
