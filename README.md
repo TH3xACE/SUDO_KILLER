@@ -317,17 +317,44 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
     
 <p align="center">
    <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide1.PNG" alt="apis"/>
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide20.JPG" alt="apis"/>
    </a>
 &nbsp;
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
-      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK/Slide2.PNG" alt="apis"/>
+    <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide21.JPG" alt="apis"/>
    </a>
-</p>
+</p> 
 
-<p></p>
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide22.JPG" alt="apis"/>
+   </a>
+&nbsp;
+    <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide23.JPG" alt="apis"/>
+   </a>
+</p> 
 
-</p>    
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide24.JPG" alt="apis"/>
+   </a>
+&nbsp;
+    <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide25.JPG" alt="apis"/>
+   </a>
+</p> 
+
+<p align="center">
+   <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide26.JPG" alt="apis"/>
+   </a>
+&nbsp;
+    <a href="https://youtu.be/Q8iO9mYrfv8">  
+     <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide28.JPG" alt="apis"/>
+   </a>
+</p> 
+
 </details>
 
 </br>
