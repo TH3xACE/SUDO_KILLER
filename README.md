@@ -144,7 +144,7 @@ Scenario 12: [16] Backdooring sudo (Credentials Capture)
 <a name="videos"></a>
 ## Videos - Demo 
 
-The playlist can be found here: https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml
+The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&list=PLQPKPAuCA40FMpMKWZLxQydLe7rPL5bml](https://www.youtube.com/watch?v=VjXiLhmOmHs&list=PLQPKPAuCA40ERFDNZ-Ub58SgGHGKAcr26)
 
 > [!IMPORTANT]
 > Quick videos on how to properly do the testing on the provided docker.
