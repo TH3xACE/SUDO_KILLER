@@ -17,9 +17,6 @@
  :bulb: Best Viewed in Dark Mode :)
 
 
-:wrench::wrench::wrench::wrench: WORK IN PROGRESS - Not officially Launch
-
-
 - [ Intro ](#intro)
 - [ Usage ](#usage)
 - [ Docker ](#docker)
