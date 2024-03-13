@@ -298,7 +298,7 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
 
 <a name="sk-tools"></a>
 ## SK-Tools
-Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SUDO_KILLERv3/SK-Tools`
+Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achieve several tasks. The scripts are located at `SUDO_KILLERv3/SUDO_KILLER/SK-Tools/`
 
 - $\color{#f0a015}\large{\textsf{SK-ImperBruteForce-NoPwd.sh:}}$ Perform an impersonation bruteforce using users from /etc/passwd, starting from user with uid 1000.
 - $\color{#f0a015}\large{\textsf{SK-credHarvest2.sh:}}$ Perform a credential capture by creating a fake sudo via alias then re-direct to real sudo.
@@ -309,6 +309,11 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
 - $\color{#f0a015}\large{\textsf{SK-csuid-with-sudo.sh:}}$ Perform identification of custom suid binary then check whether sudo command is run without full path.
 - $\color{#f0a015}\large{\textsf{SK-su-BruteForce.sh:}}$ Perform password bruteforce or password spray for a specific user via sudo.
 - $\color{#f0a015}\large{\textsf{SK-search-sudoers.sh:}}$ Perform an identification of possible sudoers backup files on the current host.
+
+```shell
+
+
+```
 
 <details open>
 <summary>
@@ -359,7 +364,7 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
 
 </br>
 
-## Capturing Credentials (via sudo redirect)
+## [SK-credHarvest2.sh] Capturing Credentials (via sudo redirect)
 The script SK-credHarvest2.sh from SK-Tools allow to perform a credential capture by creating a fake sudo via alias then re-direct to real sudo. Actually works only for bash (not working/implemented for ZSH or else for now)configured linux.
 
 The displayed message when asking for credential when using sudo differs from the version being used. It is possible to choose between two options (differ based on OS version).
@@ -382,6 +387,58 @@ For the currrent user (cuser):
 > TO STOP the credential harvesting: run the same script again with same argument
 
 output: the log /tmp/sk-crds.log will contains the credentials
+
+
+## [SK-alias-report.sh] Alias' Audit 
+You will either need root privilege, access to a backup of sudoers or read access to /etc/sudoers.
+
+```shell
+Usage: ./SK-alias-sudoers.sh -p <sudoers_path> -k <keyword> [-u] [-r] [-m] [-c] | [-a]
+  where -u: user | -r: runas | -m: host | -c: command | -a: all
+```
+
+## [SK-su-BruteForce.sh] Bruteforce/Password Spray via su 
+Using su to bruteforce password and password spray with concurrency, timeout and sleep. 
+
+```shell
+Usage: ./SK-su-BruteForce.sh [-h|--help] [-m|--module MODULE] [-u|--user USER|-uf|--userfile USERFILE] [-p|--password PASSWORD|-pf|--pwdfile PASSFILE] [-c|--concurrent CONCURRENT] [-s|--sleep SLEEP] [-t|--timeouts TIMEOUTS]
+
+Module: Password Bruteforce : pwdbf
+Example: ./SK-su-BruteForce.sh -m "pwdbf" -u user -pf password.txt -c 5 -s 0.005 -t 0.9
+
+Module: Password Spray : pwdspr
+Example: ./SK-su-BruteForce.sh -m pwdspr -uf users.txt -p password -c 5 -s 0.005 -t 0.9 
+
+Module: User:Password Bruteforce : usrpwdbf
+Example: ./SK-su-BruteForce.sh -m usrpwdbf -uf users-pwd.txt  -c 5 -s 0.005 -t 0.9 
+```
+
+## [SK-search-sudoers.sh] Search for backup of the file sudoers
+Find possible sudoers backup files in /mnt/ /opt/ /etc/ /etc/ /home/ /app*/  and any additional one parse as argument
+
+```shell
+Usage: ./SK-search-sudoers.sh /tmp/
+```
+
+## [SK_dbins_update.sh] Update dangerous bins (GTFOBINS)
+To update the dangerous bins, go to dbins/update and run ./SK_dbins_update.sh. Make sure you have internet connection.
+
+```shell
+Usage: ./SK_dbins_update.sh
+```
+
+## [SK-relative-path.sh] Binary Relative Path
+Looking for binaries with relative path that be abused! if there is no secure_path set.
+
+```shell
+sudo -l
+<..snip..>
+(root) SETENV: NOPASSWD: /opt/support/purge.sh
+<..snip..>
+
+Usage: ./SK-relative-path.sh /opt/support/purge.sh
+```
+
 
 <a name="contribute"></a>
 ## Contributing
