@@ -178,61 +178,61 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
 </summary> <br />
     
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/rg6FxPuP8sQ">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide3.JPG" alt="apis"/>
    </a>
 &nbsp;
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/BBtoBrZdAKk">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide9.JPG" alt="apis"/>
    </a>
 </p>
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/XiLsS9v3hy8">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide10.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/eBfIotMsDiI">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide11.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/a68dAmgeJnA">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide12.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/CILd01m2GBs">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide13.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/4xectsHBfCQ">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide14.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/11q5pzGJxvk">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide15.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/BbPBxXy4rKY">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide16.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/sfkxoR2a99o">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide17.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/SV2KPd4CA8A">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide18.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/6Lt-wKZmH9c">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide19.JPG" alt="apis"/>
    </a>
 </p> 
