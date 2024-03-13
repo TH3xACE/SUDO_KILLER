@@ -245,31 +245,31 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
 
 <details open>
 <summary>
-  (click to expand) Recent sudo CVEs that SUDO_KILLER detects (including pre-requisites): 
+  (click to expand) CVEs related to SUDO that SUDO_KILLER detects (including pre-requisites): 
 </summary> <br />
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/THS_bn4MOQY">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide4.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/6VkZaj3FDiE">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide5.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/LhqbExt5oq0">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide7.JPG" alt="apis"/>
    </a>
 &nbsp;
-    <a href="https://youtu.be/Q8iO9mYrfv8">  
+    <a href="https://youtu.be/AJSSRrGt-Dw">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide8.JPG" alt="apis"/>
    </a>
 </p> 
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/elwGRlN7aCI">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide6.JPG" alt="apis"/>
    </a>
 &nbsp;
@@ -284,7 +284,7 @@ The playlist can be found here: [https://www.youtube.com/watch?v=Q8iO9mYrfv8&lis
 </summary> <br />
 
 <p align="center">
-   <a href="https://youtu.be/Q8iO9mYrfv8">  
+   <a href="https://youtu.be/CP0S_7aZHxA">  
      <img width="39%" src="https://github.com/TH3xACE/res/blob/main/SK3/Slide27.JPG" alt="apis"/>
    </a>
 &nbsp;
