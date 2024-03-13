@@ -96,7 +96,7 @@ A range of Docker containers is made available to offer a deliberately vulnerabl
 
 ```shell
 service docker start 
-docker pull th3xace/sudo_killer_demo
+docker pull th3xace/sudo_killer_demo3
 docker run --rm -it th3xace/sudo_killer_demo3
 ```
 ```shell
