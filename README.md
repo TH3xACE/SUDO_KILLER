@@ -361,7 +361,7 @@ Version 3 of `SUDO_KILLER` now includes a list of tools that can be used to achi
 
 </br>
 
-## [SK-credHarvest2.sh] Capturing Credentials (via sudo redirect)
+## Capturing Credentials via sudo redirect (SK-credHarvest2.sh)
 The script SK-credHarvest2.sh from SK-Tools allow to perform a credential capture by creating a fake sudo via alias then re-direct to real sudo. Actually works only for bash (not working/implemented for ZSH or else for now)configured linux.
 
 The displayed message when asking for credential when using sudo differs from the version being used. It is possible to choose between two options (differ based on OS version).
@@ -386,7 +386,7 @@ For the currrent user (cuser):
 output: the log /tmp/sk-crds.log will contains the credentials
 
 
-## [SK-alias-report.sh] Alias' Audit 
+## Alias' Audit (SK-alias-report.sh)
 You will either need root privilege, access to a backup of sudoers or read access to /etc/sudoers.
 
 ```shell
@@ -394,7 +394,7 @@ Usage: ./SK-alias-sudoers.sh -p <sudoers_path> -k <keyword> [-u] [-r] [-m] [-c] 
   where -u: user | -r: runas | -m: host | -c: command | -a: all
 ```
 
-## [SK-su-BruteForce.sh] Bruteforce/Password Spray via su 
+## Bruteforce/Password Spray via su (SK-su-BruteForce.sh) 
 Using su to bruteforce password and password spray with concurrency, timeout and sleep. 
 
 ```shell
@@ -410,21 +410,21 @@ Module: User:Password Bruteforce : usrpwdbf
 Example: ./SK-su-BruteForce.sh -m usrpwdbf -uf users-pwd.txt  -c 5 -s 0.005 -t 0.9 
 ```
 
-## [SK-search-sudoers.sh] Search for backup of the file sudoers
+## Search for backup of the file sudoers (SK-search-sudoers.sh)
 Find possible sudoers backup files in /mnt/ /opt/ /etc/ /etc/ /home/ /app*/  and any additional one parse as argument
 
 ```shell
 Usage: ./SK-search-sudoers.sh /tmp/
 ```
 
-## [SK_dbins_update.sh] Update dangerous bins (GTFOBINS)
+## Update dangerous bins - GTFOBINS (SK_dbins_update.sh) 
 To update the dangerous bins, go to dbins/update and run ./SK_dbins_update.sh. Make sure you have internet connection.
 
 ```shell
 Usage: ./SK_dbins_update.sh
 ```
 
-## [SK-relative-path.sh] Binary Relative Path
+## Binary Relative Path (SK-relative-path.sh)
 Looking for binaries with relative path that be abused! if there is no secure_path set.
 
 ```shell
