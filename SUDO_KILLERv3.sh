@@ -1019,7 +1019,7 @@ fn_miss_scripts() {
       #echo $line
 
       # missing file/script
-      if [ ! -f $line ]; then
+      if [ ! -f "$line" ]; then
 
         rep=$(echo "$line" | awk -F.sh '{print $1}' | rev | cut -d "/" -f 2,3,4,5,6,7 | rev | cut -d " " -f 2)
 
@@ -1140,7 +1140,7 @@ fn_excessive_dir_perm() {
       ####### [DIRECTORY]
 
       # checking the directory rights of the scripts identified in sudo
-      if [ -f $liney ]; then
+      if [ -f "$liney" ]; then
         rep1=$(echo "$liney" | awk -F.sh '{print $1}' | rev | cut -d "/" -f 2,3,4,5,6,7 | rev | cut -d " " -f 2)
 
         echo -e "\n"
