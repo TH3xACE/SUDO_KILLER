@@ -2142,6 +2142,8 @@ call_each() {
 #   call_each 2> /dev/null
 # fi
 
+umask 077
+
 if [ "$path" ]; then
   mkdir -p /$path/sudo_killer-export-$(date +"%d-%m-%y") 2>/dev/null
   call_each | tee -a /$path/sudo_killer-export-$(date +"%d-%m-%y")/$report 2>/dev/null
