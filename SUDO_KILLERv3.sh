@@ -85,15 +85,6 @@ init() {
   if [ -z "$cnver" ]; then
     echo "Error: The tool has not been able to convert the sudo's version!"
   fi
-
-  if [ -n "$path" ]; then
-    vpath="$path/sudo_killer-export-$(date +'%d-%m-%y')"
-  else
-    vpath="/tmp/sudo_killer-export-$(date +'%d-%m-%y')"
-  fi
-
-  # Create the directory
-  mkdir -p "$vpath"
 } # init
 
 #------------------------------------------------------
@@ -2144,19 +2135,19 @@ call_each() {
 
 umask 077
 
-if [ "$path" ]; then
-  mkdir -p /$path/sudo_killer-export-$(date +"%d-%m-%y") 2>/dev/null
-  call_each | tee -a /$path/sudo_killer-export-$(date +"%d-%m-%y")/$report 2>/dev/null
+if [ -n "$path" ]; then
+    vpath="$path/sudo_killer-export-$(date +'%d-%m-%y')"
+    mkdir "$vpath" || echo "path already exists" && exit 1
 else
-  :
-  if [ "$report" ] || [ "$export" ]; then
-    mkdir -p /tmp/sudo_killer-export-$(date +"%d-%m-%y") 2>/dev/null
-    call_each | tee -a /tmp/sudo_killer-export-$(date +"%d-%m-%y")/$report 2>/dev/null
-  else
-    :
-    call_each 2>/dev/null
-  fi
-
+    vpath=$(mktemp -d -t sudo_killer-export-XXXXXXXXXX)
 fi
 
-
+if [ "$path" ]; then
+  call_each | tee -a "$vpath"/"$report" 2>/dev/null
+else
+  if [ "$report" ] || [ "$export" ]; then
+    call_each | tee -a "$vpath"/"$report" 2>/dev/null
+  else
+    call_each 2>/dev/null
+  fi
+fi
