@@ -85,15 +85,6 @@ init() {
   if [ -z "$cnver" ]; then
     echo "Error: The tool has not been able to convert the sudo's version!"
   fi
-
-  if [ -n "$path" ]; then
-    vpath="$path/sudo_killer-export-$(date +'%d-%m-%y')"
-  else
-    vpath="/tmp/sudo_killer-export-$(date +'%d-%m-%y')"
-  fi
-
-  # Create the directory
-  mkdir -p "$vpath"
 } # init
 
 #------------------------------------------------------
@@ -1019,7 +1010,7 @@ fn_miss_scripts() {
       #echo $line
 
       # missing file/script
-      if [ ! -f $line ]; then
+      if [ ! -f "$line" ]; then
 
         rep=$(echo "$line" | awk -F.sh '{print $1}' | rev | cut -d "/" -f 2,3,4,5,6,7 | rev | cut -d " " -f 2)
 
@@ -1140,7 +1131,7 @@ fn_excessive_dir_perm() {
       ####### [DIRECTORY]
 
       # checking the directory rights of the scripts identified in sudo
-      if [ -f $liney ]; then
+      if [ -f "$liney" ]; then
         rep1=$(echo "$liney" | awk -F.sh '{print $1}' | rev | cut -d "/" -f 2,3,4,5,6,7 | rev | cut -d " " -f 2)
 
         echo -e "\n"
@@ -2142,19 +2133,21 @@ call_each() {
 #   call_each 2> /dev/null
 # fi
 
-if [ "$path" ]; then
-  mkdir -p /$path/sudo_killer-export-$(date +"%d-%m-%y") 2>/dev/null
-  call_each | tee -a /$path/sudo_killer-export-$(date +"%d-%m-%y")/$report 2>/dev/null
-else
-  :
-  if [ "$report" ] || [ "$export" ]; then
-    mkdir -p /tmp/sudo_killer-export-$(date +"%d-%m-%y") 2>/dev/null
-    call_each | tee -a /tmp/sudo_killer-export-$(date +"%d-%m-%y")/$report 2>/dev/null
-  else
-    :
-    call_each 2>/dev/null
-  fi
+umask 077
 
+if [ -n "$path" ]; then
+    vpath="$path/sudo_killer-export-$(date +'%d-%m-%y')"
+    mkdir "$vpath" || echo "path already exists" && exit 1
+else
+    vpath=$(mktemp -d -t sudo_killer-export-XXXXXXXXXX)
 fi
 
-
+if [ "$path" ]; then
+  call_each | tee -a "$vpath"/"$report" 2>/dev/null
+else
+  if [ "$report" ] || [ "$export" ]; then
+    call_each | tee -a "$vpath"/"$report" 2>/dev/null
+  else
+    call_each 2>/dev/null
+  fi
+fi
